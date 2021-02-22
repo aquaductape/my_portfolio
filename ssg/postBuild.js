@@ -41,22 +41,4 @@ const runInjectFusionTimeChunk = async () => {
   prependFile.sync(fusionTimeChunkPath, code);
 };
 
-const runInjectIndex = async () => {
-  const [result] = await FindFiles(
-    jsBuildPath,
-    /index-.*\.js/
-  );
-
-  const indexPath = `${result.dir}/${result.file}`;
-
-  const postBuildLibPath = __dirname + "/postBuildLib/";
-  const fileSavePath = postBuildLibPath + "fileSave.js";
-
-  const fileSaveFile = fs.readFileSync(fileSavePath).toString();
-
-  prependFile.sync(indexPath, fileSaveFile);
-};
-
 runInjectFusionTimeChunk();
-// doesnt work
-// runInjectIndex()
