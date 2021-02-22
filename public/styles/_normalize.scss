@@ -1,0 +1,72 @@
+* {
+  box-sizing: border-box;
+}
+
+// .js-focus-visible :focus:not(.focus-visible) {
+//   outline: none;
+// }
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: "Ubuntu", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--primary-bg);
+  color: var(--primary-txt-color);
+}
+
+#root {
+  overflow: hidden;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+li {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font: inherit;
+  outline: none;
+  user-select: none;
+}
+button::-moz-focus-inner {
+  border: 0;
+}
+
+.click-me {
+  outline: initial;
+}
+
+a {
+  color: inherit;
+}
+
+// @-webkit-keyframes autofill {
+//   0%,
+//   100% {
+//     background: transparent;
+//   }
+// }
+//
+// input:-webkit-autofill {
+//   -webkit-animation-delay: 1s; /* Safari support - any positive time runs instantly */
+//   -webkit-animation-name: autofill;
+//   -webkit-animation-fill-mode: both;
+// }

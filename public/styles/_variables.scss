@@ -1,0 +1,52 @@
+// headerColor: "#fff",
+// navTxtColor: "#bbb",
+// navBgColor: "#25385b",
+// primaryTxtColor: "#fff",
+// secondaryTxtColor: "#bbb",
+// primaryBg: "#030f27",
+// cardBg: "#142546",
+// cardTxt: "#ccc",
+// btnTxt: "#5396f0",
+// btnBG: "rgba(0, 0, 0, 0)",
+// btnBorder: "#5396f0",
+// btnBgFocus: "#5396f0",
+// btnTxtFocus: "#fff",
+// graphColor: "#bbb",
+// iconColor: "#bbb",
+// heroColor: "rgba(25, 43, 76, 0.7)",
+$header-color: #fff;
+$nav-txt-color: #bbb;
+$nav-bg-color: #25385b;
+$primary-txt-color: #fff;
+$secondary-txt-color: #cfcfcf;
+$card-bg: #142546;
+$card-txt: #ccc;
+$btn-txt: #fff;
+$btn-bg: #000;
+$btn-border: #00ceff;
+$btn-txt-focus: #fff;
+$btn-bg-focus: #00ceff;
+$primary-bg: #030f27;
+$graph-color: #bbb;
+$icon-color: #bbb;
+$hero-color: rgba(25, 43, 76, 0.7);
+$transitionTheme: 500ms background-color;
+
+:root {
+  --header-color: #{$header-color};
+  --nav-txt-color: #{$nav-txt-color};
+  --nav-bg-color: #{$nav-bg-color};
+  --primary-txt-color: #{$primary-txt-color};
+  --secondary-txt-color: #{$secondary-txt-color};
+  --primary-bg: #{$primary-bg};
+  --card-bg: #{$card-bg};
+  --card-txt: #{$card-txt};
+  --btn-txt: #{$btn-txt};
+  --btn-bg: #{$btn-bg};
+  --btn-border: #{$btn-border};
+  --btn-txt-focus: #{$btn-txt-focus};
+  --btn-bg-focus: #{$btn-bg-focus};
+  --graph-color: #{$graph-color};
+  --icon-color: #{$icon-color};
+  --hero-color: #{$hero-color};
+}

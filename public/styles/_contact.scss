@@ -1,0 +1,144 @@
+.contact-me {
+  padding: 100px 0;
+  margin-top: -200px;
+
+  .inputs,
+  .inputs-label {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .label-container {
+    display: flex;
+  }
+
+  .label-error {
+    color: #fff;
+    margin-left: 25px;
+    background: #c71212;
+  }
+
+  .inputs {
+    text-align: left;
+  }
+  .inputs-label {
+    margin: 10px 0;
+    margin-bottom: 4px;
+  }
+
+  input,
+  textarea {
+    color: #ccc;
+    font-size: 16px;
+    padding: 10px;
+    background: #0b1425;
+    border-style: none;
+    border-radius: 10px;
+    border: 4px solid #0b1425;
+    outline: none;
+
+    &:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 50px #1a2944 inset !important; /* Change the color to your own background color */
+      -webkit-text-fill-color: #ccc;
+      font-size: 16px;
+    }
+
+    &:-webkit-autofill:focus {
+      -webkit-box-shadow: 0 0 0 50px #1a2944 inset !important; /*your box-shadow*/
+      -webkit-text-fill-color: #ccc;
+      font-size: 16px;
+    }
+
+    &:focus {
+      -webkit-appearance: none;
+      border-color: #3e3ec5;
+      box-shadow: 0 0 10px 0px #0000ff85;
+      -webkit-box-shadow: 0 0 10px 0px #0000ff85;
+    }
+  }
+
+  .inputs-label {
+    font-size: 20px;
+  }
+
+  .card {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  textarea {
+    height: 180px;
+    margin-bottom: 80px;
+  }
+
+  .btn-send-message {
+    position: relative;
+    top: -85px;
+    border: none;
+    border-radius: 10px;
+    width: 180px;
+    height: 65px;
+    font-size: 20px;
+    color: #fff;
+    background: #4a57be;
+    box-shadow: 0 5px 0 #1f1f75;
+    transition: 300ms background-color, 300ms color;
+
+    // .btn-send-message__content {
+    //   animation: Reveal 500ms;
+    // }
+
+    &:hover,
+    &.focus-visible {
+      background: var(--btn-border);
+      color: #000;
+    }
+
+    &.focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 5px;
+    }
+  }
+}
+
+@media (min-width: 500px) {
+  #contact-me {
+    padding: 100px 30px;
+    padding-bottom: 200px;
+
+    input,
+    textarea {
+      font-size: 20px;
+    }
+
+    input {
+      &:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 50px #223155 inset !important; /* Change the color to your own background color */
+        -webkit-text-fill-color: #fff;
+      }
+      &:-webkit-autofill:focus {
+        -webkit-box-shadow: 0 0 0 50px #223155 inset !important; /*your box-shadow*/
+        -webkit-text-fill-color: #fff;
+      }
+      &:-webkit-autofill::first-line {
+        font-size: 20px;
+        // padding: 10px;
+      }
+    }
+
+    .card {
+      padding: 50px;
+    }
+    .inputs-label {
+      font-size: 25px;
+    }
+    textarea {
+      height: 300px;
+    }
+
+    .btn-send-message {
+      top: -100px;
+    }
+  }
+}
