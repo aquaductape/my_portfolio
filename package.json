@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "build": "rollup -c rollup.config.js && node ssg/export.js && node ssg/postBuild.js",
-    "build:withoutChart": "rollup -c rollup.config.js && node ssg/export.js",
+    "build:skipChart": "rollup -c rollup.config.js && node ssg/export.js",
     "serve": "serve build -l 8080",
     "type:check": "tsc --noEmit"
   },

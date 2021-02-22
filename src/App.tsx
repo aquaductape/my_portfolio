@@ -17,12 +17,12 @@ function App() {
   onMount(() => {
     if (!isBrowser) return;
 
-    const hash = window.location.hash;
+    const hash = window.location.hash.slice(1);
     const allowList = ["skills", "projects", "contact"];
 
     if (!allowList.includes(hash)) return;
 
-    const anchorEl = document.querySelector(`.nav-list-link[href="${hash}"]`);
+    const anchorEl = document.querySelector(`.nav-list-link[href="#${hash}"]`);
     if (!anchorEl) return;
     anchorEl.classList.add("active");
   });
