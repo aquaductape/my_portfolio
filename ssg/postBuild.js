@@ -14,12 +14,12 @@ const run = async () => {
 
   const fusionTimeChunkPath = `${result.dir}/${result.file}`;
 
-  const libInjectsPath = __dirname + "/libInjects/";
-  const jqueryPath = libInjectsPath + "jquery.js";
+  const postBuildLibPath = __dirname + "/postBuildPath/";
+  const jqueryPath = postBuildLibPath + "jquery.js";
   const fusionchartsJqueryPluginPath =
-    libInjectsPath + "fusioncharts.jqueryplugin.js";
-  const fusionchartsPath = libInjectsPath + "fusioncharts.js";
-  const timeseriesPath = libInjectsPath + "timeseries.js";
+    postBuildLibPath + "fusioncharts.jqueryplugin.js";
+  const fusionchartsPath = postBuildLibPath + "fusioncharts.js";
+  const timeseriesPath = postBuildLibPath + "timeseries.js";
 
   const jqueryFile = fs.readFileSync(jqueryPath).toString();
   const timeseriesFile = fs.readFileSync(timeseriesPath).toString();
