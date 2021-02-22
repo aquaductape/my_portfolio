@@ -1,6 +1,8 @@
 import { iconCode, iconLink } from "../../components/font-awesome/icons";
 import ticTacToeImg from "../../assets/img/tic-tac-toe.png";
+import ticTacToeImgWebP from "../../assets/img/tic-tac-toe.webp";
 import facifyImg from "../../assets/img/facify.png";
+import facifyImgWebP from "../../assets/img/facify.webp";
 
 const Projects = () => {
   return (
@@ -9,11 +11,15 @@ const Projects = () => {
       <div className="card-container">
         <div className="flex-gap">
           <div className="card">
-            <img
-              className="card-img"
-              src={ticTacToeImg}
-              alt="screenshot of tic-tac-toe game"
-            />
+            <picture>
+              <source srcset={ticTacToeImgWebP} type="image/webp" />
+              <source srcset={ticTacToeImg} type="image/png" />
+              <img
+                className="card-img"
+                src={ticTacToeImg}
+                alt="screenshot of tic-tac-toe game"
+              />
+            </picture>
             <div className="card-content">
               <h3 className="card-title">3nRow - Tic Tac Toe</h3>
               <p className="card-pg">
@@ -43,11 +49,15 @@ const Projects = () => {
         </div>
         <div className="flex-gap">
           <div className="card">
-            <img
-              className="card-img"
-              src={facifyImg}
-              alt="screenshot of facify application"
-            />
+            <picture>
+              <source srcset={facifyImgWebP} type="image/webp" />
+              <source srcset={facifyImg} type="image/png" />
+              <img
+                className="card-img"
+                src={facifyImg}
+                alt="screenshot of facify application"
+              />
+            </picture>
             <div className="card-content">
               <h3 className="card-title">Facify</h3>
               <p className="card-pg">

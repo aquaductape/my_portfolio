@@ -62,7 +62,6 @@ const AboutMe = () => {
       // e.preventDefault();
     } catch (err) {}
   };
-
   return (
     <section id="about-me" class="about-me">
       <div class="about-me-inner">
@@ -127,15 +126,6 @@ const AboutMe = () => {
                     rel="noreferrer noopener"
                     target="_blank"
                     download={item.download ? item.download : null}
-                    // onClick={
-                    //   item.download
-                    //     ? (e) =>
-                    //         onClickDownload(e, {
-                    //           href: item.href,
-                    //           name: item.download!,
-                    //         })
-                    //     : undefined
-                    // }
                     innerHTML={
                       typeof item.icon === "string" ? item.icon : undefined
                     }
