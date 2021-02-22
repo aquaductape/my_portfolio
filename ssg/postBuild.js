@@ -6,7 +6,7 @@ const { minify } = require("terser");
 
 const jsBuildPath = path.resolve(__dirname, "../build/js/");
 
-const run = async () => {
+const runInjectFusionTimeChunk = async () => {
   const [result] = await FindFiles(
     jsBuildPath,
     /FusionTimeChart-chunkFile-.*\.js/
@@ -14,7 +14,7 @@ const run = async () => {
 
   const fusionTimeChunkPath = `${result.dir}/${result.file}`;
 
-  const postBuildLibPath = __dirname + "/postBuildPath/";
+  const postBuildLibPath = __dirname + "/postBuildLib/";
   const jqueryPath = postBuildLibPath + "jquery.js";
   const fusionchartsJqueryPluginPath =
     postBuildLibPath + "fusioncharts.jqueryplugin.js";
@@ -40,4 +40,23 @@ const run = async () => {
   // console.log(typeof code);
   prependFile.sync(fusionTimeChunkPath, code);
 };
-run();
+
+const runInjectIndex = async () => {
+  const [result] = await FindFiles(
+    jsBuildPath,
+    /index-.*\.js/
+  );
+
+  const indexPath = `${result.dir}/${result.file}`;
+
+  const postBuildLibPath = __dirname + "/postBuildLib/";
+  const fileSavePath = postBuildLibPath + "fileSave.js";
+
+  const fileSaveFile = fs.readFileSync(fileSavePath).toString();
+
+  prependFile.sync(indexPath, fileSaveFile);
+};
+
+runInjectFusionTimeChunk();
+// doesnt work
+// runInjectIndex()

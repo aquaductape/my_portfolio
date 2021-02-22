@@ -24,7 +24,7 @@ const Graph = () => {
       });
     };
 
-    const observer = new IntersectionObserver(observerCb);
+    const observer = new IntersectionObserver(observerCb, {rootMargin: '150px 0px 0px 150px'});
 
     observer.observe(sectionRef.querySelector(".section-title")!);
 
