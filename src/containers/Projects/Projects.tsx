@@ -18,6 +18,8 @@ const Projects = () => {
                 className="card-img"
                 src={ticTacToeImg}
                 alt="screenshot of tic-tac-toe game"
+                width="100" // just to pass lighthouse, since this image is responsive
+                height="100" // just to pass lighthouse, since this image is responsive
               />
             </picture>
             <div className="card-content">
@@ -56,6 +58,8 @@ const Projects = () => {
                 className="card-img"
                 src={facifyImg}
                 alt="screenshot of facify application"
+                width="100" // just to pass lighthouse, since this image is responsive
+                height="100" // just to pass lighthouse, since this image is responsive
               />
             </picture>
             <div className="card-content">
