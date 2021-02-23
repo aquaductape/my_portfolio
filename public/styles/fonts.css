@@ -11,6 +11,7 @@
   font-style: normal;
   font-weight: 500;
   src: url("../fonts/comfortaa-v27-latin-500.woff2") format("woff2");
+  font-display: swap;
 }
 
 /* ubuntu-regular - latin */
@@ -19,6 +20,7 @@
   font-style: normal;
   font-weight: 400;
   src: url("../fonts/ubuntu-v14-latin-regular.woff2") format("woff2");
+  font-display: swap;
 }
 /* ubuntu-700 - latin */
 @font-face {
@@ -26,4 +28,5 @@
   font-style: normal;
   font-weight: 700;
   src: url("../fonts/ubuntu-v14-latin-700.woff2") format("woff2");
+  font-display: swap;
 }

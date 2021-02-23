@@ -77,7 +77,6 @@ const FusionTimeChart = ({
     const TimeSeries = window.TimeSeries;
     // @ts-ignore
     const jQueryFusionCharts = window.jQueryFusionCharts;
-    console.log({ jQueryFusionCharts });
 
     TimeSeries(FusionCharts); // Resolve Charts as dependency for FusionCharts.
     jQueryFusionCharts(FusionCharts); // Resolve FusionCharts as dependency for jqueryFusionCharts.
