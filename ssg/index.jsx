@@ -66,6 +66,7 @@ export default async (req) => {
       <meta name="author" content="Caleb Taylor" />
       <meta name="keywords" content="JavaScript, React, Front end, Fullstack, Sass, Los Angeles">
       <meta name="theme-color" content="#25385b">
+      <meta name="google-site-verification" content="DKvE2Lk-6ot4QrMLyu7NeflH_nxZ4QHzAd0n0XeO7Bc" />
 
       <!-- Favicon -->
       <link rel="shortcut icon" href="/favicon/favicon.ico" />
@@ -95,6 +96,7 @@ export default async (req) => {
         <meta name="twitter:image:alt" content="Caleb Taylor vector letters">
         <meta name="twitter:image" content="https://calebetaylor.com/open-graph/calebtaylorlogo_og-image1.png">
       ${script}
+
     </head>
     <body style="height: 100%; background-color: #25385b;"><div id="app" style="background-color: #030f27;">${html}</div></body>
     ${jsFiles.join("")}
