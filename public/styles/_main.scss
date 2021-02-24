@@ -452,7 +452,7 @@ section {
 }
 
 .social-links__li {
-  &[data-link-name="Stack Overflow"] {
+  &[data-link-name="LinkedIn"] {
     display: none;
   }
 }
@@ -876,7 +876,7 @@ section {
   }
 
   .social-links__li {
-    &[data-link-name="Stack Overflow"] {
+    &[data-link-name="LinkedIn"] {
       display: unset;
     }
 
