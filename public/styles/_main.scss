@@ -802,6 +802,18 @@ section {
   .card-title {
     font-size: 25px;
   }
+
+  .social-links__li {
+    &[data-link-name="LinkedIn"] {
+      display: unset;
+    }
+
+    &[data-link-name="Download PDF Resume"] {
+      svg {
+        transform: scale(1.13) translateY(-0.5px) !important;
+      }
+    }
+  }
 }
 
 @media (min-width: 655px) {
@@ -873,18 +885,6 @@ section {
 
   .about-me-social-links {
     margin-top: -40px;
-  }
-
-  .social-links__li {
-    &[data-link-name="LinkedIn"] {
-      display: unset;
-    }
-
-    &[data-link-name="Download PDF Resume"] {
-      svg {
-        transform: scale(1.13) translateY(-0.5px) !important;
-      }
-    }
   }
 }
 
