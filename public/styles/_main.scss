@@ -778,7 +778,7 @@ section {
     margin: 50px 0;
   }
   .nav-list-link {
-    font-size: 20px;
+    font-size: 18px;
     margin: 0 20px;
   }
 
@@ -817,6 +817,10 @@ section {
 }
 
 @media (min-width: 655px) {
+  .nav-list-link {
+    font-size: 20px;
+    margin: 0 20px;
+  }
   .skills-group {
     grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
     margin: 0 auto;
