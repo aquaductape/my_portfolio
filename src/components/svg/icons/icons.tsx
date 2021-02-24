@@ -122,7 +122,7 @@ export const ResponsiveIcon = () => (
 export const ResumeIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    style="transform: translateY(3px);"
+    style="transform: translateY(2px);"
     width="19.635"
     height="28.361"
   >
