@@ -815,6 +815,10 @@ section {
     font-size: 20px;
     margin: 0 20px;
   }
+
+  section {
+    padding: 100px 80px;
+  }
   .skills-group {
     grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
     margin: 0 auto;
