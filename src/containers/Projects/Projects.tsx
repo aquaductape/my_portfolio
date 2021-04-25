@@ -71,7 +71,7 @@ const Projects = () => {
               <div className="card-link-container">
                 <a
                   className="card-link-item"
-                  href="https://aquaductape.github.io/facify/"
+                  href="https://facify.vercel.app/"
                   target="blank"
                 >
                   <span innerHTML={iconLink}></span>
