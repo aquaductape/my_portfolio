@@ -5,6 +5,7 @@ import {
   html,
   js,
   react,
+  redux,
   sass,
   typescript,
 } from "../../components/svg/icons/programming-icons";
@@ -18,6 +19,7 @@ const Skills = () => {
     [js, "JavaScript"],
     [typescript, "TypeScript"],
     [react, "React"],
+    [redux, "Redux"],
     [git, "Git"],
     // [npm, "NPM"]
     // [nodejs, "NodeJS"],
