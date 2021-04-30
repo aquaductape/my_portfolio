@@ -1,7 +1,7 @@
 import { iconCode, iconLink } from "../../components/font-awesome/icons";
 import ticTacToeImg from "../../assets/img/tic-tac-toe.png";
 import ticTacToeImgWebP from "../../assets/img/tic-tac-toe.webp";
-import facifyImg from "../../assets/img/facify.png";
+import facifyImg from "../../assets/img/facify.jpg";
 import facifyImgWebP from "../../assets/img/facify.webp";
 
 const Projects = () => {
@@ -53,7 +53,7 @@ const Projects = () => {
           <div className="card">
             <picture>
               <source srcset={facifyImgWebP} type="image/webp" />
-              <source srcset={facifyImg} type="image/png" />
+              <source srcset={facifyImg} type="image/jpeg" />
               <img
                 className="card-img"
                 src={facifyImg}
