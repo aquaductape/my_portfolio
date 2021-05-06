@@ -219,6 +219,25 @@ section {
   }
 }
 
+@media not all and (pointer: coarse) {
+  .logo {
+    .circle-logo__outer-ring,
+    .circle-logo__inner-circle {
+      transition: 400ms transform;
+      transform-origin: center;
+    }
+
+    &:hover {
+      .circle-logo__outer-ring {
+        transform: rotate(-310deg);
+      }
+      .circle-logo__inner-circle {
+        transform: rotate(90deg);
+      }
+    }
+  }
+}
+
 .logo a {
   color: var(--header-color);
   display: inline-block;
