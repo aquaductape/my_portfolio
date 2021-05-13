@@ -98,7 +98,7 @@ export default async (req) => {
       ${script}
 
     </head>
-    <body style="height: 100%; background-color: #25385b; color: #fff"><div id="app" style="background-color: #030f27;">${html}</div></body>
+    <body style="height: 100%; background-color: #25385b; color: #fff;"><div id="app" style="background-color: #030f27;">${html}</div></body>
     ${jsFiles.join("")}
     <script>
     ${focusVisibleScript()}
