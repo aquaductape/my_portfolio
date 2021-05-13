@@ -1,41 +1,30 @@
-import { batch, For, SetStateFunction, useContext } from "solid-js";
+import { createEffect, createSignal, For, onMount, useContext } from "solid-js";
+import CONSTANTS from "../../constants";
 import { GlobalContext } from "../../context/context";
 import smoothScrollTo from "../../utils/smoothScrollTo";
 
-type LinksProps = {
-  setSmoothScroll: SetStateFunction<{
-    active: boolean;
-    debounceActive: boolean;
-  }>;
-};
-
 type LinkProps = {
   content: string;
-  onClick: (e: MouseEvent, id: string) => void;
-  onFocus: (e: FocusEvent, id: string) => void;
+  onClick: (id: string) => void;
+  onFocus: (id: string) => void;
 };
 
 const Links = () => {
-  const [_, { setSmoothScroll, setHeader }] = useContext(GlobalContext);
-  const links = ["skills", "projects", "contact"];
+  const [context, { setSmoothScroll, setHeader, setBlog }] =
+    useContext(GlobalContext);
+  const links = CONSTANTS.links;
 
-  const onClick = (e: MouseEvent, id: string) => {
-    const target = e.target as HTMLElement;
-    const linkTarget = target.closest(".nav-list-link") as HTMLAnchorElement;
-
-    if (!linkTarget) return;
-
-    const prevActiveLink = document.querySelector(".nav-list-link.active")!;
+  const onClick = (id: string) => {
     const el = document.getElementById(id)!;
 
-    if (prevActiveLink) {
-      prevActiveLink.classList.remove("active");
+    setHeader({ activeLink: id });
+
+    if (context.blog.active) {
+      setBlog({ active: false });
+      return;
     }
 
-    linkTarget.classList.add("active");
     setSmoothScroll({ active: true });
-
-    window.history.replaceState("", "", linkTarget.href);
 
     el.focus({ preventScroll: true });
     smoothScrollTo({
@@ -47,7 +36,7 @@ const Links = () => {
     });
   };
 
-  const onFocus = (e: FocusEvent, id: string) => {
+  const onFocus = (id: string) => {
     if (id !== "contact") return;
 
     setHeader({ visible: true });
@@ -56,6 +45,15 @@ const Links = () => {
     if (windowScrollY <= 90) return;
     setHeader({ shadow: true });
   };
+
+  onMount(() => {
+    const hash = window.location.hash.slice(1);
+
+    if (!links.includes(hash)) return;
+    console.log({ hash });
+
+    setHeader({ activeLink: hash });
+  });
 
   return (
     <ul class="nav-desktop-group">
@@ -69,16 +67,38 @@ const Links = () => {
 };
 
 const Link = ({ content, onClick, onFocus }: LinkProps) => {
+  const [context] = useContext(GlobalContext);
+  const [active, setActive] = createSignal(
+    context.header.activeLink === content
+  );
+
+  createEffect(() => {
+    if (context.header.activeLink === null) {
+      window.history.replaceState("", "", location.origin);
+    }
+
+    if (context.header.activeLink === content) {
+      const url = `${location.origin}/#${content}`;
+
+      window.history.replaceState("", "", url);
+
+      setActive(true);
+      return;
+    }
+
+    setActive(false);
+  });
+
   return (
     <li class="nav-list">
       <a
-        class="nav-list-link"
+        class={`nav-list-link ${active() ? "active" : ""}`}
         href={`#${content}`}
         onClick={(e) => {
           e.preventDefault();
-          onClick(e, content);
+          onClick(content);
         }}
-        onFocus={(e) => onFocus(e, content)}
+        onFocus={(e) => onFocus(content)}
       >
         <span class="nav-list-link-content">{content}</span>
       </a>

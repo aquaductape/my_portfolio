@@ -62,12 +62,15 @@ const chartConfig = {
 
 const FusionTimeChart = ({
   fetchResult,
+  setLoading,
 }: {
   fetchResult: { res: [WakaData[], WakaSchema] };
+  setLoading: (v: boolean) => void;
 }) => {
   onMount(() => {
     if (!isBrowser) return;
     const [data, schema] = fetchResult.res;
+    setLoading(false);
 
     // @ts-ignore
     const $ = window.$;

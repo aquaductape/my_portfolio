@@ -1,11 +1,14 @@
 import { lazy, Suspense, onMount, createSignal } from "solid-js";
+import LoaderLogo from "../../components/Loader/LoaderLogo";
 import { WakaData, WakaSchema } from "../../ts";
+
 const FusionTimeChart = lazy(() => {
   return import("./FusionTimeChart");
 });
 
 const Graph = () => {
   const [hasObserved, setHasObserved] = createSignal(false);
+  const [loading, setLoading] = createSignal(false);
   const fetchedResult = {
     res: null as any,
   };
@@ -16,6 +19,8 @@ const Graph = () => {
       entries.forEach((entry) => {
         if (entry.intersectionRatio === 0) return;
         if (hasObserved()) return;
+        setLoading(true);
+
         const run = async () => {
           fetchedResult.res = await onFetchData();
           setHasObserved(true);
@@ -24,7 +29,9 @@ const Graph = () => {
       });
     };
 
-    const observer = new IntersectionObserver(observerCb, {rootMargin: '150px 0px 0px 150px'});
+    const observer = new IntersectionObserver(observerCb, {
+      rootMargin: "150px 0px 0px 150px",
+    });
 
     observer.observe(sectionRef.querySelector(".section-title")!);
 
@@ -53,9 +60,18 @@ const Graph = () => {
       </h2>
       <p class="wakatime">(Powered by wakatime.com)</p>
       <div role="presentation" className="container">
+        {loading() && (
+          <div class="graph-loader">
+            <div>Fetching graph data ...</div>
+            <LoaderLogo></LoaderLogo>
+          </div>
+        )}
         {hasObserved() ? (
-          <Suspense fallback={<div>Fetching graph data ...</div>}>
-            <FusionTimeChart fetchResult={fetchedResult} />
+          <Suspense fallback={<div></div>}>
+            <FusionTimeChart
+              fetchResult={fetchedResult}
+              setLoading={setLoading}
+            />
           </Suspense>
         ) : null}
       </div>

@@ -8,7 +8,7 @@ import {
   redux,
   sass,
   typescript,
-} from "../../components/svg/icons/programming-icons";
+} from "../../components/svg/icons/animated-icons";
 import Skill from "./Skill";
 
 const Skills = () => {

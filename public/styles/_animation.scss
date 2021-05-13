@@ -6,3 +6,23 @@
     opacity: 1;
   }
 }
+
+@keyframes Rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  40% {
+    transform: rotate(180deg);
+  }
+  70% {
+    transform: rotate(250deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.Reveal-delay {
+  opacity: 0;
+  animation: Reveal 250ms 500ms forwards;
+}

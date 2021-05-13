@@ -1,4 +1,4 @@
-// import { debounce } from "lodash-es";
+import { debounce } from "lodash-es";
 import { createSignal, createState, onMount, useContext } from "solid-js";
 import MonochromeCircleLogo from "../../components/svg/logos/MonochromeCircleLogo";
 import { GlobalContext } from "../../context/context";
@@ -8,36 +8,68 @@ import smoothScrollTo from "../../utils/smoothScrollTo";
 import Links from "./Links";
 
 const NavigationBar = () => {
-  const [context, { setSmoothScroll, setHeader }] = useContext(GlobalContext);
+  const [context, { setSmoothScroll, setHeader, setBlog }] =
+    useContext(GlobalContext);
   const [hasRendered, setHasRendered] = createSignal(true);
   const [navSettings, setNavSettings] = createState({
     navVisible: true,
   });
   let prevWindowScrollY = 0;
+  let topPageSentinelElRef!: HTMLDivElement;
+  let debounceRef: any = null;
+
+  const createIntersectionObserver = () => {
+    return new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        const windowScrollY = window.scrollY;
+        let isVisible = false;
+
+        if (entry.intersectionRatio > 0) {
+          isVisible = true;
+        }
+
+        if (debounceRef) {
+          // @ts-ignore
+          debounceRef.cancel();
+        }
+
+        prevWindowScrollY = windowScrollY;
+        if (context.smoothScroll.active) return;
+
+        if (isVisible) {
+          setHeader({ shadow: false, visible: true });
+          return;
+        }
+        setHeader({ shadow: false, visible: false });
+      });
+    });
+  };
 
   const onScrollHeader = () => {
-    // window.pageYOffset is IE9+ browser compatible
-    const windowScrollY = window.scrollY || window.pageYOffset;
+    const windowScrollY = window.scrollY;
 
-    if (windowScrollY <= 90) {
-      // setHeaderShadow(false);
-      setHeader({ shadow: false });
-    } else {
-      setHeader({ shadow: true });
-      // setHeaderShadow(true);
+    if (context.header.enableShadow) {
+      if (windowScrollY <= 90) {
+        setHeader({ shadow: false });
+      } else {
+        setHeader({ shadow: true });
+      }
     }
-    // setSmoothScroll("debounceActive", true);
-    if (context.smoothScroll.active || context.smoothScroll.debounceActive) {
-      // if (!smoothScroll.active && smoothScroll.debounceActive) {
-      //   setSmoothScroll("debounceActive", false);
-      // }
+
+    if (
+      !context.header.enableTranslate ||
+      context.smoothScroll.active
+      // context.smoothScroll.debounceActive
+    ) {
+      // @ts-ignore
+      debounceRef.cancel();
       prevWindowScrollY = windowScrollY;
       return;
     }
 
     if (hasRendered()) return;
 
-    if (windowScrollY <= 90) return setHeader({ visible: true });
+    if (windowScrollY <= 250) return setHeader({ visible: true });
     // if the scroll repeats the same number ignore it
     if (windowScrollY === prevWindowScrollY) return;
     if (windowScrollY > prevWindowScrollY) {
@@ -56,14 +88,16 @@ const NavigationBar = () => {
     // sometimes when reloading the page scroll event runs twice
     // timeout prevents that
     setTimeout(() => {
+      debounceRef = debounce(onScrollHeader, 200, {
+        leading: true,
+        trailing: true,
+        // maxWait: 1000,
+      });
+
       window.addEventListener(
         "scroll",
-        // debounce(onScrollHeader, 100, {
-        //   leading: true,
-        //   trailing: true,
-        //   maxWait: 400,
-        // }),
-        onScrollHeader,
+        debounceRef,
+        // onScrollHeader,
         { passive: true }
       );
     }, 500);
@@ -87,16 +121,40 @@ const NavigationBar = () => {
     return context.header.shadow ? "shadow" : "";
   };
 
+  const onClickLogo = (e: MouseEvent) => {
+    e.preventDefault();
+    setHeader({ activeLink: null });
+
+    if (context.blog.active) {
+      setBlog({ active: false });
+      return;
+    }
+
+    setSmoothScroll({ active: true });
+
+    smoothScrollTo({
+      container: window,
+      destination: 0,
+      onEnd: () => {
+        setSmoothScroll({ active: false });
+      },
+    });
+  };
+
   onMount(() => {
     if (!isBrowser) return;
+
     prevWindowScrollY = window.scrollY || window.pageYOffset;
     smartHideHeader();
     onScrollHeader();
     setHasRendered(false);
+    const observer = createIntersectionObserver();
+    observer.observe(topPageSentinelElRef);
   });
 
   return (
     <header>
+      <div className="top-page-sentinel" ref={topPageSentinelElRef}></div>
       <div class={`header-bar ${shadowHeaderCss()} ${hideHeaderCss()}`}>
         <div class="header-bar-inner">
           <a href="#about-me-logo" className="skip-to-content">
@@ -107,27 +165,7 @@ const NavigationBar = () => {
               aria-label="Caleb Taylor: Go to Home Page"
               title="Caleb Taylor"
               href="#homepage"
-              onClick={(e) => {
-                e.preventDefault();
-                const prevActiveLink = document.querySelector(
-                  ".nav-list-link.active"
-                )!;
-
-                if (prevActiveLink) {
-                  prevActiveLink.classList.remove("active");
-                }
-
-                window.history.replaceState("", "", window.location.origin);
-                setSmoothScroll({ active: true });
-
-                smoothScrollTo({
-                  container: window,
-                  destination: 0,
-                  onEnd: () => {
-                    setSmoothScroll({ active: false });
-                  },
-                });
-              }}
+              onClick={onClickLogo}
             >
               <MonochromeCircleLogo></MonochromeCircleLogo>
             </a>

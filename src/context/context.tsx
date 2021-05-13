@@ -6,19 +6,32 @@ type TSmoothScroll = {
 };
 
 type THeader = {
+  activeLink: string | null;
   visible: boolean;
   shadow: boolean;
+  enableShadow: boolean;
+  enableTranslate: boolean;
 };
+
+type TBlog = {
+  type: "3nRow" | "facify" | null;
+  active: boolean;
+  import: boolean;
+  finishedStaging: boolean;
+};
+
 export type TGlobalState = {
   smoothScroll: TSmoothScroll;
   header: THeader;
+  blog: TBlog;
 };
 
-type TGlobalContext = [
+export type TGlobalContext = [
   TGlobalState,
   {
     setSmoothScroll(props: Partial<TSmoothScroll>): void;
     setHeader(props: Partial<THeader>): void;
+    setBlog(props: Partial<TBlog>): void;
   }
 ];
 
@@ -28,8 +41,17 @@ const globalState = (): TGlobalState => ({
     debounceActive: false,
   },
   header: {
+    activeLink: null,
     shadow: false,
     visible: true,
+    enableShadow: true,
+    enableTranslate: true,
+  },
+  blog: {
+    type: null,
+    active: false,
+    import: false,
+    finishedStaging: false,
   },
 });
 export const GlobalContext = createContext<TGlobalContext>([
@@ -44,6 +66,23 @@ const GlobalProvider = (props: { children: any }) => {
   const store: TGlobalContext = [
     state,
     {
+      setBlog: ({ active, type, import: _import, finishedStaging }) => {
+        batch(() => {
+          if (active !== undefined) {
+            setState("blog", "active", active);
+          }
+
+          if (type !== undefined) {
+            setState("blog", "type", type);
+          }
+          if (_import !== undefined) {
+            setState("blog", "import", _import);
+          }
+          if (finishedStaging !== undefined) {
+            setState("blog", "finishedStaging", finishedStaging);
+          }
+        });
+      },
       setSmoothScroll: ({ active, debounceActive }) => {
         if (active != null) {
           setState("smoothScroll", "active", active);
@@ -52,13 +91,28 @@ const GlobalProvider = (props: { children: any }) => {
           setState("smoothScroll", "debounceActive", debounceActive);
         }
       },
-      setHeader: ({ shadow, visible }) => {
+      setHeader: ({
+        shadow,
+        visible,
+        enableShadow,
+        activeLink,
+        enableTranslate,
+      }) => {
         batch(() => {
           if (shadow != null) {
             setState("header", "shadow", shadow);
           }
           if (visible != null) {
             setState("header", "visible", visible);
+          }
+          if (enableShadow != null) {
+            setState("header", "enableShadow", enableShadow);
+          }
+          if (enableTranslate != null) {
+            setState("header", "enableTranslate", enableTranslate);
+          }
+          if (activeLink !== undefined) {
+            setState("header", "activeLink", activeLink);
           }
         });
       },

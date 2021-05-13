@@ -1,5 +1,6 @@
 import { JSX, onMount, useContext } from "solid-js";
-import { GlobalContext, TGlobalState } from "../../context/context";
+import CONSTANTS from "../../constants";
+import { GlobalContext, TGlobalContext } from "../../context/context";
 import { isBrowser } from "../../utils";
 
 type SpySectionProps = {
@@ -14,39 +15,25 @@ const callback: IntersectionObserverCallback = (entries, observer) => {
     init = false;
     return;
   }
+  const [context, { setHeader }] = globalContext;
   entries.forEach((entry) => {
-    if (context.smoothScroll.active) return;
+    if (context.smoothScroll.active || context.blog.active) return;
 
     const { rootBounds, boundingClientRect, target } = entry;
     if (boundingClientRect.top / rootBounds?.height! > 0.5) return;
+
     const targetId = (target as HTMLElement).dataset.hash!;
     const targetHasNavLink = (target as HTMLElement).dataset.navLink!;
+    const links = CONSTANTS.links;
 
-    if (currentId === targetId) return;
-    // console.log("pass ", currentId);
-
-    currentId = targetId;
-    const prevAnchorEl = document.querySelector(`.nav-list-link.active`);
-    let url = `${location.origin}/#${targetId}`;
-
-    if (prevAnchorEl) {
-      prevAnchorEl.classList.remove("active");
+    if (targetId === "about-me") {
+      setHeader({ activeLink: null });
+      return;
     }
 
-    if (currentId === "about-me") {
-      url = location.origin;
-    }
+    if (!links.includes(targetId)) return;
 
-    if (targetHasNavLink) {
-      const anchorEl = document.querySelector(
-        `.nav-list-link[href="#${currentId}"]`
-      );
-      if (!anchorEl) return;
-      anchorEl.classList.add("active");
-    }
-
-    window.history.replaceState("", "", url);
-    // console.log(entry.target);
+    setHeader({ activeLink: targetId });
   });
 };
 
@@ -55,7 +42,7 @@ const observer = isBrowser
   : ({} as IntersectionObserver);
 let currentId = "";
 let init = true;
-let context: TGlobalState;
+let globalContext: TGlobalContext;
 
 const SpySection = ({
   children,
@@ -63,17 +50,17 @@ const SpySection = ({
   hasNavLink,
   sentinelTop,
 }: SpySectionProps) => {
-  context = useContext(GlobalContext)[0];
+  globalContext = useContext(GlobalContext);
   let sentinelRef!: HTMLDivElement;
-  onMount(() => {
-    if (!isBrowser) return;
-    // observer.observe(divRef.querySelector(".section-title")!);
-    observer.observe(sentinelRef);
-  });
   const sentinelStyle: JSX.CSSProperties = {
     position: "absolute",
     top: sentinelTop ? `${sentinelTop}px` : null,
   };
+
+  onMount(() => {
+    observer.observe(sentinelRef);
+  });
+
   return (
     <div style={{ position: "relative" }}>
       <div

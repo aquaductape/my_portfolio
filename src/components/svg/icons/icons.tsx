@@ -1,3 +1,5 @@
+import { JSX } from "solid-js";
+
 export const AccessabilityIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.016 6.224">
     {/* @ts-ignore */}
@@ -133,3 +135,28 @@ export const ResumeIcon = () => (
     </g>
   </svg>
 );
+
+export const Cevron = ({
+  direction = "right",
+}: { direction?: "right" | "bottom" } = {}) => {
+  const style: JSX.CSSProperties = {};
+
+  if (direction === "bottom") {
+    style.transform = "rotate(-90deg)";
+  }
+  return (
+    <svg
+      style={style}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 55.127 100.001"
+    >
+      <path
+        d="M50 5.127L5.127 50 50 94.874"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="7.25"
+        stroke-linecap="square"
+      />
+    </svg>
+  );
+};

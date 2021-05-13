@@ -18,6 +18,14 @@
   height: 0;
 }
 
+.top-page-sentinel {
+  position: absolute;
+  top: 250px;
+  left: 0;
+  height: 0;
+  width: 100%;
+}
+
 :root {
   color-scheme: dark;
 }
@@ -516,93 +524,6 @@ section {
   }
 }
 
-/************ Projects **************/
-
-.projects {
-}
-
-.card {
-  margin: 50px 0;
-  max-width: 475px;
-  background: var(--card-bg);
-  border-radius: 20px;
-  color: var(--card-txt);
-  box-shadow: 0 8px 16px 1px #00000042;
-}
-
-.card-container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  max-width: 1080px;
-  margin: 0 auto;
-  margin-top: -50px;
-}
-
-.card-content {
-  text-align: center;
-  padding: 0px 15px 15px;
-  display: flex;
-  flex-direction: column;
-}
-
-.card-img {
-  width: 100%;
-  height: auto !important; // just to pass lighthouse, since this image is responsive
-  border-radius: 20px;
-  aspect-ratio: 1;
-  box-shadow: 0 14px 24px -6px #13131391;
-}
-
-.card-title {
-  order: 1;
-  font-size: 22px;
-}
-
-.card-link-container {
-  display: flex;
-  justify-content: center;
-  order: 2;
-}
-.card-pg {
-  font-size: 18px;
-  // text-align: center;
-  line-height: 1.5;
-  order: 3;
-}
-
-.card-link-item {
-  background: var(--btn-bg);
-  color: var(--btn-border);
-  // When there's border radius ,if the type of element is inline,
-  // it will have extremely faint broken secondary border,
-  // I think what's happening is parts of element's content is bigger than the border
-  // The fix is to set the element to block
-  // However in IE and Edge, there's always a faint outline on border, solution is to set border to transparent
-  border: 2px solid var(--btn-border);
-  padding: 5px 10px;
-  border-radius: 30px;
-  margin-right: 5px;
-  text-decoration: none;
-  outline: none;
-  cursor: pointer;
-  transition: 500ms background-color, 500ms color;
-
-  span {
-    margin: 0 5px;
-  }
-
-  &:hover,
-  &.focus-visible {
-    background: var(--btn-border);
-    color: #000;
-  }
-
-  &.focus-visible {
-    outline: 2px solid #fff;
-    outline-offset: 5px;
-  }
-}
 /************ footer ***********/
 
 .pfooter {
@@ -671,6 +592,34 @@ section {
 }
 
 /************** chart **************/
+
+.loader {
+  svg {
+    height: 100%;
+    width: 100%;
+  }
+
+  .circle-logo__inner-circle {
+    backface-visibility: hidden;
+    transform-origin: center;
+    animation: Rotate 2500ms infinite ease-in-out;
+  }
+  .circle-logo__outer-ring {
+    backface-visibility: hidden;
+    transform-origin: center;
+    animation: Rotate 3000ms reverse infinite ease-in-out;
+  }
+}
+
+.graph-loader {
+  margin-top: 50px;
+
+  .loader {
+    margin-top: 50px;
+    height: 100px;
+  }
+}
+
 .coding-activity {
   .container {
     min-height: 600px;
