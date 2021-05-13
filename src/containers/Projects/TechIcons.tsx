@@ -113,7 +113,7 @@ export const TechIconsExpanded = ({
       )}
       {backend.length && <Category title="Backend" icons={backend}></Category>}
       {buildTool.length && (
-        <Category title="Frontend" icons={buildTool}></Category>
+        <Category title="Build Tools" icons={buildTool}></Category>
       )}
       {api.length && <Category title="API" icons={api}></Category>}
     </>
