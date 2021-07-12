@@ -9,6 +9,7 @@ import {
   sass,
   typescript,
 } from "../../components/svg/icons/animated-icons";
+
 import Skill from "./Skill";
 
 const Skills = () => {

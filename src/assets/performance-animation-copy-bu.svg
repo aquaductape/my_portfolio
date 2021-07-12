@@ -1,0 +1,679 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 9.413 7.684"
+   version="1.1"
+   id="svg108"
+   sodipodi:docname="performance-animation-copy-bu.svg"
+   inkscape:version="1.0.2 (394de47547, 2021-03-26)">
+  <metadata
+     id="metadata112">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1016"
+     id="namedview110"
+     showgrid="false"
+     inkscape:zoom="68.629309"
+     inkscape:cx="2.7558163"
+     inkscape:cy="3.2381167"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg108"
+     inkscape:document-rotation="0" />
+  <defs
+     id="defs38">
+    <linearGradient
+       id="d">
+      <stop
+         offset="0"
+         stop-color="#629bff"
+         id="stop2" />
+      <stop
+         offset="1"
+         stop-color="#003eaa"
+         stop-opacity=".996"
+         id="stop4" />
+    </linearGradient>
+    <linearGradient
+       id="c">
+      <stop
+         offset="0"
+         stop-color="#d60000"
+         id="stop7" />
+      <stop
+         offset="1"
+         stop-color="#ff8989"
+         id="stop9" />
+    </linearGradient>
+    <linearGradient
+       id="b">
+      <stop
+         offset="0"
+         stop-color="#0056eb"
+         id="stop12" />
+      <stop
+         offset=".77"
+         stop-color="#0a55db"
+         id="stop14" />
+      <stop
+         offset=".807"
+         stop-color="#3c7ff4"
+         id="stop16" />
+      <stop
+         offset=".839"
+         stop-color="#1263f1"
+         id="stop18" />
+      <stop
+         offset=".954"
+         stop-color="#0b2be8"
+         id="stop20" />
+      <stop
+         offset="1"
+         stop-color="#3880ff"
+         id="stop22" />
+    </linearGradient>
+    <linearGradient
+       id="a">
+      <stop
+         offset="0"
+         stop-color="#0056eb"
+         id="stop25" />
+      <stop
+         offset=".453"
+         stop-color="#1969f4"
+         id="stop27" />
+      <stop
+         offset="1"
+         stop-color="#3880ff"
+         id="stop29" />
+    </linearGradient>
+    <linearGradient
+       xlink:href="#b"
+       id="g"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(.24306 0 0 .24306 -24.461 -87.63)"
+       x1="121.506"
+       y1="387.748"
+       x2="121.506"
+       y2="377.14" />
+    <linearGradient
+       xlink:href="#c"
+       id="h"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(.24306 0 0 .24306 -24.461 -87.533)"
+       x1="129.93"
+       y1="378.776"
+       x2="128.408"
+       y2="377.335" />
+    <linearGradient
+       xlink:href="#d"
+       id="i"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(.24306 0 0 .24306 -25.093 -87.533)"
+       x1="126"
+       y1="377.497"
+       x2="127.015"
+       y2="378.728" />
+    <linearGradient
+       xlink:href="#d"
+       id="j"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(.24306 0 0 .24306 -24.442 -87.533)"
+       x1="126"
+       y1="377.497"
+       x2="127.015"
+       y2="378.728" />
+    <linearGradient
+       xlink:href="#b"
+       id="e"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(.24306 0 0 .24306 -24.461 -87.63)"
+       x1="121.506"
+       y1="387.748"
+       x2="121.506"
+       y2="377.14" />
+    <linearGradient
+       xlink:href="#b"
+       id="f"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(.24306 0 0 .24306 -24.461 -87.63)"
+       x1="121.506"
+       y1="387.748"
+       x2="121.506"
+       y2="377.14" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#b"
+       id="linearGradient2452"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.24306,0,0,0.24306,-24.461,-87.63)"
+       x1="121.506"
+       y1="387.748"
+       x2="121.506"
+       y2="377.14" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#b"
+       id="linearGradient2454"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.24306,0,0,0.24306,-24.461,-87.63)"
+       x1="121.506"
+       y1="387.748"
+       x2="121.506"
+       y2="377.14" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#b"
+       id="linearGradient2456"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.24306,0,0,0.24306,-24.461,-87.63)"
+       x1="121.506"
+       y1="387.748"
+       x2="121.506"
+       y2="377.14" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#c"
+       id="linearGradient2458"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.24306,0,0,0.24306,-24.461,-87.533)"
+       x1="129.93"
+       y1="378.776"
+       x2="128.408"
+       y2="377.335" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#d"
+       id="linearGradient2460"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.24306,0,0,0.24306,-25.093,-87.533)"
+       x1="126"
+       y1="377.497"
+       x2="127.015"
+       y2="378.728" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#d"
+       id="linearGradient2462"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.24306,0,0,0.24306,-24.442,-87.533)"
+       x1="126"
+       y1="377.497"
+       x2="127.015"
+       y2="378.728" />
+  </defs>
+  <g
+     class="title-bar-windowsxp"
+     id="g68">
+    <path
+       d="M6.763 3.985v.645h.52v-.39a.256.256 0 00-.256-.255z"
+       class="title-right"
+       fill="url(#e)"
+       paint-order="markers fill stroke"
+       id="path40" />
+    <path
+       d="M2.615 3.985v.645h4.254v-.645z"
+       class="title-mid"
+       fill="url(#f)"
+       paint-order="markers fill stroke"
+       id="path42" />
+    <path
+       d="M2.388 3.985a.256.256 0 00-.256.256v.389h.564v-.645z"
+       class="title-left"
+       fill="url(#g)"
+       paint-order="markers fill stroke"
+       id="path44" />
+    <g
+       class="title-bar-buttons"
+       id="g66">
+      <g
+         class="title-bar-close"
+         id="g50">
+        <rect
+           width=".482"
+           height=".482"
+           x="6.661"
+           y="4.089"
+           ry=".095"
+           class="hover"
+           fill="url(#h)"
+           stroke="#fff"
+           stroke-width=".026"
+           stroke-linecap="round"
+           stroke-dashoffset="16.97"
+           id="rect46" />
+        <path
+           d="M6.75 4.486l.304-.305m-.305 0l.305.305"
+           fill="none"
+           stroke="#fff"
+           stroke-width=".064"
+           id="path48" />
+      </g>
+      <g
+         class="title-bar-collapse"
+         id="g56">
+        <rect
+           width=".482"
+           height=".482"
+           x="5.36"
+           y="4.089"
+           ry=".095"
+           class="hover"
+           fill="url(#i)"
+           stroke="#fff"
+           stroke-width=".026"
+           stroke-linecap="round"
+           stroke-dashoffset="16.97"
+           id="rect52" />
+        <path
+           d="M5.645 4.44h-.202"
+           fill="none"
+           stroke="#fff"
+           stroke-width=".064"
+           id="path54" />
+      </g>
+      <g
+         class="title-bar-expand"
+         id="g64">
+        <rect
+           width=".482"
+           height=".482"
+           x="6.01"
+           y="4.089"
+           ry=".095"
+           class="hover"
+           fill="url(#j)"
+           stroke="#fff"
+           stroke-width=".026"
+           stroke-linecap="round"
+           stroke-dashoffset="16.97"
+           id="rect58" />
+        <path
+           d="M6.112 4.24h.279m-.28-.044h.28v.279h-.28z"
+           class="expand"
+           fill="none"
+           stroke="#fff"
+           stroke-width=".05"
+           id="path60" />
+        <path
+           d="M6.183 4.28v-.075h.213v.173h-.054m-.235-.097h.212v.173h-.212z"
+           class="minimize"
+           fill="none"
+           stroke="#fff"
+           stroke-width=".039"
+           stroke-linecap="round"
+           stroke-dashoffset="16.97"
+           paint-order="markers fill stroke"
+           id="path62" />
+      </g>
+    </g>
+  </g>
+  <g
+     class="title-bar-mac"
+     id="g106">
+    <path
+       d="M6.763 4.08v.546h.52v-.291a.255.255 0 00-.256-.254z"
+       class="title-right"
+       id="path70" />
+    <path
+       d="M2.615 4.08v.546H6.87V4.08z"
+       class="title-mid"
+       id="path72" />
+    <path
+       d="M2.388 4.079a.256.256 0 00-.256.256v.29h.564v-.544h-.308z"
+       class="title-left"
+       id="path74" />
+    <g
+       class="title-bar-buttons"
+       id="g104">
+      <g
+         class="title-bar-close"
+         id="g82">
+        <circle
+           cx="2.437"
+           cy="4.37"
+           r=".115"
+           fill="#ff2a2a"
+           paint-order="markers fill stroke"
+           id="circle76" />
+        <g
+           class="hover"
+           fill="none"
+           stroke="#640000"
+           stroke-width=".03"
+           id="g80">
+          <path
+             d="M2.379 4.311l.116.117M2.379 4.428l.116-.117"
+             id="path78" />
+        </g>
+      </g>
+      <g
+         class="title-bar-collapse"
+         id="g88">
+        <circle
+           cx="2.86"
+           cy="4.37"
+           r=".115"
+           fill="#fc0"
+           paint-order="markers fill stroke"
+           id="circle84" />
+        <path
+           d="M2.794 4.37h.131"
+           class="hover"
+           fill="none"
+           stroke="#5c4a00"
+           stroke-width=".04"
+           id="path86" />
+      </g>
+      <g
+         class="title-bar-expand"
+         id="g102">
+        <circle
+           cx="3.282"
+           cy="4.37"
+           r=".115"
+           fill="#00eb13"
+           paint-order="markers fill stroke"
+           id="circle90" />
+        <g
+           class="minimize hover"
+           fill="#006100"
+           id="g96">
+          <path
+             d="M3.373 4.375l-.086.086-.007-.093z"
+             id="path92" />
+          <path
+             d="M3.19 4.364l.086-.086.007.093z"
+             id="path94" />
+        </g>
+        <g
+           class="expand hover"
+           fill="#006100"
+           id="g100">
+          <path
+             d="M3.254 4.427l.085-.085.007.092zM3.31 4.312l-.086.086-.006-.093z"
+             id="path98" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <g
+     id="g2760"
+     class="title-bar-windows10">
+    <path
+       d="m 6.763,4.147 v 0.4335938 h 0.52 V 4.147 Z"
+       id="path1823"
+       style="fill:#ffffff"
+       class="title-right"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       d="M 2.615,4.147 V 4.5805938 H 6.87 V 4.147 Z"
+       id="path1821"
+       style="fill:#ffffff"
+       class="title-mid"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       d="M 2.132,4.147 V 4.5805938 H 2.696 V 4.147 Z"
+       id="path1397"
+       style="fill:#ffffff"
+       class="title-left"
+       sodipodi:nodetypes="ccccc" />
+  </g>
+  <rect
+     width="5.1500001"
+     height="3.3970001"
+     x="-0.41495273"
+     y="4.2480001"
+     ry="0.237"
+     class="browser-body"
+     fill="#ffffff"
+     id="rect2158" />
+  <g
+     class="page"
+     id="g2168"
+     transform="translate(-2.5469529)">
+    <path
+       d="M 3.039,7.515 H 4.246 M 3.039,6.107 H 6.484 M 3.039,6.417 H 5.984 M 3.039,6.726 h 3.096"
+       class="page-txt"
+       stroke="#808080"
+       stroke-width="0.064"
+       id="path2160" />
+    <path
+       fill="#43b7ff"
+       paint-order="markers fill stroke"
+       d="M 2.132,4.413 H 7.283 V 5.882 H 2.132 Z"
+       class="hero-bg"
+       id="path2162" />
+    <path
+       fill="#43b7ff"
+       paint-order="markers fill stroke"
+       d="M 3.03,6.925 H 3.723 V 7.34 H 3.03 Z m 0.953,0 H 4.676 V 7.34 H 3.983 Z"
+       class="page-img-bg"
+       id="path2164" />
+    <path
+       d="m 3.225,7.02 l 0.068,0.12 l 0.07,0.119 H 3.087 L 3.156,7.139 Z M 4.17,7.253 L 4.059,7.176 L 4.047,7.042 L 4.17,6.984 L 4.292,7.042 L 4.281,7.176 Z"
+       fill="#0067a9"
+       paint-order="markers fill stroke"
+       class="page-img-img"
+       id="path2166" />
+  </g>
+  <g
+     class="browser-windowsxp"
+     id="g2224"
+     transform="translate(-2.5469529)">
+    <path
+       class="frame"
+       fill="none"
+       stroke="#0056eb"
+       stroke-width="0.097"
+       stroke-linecap="round"
+       stroke-dashoffset="16.97"
+       d="M 2.18,4.544 H 7.233 V 7.631 H 2.18 Z"
+       id="path2192" />
+    <g
+       class="title-bar-windowsxp"
+       id="g2222">
+      <path
+         d="M 6.65,3.985 V 4.63 H 7.283 V 4.24 A 0.256,0.256 0 0 0 7.027,3.985 Z"
+         fill="url(#perf-e)"
+         paint-order="markers fill stroke"
+         id="path2194"
+         style="fill:url(#linearGradient2452)" />
+      <path
+         d="M 2.567,3.985 V 4.63 H 6.893 V 3.985 Z"
+         fill="url(#perf-f)"
+         paint-order="markers fill stroke"
+         id="path2196"
+         style="fill:url(#linearGradient2454)" />
+      <path
+         d="M 2.388,3.985 A 0.256,0.256 0 0 0 2.132,4.241 V 4.63 H 2.736 V 3.985 Z"
+         fill="url(#perf-g)"
+         paint-order="markers fill stroke"
+         id="path2198"
+         style="fill:url(#linearGradient2456)" />
+      <g
+         class="title-bar-buttons"
+         id="g2220">
+        <g
+           class="title-bar-close"
+           id="g2204">
+          <rect
+             width="0.48199999"
+             height="0.48199999"
+             x="6.6609998"
+             y="4.0890002"
+             ry="0.094999999"
+             class="hover"
+             fill="url(#perf-h)"
+             stroke="#ffffff"
+             stroke-width="0.026"
+             stroke-linecap="round"
+             stroke-dashoffset="16.97"
+             id="rect2200"
+             style="fill:url(#linearGradient2458)" />
+          <path
+             d="M 6.75,4.486 L 7.054,4.181 m -0.305,0 l 0.305,0.305"
+             fill="none"
+             stroke="#ffffff"
+             stroke-width="0.064"
+             id="path2202" />
+        </g>
+        <g
+           class="title-bar-collapse"
+           id="g2210">
+          <rect
+             width="0.48199999"
+             height="0.48199999"
+             x="5.3600001"
+             y="4.0890002"
+             ry="0.094999999"
+             class="hover"
+             fill="url(#perf-i)"
+             stroke="#ffffff"
+             stroke-width="0.026"
+             stroke-linecap="round"
+             stroke-dashoffset="16.97"
+             id="rect2206"
+             style="fill:url(#linearGradient2460)" />
+          <path
+             d="M 5.645,4.44 H 5.443"
+             fill="none"
+             stroke="#ffffff"
+             stroke-width="0.064"
+             id="path2208" />
+        </g>
+        <g
+           class="title-bar-expand"
+           id="g2218">
+          <rect
+             width="0.48199999"
+             height="0.48199999"
+             x="6.0100002"
+             y="4.0890002"
+             ry="0.094999999"
+             class="hover"
+             fill="url(#perf-j)"
+             stroke="#ffffff"
+             stroke-width="0.026"
+             stroke-linecap="round"
+             stroke-dashoffset="16.97"
+             id="rect2212"
+             style="fill:url(#linearGradient2462)" />
+          <path
+             d="M 6.112,4.24 H 6.391 M 6.111,4.196 h 0.28 v 0.279 h -0.28 z"
+             class="expand"
+             fill="none"
+             stroke="#ffffff"
+             stroke-width="0.05"
+             id="path2214" />
+          <path
+             d="M 6.183,4.28 V 4.205 H 6.396 V 4.378 H 6.342 M 6.107,4.281 H 6.319 V 4.454 H 6.107 Z"
+             class="minimize"
+             fill="none"
+             stroke="#ffffff"
+             stroke-width="0.039"
+             stroke-linecap="round"
+             stroke-dashoffset="16.97"
+             paint-order="markers fill stroke"
+             id="path2216" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <g
+     class="title-bar-windows10"
+     id="g2250"
+     transform="translate(-2.5469529)">
+    <path
+       d="M 2.132,4.147 H 7.283 V 4.58 H 2.132 Z"
+       fill="#ffffff"
+       paint-order="markers fill stroke"
+       id="path2226" />
+    <g
+       class="title-bar-buttons"
+       id="g2248">
+      <g
+         class="title-bar-close"
+         id="g2232">
+        <path
+           d="M 6.427,4.147 H 7.283 V 4.58 H 6.427 Z"
+           class="hover"
+           fill="#ff0000"
+           id="path2228" />
+        <path
+           d="M 6.742,4.477 L 6.968,4.25 m -0.226,0 l 0.226,0.227"
+           class="hover-icon"
+           fill="none"
+           stroke="#000000"
+           stroke-width="0.03"
+           id="path2230" />
+      </g>
+      <g
+         class="title-bar-collapse"
+         id="g2238">
+        <path
+           class="hover"
+           fill="#e6e6e6"
+           d="M 4.716,4.147 H 5.572 V 4.58 H 4.716 Z"
+           id="path2234" />
+        <path
+           d="M 5.26,4.364 H 5.027"
+           fill="none"
+           stroke="#000000"
+           stroke-width="0.03"
+           id="path2236" />
+      </g>
+      <g
+         class="title-bar-expand"
+         id="g2246">
+        <path
+           class="hover"
+           fill="#e6e6e6"
+           d="M 5.572,4.147 H 6.428 V 4.58 H 5.572 Z"
+           id="path2240" />
+        <path
+           class="expand"
+           fill="none"
+           stroke="#000000"
+           stroke-width="0.028"
+           stroke-linecap="round"
+           stroke-dashoffset="16.97"
+           paint-order="markers fill stroke"
+           d="M 5.896,4.26 H 6.104 V 4.468 H 5.896 Z"
+           id="path2242" />
+        <path
+           d="M 6.055,4.414 H 6.09 V 4.274 H 5.95 V 4.309 M 5.909,4.454 h 0.14 v -0.14 h -0.14 z"
+           class="minimize"
+           fill="none"
+           stroke="#000000"
+           stroke-width="0.02"
+           id="path2244" />
+      </g>
+    </g>
+  </g>
+</svg>

@@ -154,17 +154,16 @@ export const colyseus = () => (
         <stop offset="0" stop-color="#4584ff" />
         <stop offset="1" stop-color="#9a57ff" />
       </linearGradient>
+      {/* @ts-ignore */}
       <linearGradient
-        // @ts-ignore
         {...{ "xlink:href": "#prefixx_a" }}
-        // xlinkHref="#prefixx_a"
         id="prefixx_c"
         x1="28.38"
         y1="27.755"
         x2="6.568"
         y2="8.306"
         gradientUnits="userSpaceOnUse"
-        gradientTransform={`matrix(.94763 0 0 .94763 .992 .982)`}
+        gradientTransform="matrix(.94763 0 0 .94763 .992 .982)"
       />
       <mask maskUnits="userSpaceOnUse" id="prefixx_b">
         {/* @ts-ignore */}

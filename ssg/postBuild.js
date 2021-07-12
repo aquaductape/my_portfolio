@@ -37,7 +37,6 @@ const runInjectFusionTimeChunk = async () => {
       mangle: false,
     }
   );
-  // console.log(typeof code);
   prependFile.sync(fusionTimeChunkPath, code);
 };
 

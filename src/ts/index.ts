@@ -15,3 +15,5 @@ export type WakaSchema = [
     type: "number";
   }
 ];
+
+export type TKeyframe = { transform?: string; opacity?: string } | Keyframe;

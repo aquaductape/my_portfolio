@@ -1,6 +1,15 @@
-import { createEffect, createSignal, For, onMount, useContext } from "solid-js";
+import {
+  createEffect,
+  createMemo,
+  createSignal,
+  For,
+  onMount,
+  useContext,
+} from "solid-js";
 import CONSTANTS from "../../constants";
 import { GlobalContext } from "../../context/context";
+import { ChromeForAndroid, MotoG4 } from "../../lib/browserInfo";
+import { isBrowser } from "../../utils";
 import smoothScrollTo from "../../utils/smoothScrollTo";
 
 type LinkProps = {
@@ -16,6 +25,8 @@ const Links = () => {
 
   const onClick = (id: string) => {
     const el = document.getElementById(id)!;
+
+    setUrlHash({ id });
 
     setHeader({ activeLink: id });
 
@@ -36,9 +47,7 @@ const Links = () => {
     });
   };
 
-  const onFocus = (id: string) => {
-    if (id !== "contact") return;
-
+  const onFocus = () => {
     setHeader({ visible: true });
     const windowScrollY = window.scrollY || window.pageYOffset;
 
@@ -50,8 +59,6 @@ const Links = () => {
     const hash = window.location.hash.slice(1);
 
     if (!links.includes(hash)) return;
-    console.log({ hash });
-
     setHeader({ activeLink: hash });
   });
 
@@ -66,6 +73,45 @@ const Links = () => {
   );
 };
 
+// let isDebouncing = false;
+/**
+ * unfortunately, setting history on low end devices such as Moto G4, will cause scroll jank, its really bad jank
+ *
+ *
+ *  */
+export const setUrlHash = ({
+  id,
+  debounce,
+}: {
+  id: string | null;
+  debounce?: boolean;
+}) => {
+  // if (isDebouncing) return;
+
+  const run = () => {
+    const url = `${location.origin}/#${id}`;
+    if (id === null) {
+      window.history.replaceState(null, "", "/");
+      return;
+    }
+    window.history.replaceState(null, "", url);
+  };
+
+  // const onScroll = () => {
+  //   isDebouncing = false;
+  //   run();
+  //   window.removeEventListener("scroll", onScroll);
+  // };
+
+  if (MotoG4 && ChromeForAndroid) {
+    // isDebouncing = true;
+    // window;
+    return;
+  }
+
+  run();
+};
+
 const Link = ({ content, onClick, onFocus }: LinkProps) => {
   const [context] = useContext(GlobalContext);
   const [active, setActive] = createSignal(
@@ -73,15 +119,7 @@ const Link = ({ content, onClick, onFocus }: LinkProps) => {
   );
 
   createEffect(() => {
-    if (context.header.activeLink === null) {
-      window.history.replaceState("", "", location.origin);
-    }
-
     if (context.header.activeLink === content) {
-      const url = `${location.origin}/#${content}`;
-
-      window.history.replaceState("", "", url);
-
       setActive(true);
       return;
     }
@@ -98,7 +136,7 @@ const Link = ({ content, onClick, onFocus }: LinkProps) => {
           e.preventDefault();
           onClick(content);
         }}
-        onFocus={(e) => onFocus(content)}
+        onFocus={() => onFocus(content)}
       >
         <span class="nav-list-link-content">{content}</span>
       </a>

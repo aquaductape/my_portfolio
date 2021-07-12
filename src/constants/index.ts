@@ -36,7 +36,7 @@ const CONSTANTS = {
         sourceCode: "https://github.com/aquaductape/facify",
       },
       skills: {
-        frontend: ["react", "redux", "css", "svg"],
+        frontend: ["react", "redux", "typescript", "css", "svg"],
         backend: ["nodejs"],
         buildTool: [],
         api: ["clarifai"],

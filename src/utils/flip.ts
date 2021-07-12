@@ -6,6 +6,7 @@ export const flip = (
     translateOnly?: "x" | "y";
     hideFirstEl?: boolean;
     endKeyframe?: string;
+    commitStyles?: boolean;
   }[],
   { enableCache = true }: { enableCache?: boolean } = {}
 ) => {
@@ -18,6 +19,7 @@ export const flip = (
     hideFirstEl = true,
     scale = true,
     endKeyframe = "none",
+    commitStyles = false,
   }: {
     firstEl: HTMLElement | DOMRect;
     lastEl: HTMLElement;
@@ -25,6 +27,7 @@ export const flip = (
     translateOnly?: "x" | "y";
     hideFirstEl?: boolean;
     endKeyframe?: string;
+    commitStyles?: boolean;
   }) => {
     const getBCR = (el: HTMLElement) => {
       if (!enableCache) return el.getBoundingClientRect();
@@ -85,6 +88,8 @@ export const flip = (
         fill: "forwards",
       }
     );
+
+    if (!commitStyles) return;
 
     lastElAnimate.onfinish = (e) => {
       // @ts-ignore

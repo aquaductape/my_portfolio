@@ -2,10 +2,9 @@ import { debounce } from "lodash-es";
 import { createSignal, createState, onMount, useContext } from "solid-js";
 import MonochromeCircleLogo from "../../components/svg/logos/MonochromeCircleLogo";
 import { GlobalContext } from "../../context/context";
-import { isBrowser } from "../../utils";
 import smoothScrollTo from "../../utils/smoothScrollTo";
 
-import Links from "./Links";
+import Links, { setUrlHash } from "./Links";
 
 const NavigationBar = () => {
   const [context, { setSmoothScroll, setHeader, setBlog }] =
@@ -17,14 +16,16 @@ const NavigationBar = () => {
   let prevWindowScrollY = 0;
   let topPageSentinelElRef!: HTMLDivElement;
   let debounceRef: any = null;
+  let onScrollAdded = false;
 
   const createIntersectionObserver = () => {
     return new IntersectionObserver((entries, observer) => {
       entries.forEach((entry) => {
         const windowScrollY = window.scrollY;
         let isVisible = false;
+        if (!onScrollAdded) return;
 
-        if (entry.intersectionRatio > 0) {
+        if (entry.isIntersecting) {
           isVisible = true;
         }
 
@@ -34,7 +35,13 @@ const NavigationBar = () => {
         }
 
         prevWindowScrollY = windowScrollY;
-        if (context.smoothScroll.active) return;
+
+        if (context.smoothScroll.active) {
+          if (!context.header.visible) {
+            setHeader({ shadow: false, visible: true });
+          }
+          return;
+        }
 
         if (isVisible) {
           setHeader({ shadow: false, visible: true });
@@ -84,10 +91,12 @@ const NavigationBar = () => {
     prevWindowScrollY = windowScrollY;
   };
 
-  const smartHideHeader = () => {
+  const initOnScrollHeader = () => {
     // sometimes when reloading the page scroll event runs twice
     // timeout prevents that
     setTimeout(() => {
+      onScrollAdded = true;
+
       debounceRef = debounce(onScrollHeader, 200, {
         leading: true,
         trailing: true,
@@ -124,6 +133,7 @@ const NavigationBar = () => {
   const onClickLogo = (e: MouseEvent) => {
     e.preventDefault();
     setHeader({ activeLink: null });
+    setUrlHash({ id: null });
 
     if (context.blog.active) {
       setBlog({ active: false });
@@ -141,11 +151,17 @@ const NavigationBar = () => {
     });
   };
 
-  onMount(() => {
-    if (!isBrowser) return;
+  const onFocus = () => {
+    setHeader({ visible: true });
+    const windowScrollY = window.scrollY || window.pageYOffset;
 
+    if (windowScrollY <= 90) return;
+    setHeader({ shadow: true });
+  };
+
+  onMount(() => {
     prevWindowScrollY = window.scrollY || window.pageYOffset;
-    smartHideHeader();
+    initOnScrollHeader();
     onScrollHeader();
     setHasRendered(false);
     const observer = createIntersectionObserver();
@@ -157,7 +173,11 @@ const NavigationBar = () => {
       <div className="top-page-sentinel" ref={topPageSentinelElRef}></div>
       <div class={`header-bar ${shadowHeaderCss()} ${hideHeaderCss()}`}>
         <div class="header-bar-inner">
-          <a href="#about-me-logo" className="skip-to-content">
+          <a
+            href="#about-me-logo"
+            onFocus={onFocus}
+            className="skip-to-content"
+          >
             <div class="skip-to-content__inner">Skip to Main Content</div>
           </a>
           <div class="logo">
@@ -166,6 +186,7 @@ const NavigationBar = () => {
               title="Caleb Taylor"
               href="#homepage"
               onClick={onClickLogo}
+              onFocus={onFocus}
             >
               <MonochromeCircleLogo></MonochromeCircleLogo>
             </a>

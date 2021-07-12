@@ -31,7 +31,6 @@ export const redux = () => (
     </g>
   </svg>
 );
-
 export const html = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
     <clipPath id="skill-icon-HTML__clipPath">

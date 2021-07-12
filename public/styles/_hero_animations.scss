@@ -1,0 +1,56 @@
+.page-btn {
+  .page-btn-bg {
+    transition: fill 250ms;
+  }
+  &:hover {
+    .page-btn-bg {
+      fill: #000000ff;
+    }
+  }
+}
+
+.title-bar-mac {
+  .hover {
+    opacity: 0;
+  }
+
+  .title-bar-close,
+  .title-bar-collapse,
+  .title-bar-expand {
+    &:hover .hover {
+      opacity: 1;
+    }
+  }
+}
+
+.title-bar-windows10 {
+  .title-bar-collapse,
+  .title-bar-expand {
+    &:hover .hover {
+      fill: #e6e6e6;
+    }
+  }
+
+  .title-bar-close {
+    &:hover {
+      .hover {
+        fill: #f00;
+      }
+
+      .hover-icon {
+        stroke: #fff;
+        stroke-width: 0.08;
+      }
+    }
+  }
+}
+
+.title-bar-windowsxp {
+  .title-bar-close,
+  .title-bar-collapse,
+  .title-bar-expand {
+    &:hover .hover {
+      filter: brightness(1.4);
+    }
+  }
+}

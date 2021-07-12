@@ -1,0 +1,92 @@
+<svg viewBox="0 0 9.413 7.684" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <clipPath id="a">
+      <path fill="#fff" d="M1.72.257h5.343v7.191H1.72z"/>
+    </clipPath>
+    <clipPath id="b">
+      <path d="M1.056 2.216h4.189v1.097l.695.561-.695.559v1.016h-4.19z" fill="#fff"/>
+    </clipPath>
+  </defs>
+  <path class="person" d="M5.001 2.347a.734.734 0 00.039-1.3.688.688 0 00-.334-.074.674.674 0 00-.334.074.767.767 0 00-.382.646c0 .294.223.598.508.691.137.045.37.028.503-.037zm-.894 4.304c.06-.05.091-.117.168-.364.11-.353.22-.783.301-1.183.058-.281.085-.348.14-.348.067 0 .107.106.203.537.108.48.288 1.142.346 1.27.07.152.286.192.41.075.09-.085.093-.178.012-.441-.253-.827-.41-1.64-.456-2.375-.031-.487-.016-.596.091-.65a1.38 1.38 0 01.326-.049c.596-.037 1.18-.116 1.264-.17.194-.127.106-.462-.123-.464-.041 0-.245.02-.453.047-.98.121-2.233.127-3.384.015-.365-.036-.448-.021-.515.088-.108.178-.003.375.216.407.176.025.995.087 1.154.087.18 0 .292.03.366.1.051.048.055.07.055.304 0 .659-.147 1.549-.399 2.41-.117.402-.145.588-.096.648.107.13.26.153.374.056z" clip-path="url(#a)" fill="#888f9b"/>
+  <g class="card">
+    <path d="M3.672 2.293h4.253c.13 0 .234.104.234.234v2.622c0 .13-.104.233-.234.233H3.672a.233.233 0 01-.234-.233V2.527c0-.13.104-.234.234-.234z" fill="#fff" paint-order="markers fill stroke"/>
+    <g class="card-art">
+      <path class="moon" d="M8.001 2.748a.292.292 0 11-.584 0 .292.292 0 01.584 0z" fill="#5858ff" paint-order="markers fill stroke"/>
+      <path class="moon-shadow" d="M7.338 3.201a.293.293 0 01-.527.177c.054-.403.38-.404.396-.421.08.052.131.142.131.245z" fill="#fff"/>
+      <path class="flower-petal-3" d="M7.2 2.638s-.242.124-.342.498c-.1.373-.015.402.091.43.108.029.196.047.296-.327.1-.373-.045-.601-.045-.601z" fill="#fe2dff" paint-order="markers fill stroke"/>
+      <path class="flower-petal-2" d="M6.954 2.436s-.235.215-.235.67c0 .454.105.46.234.46.131 0 .237-.006.237-.46 0-.455-.234-.67-.234-.67z" fill="#ff2db5" paint-order="markers fill stroke"/>
+      <path class="flower-stem" d="M6.958 5.376V3.404" fill="none" stroke="green" stroke-width=".059"/>
+      <g class="flower-leaf-1" paint-order="markers fill stroke">
+        <path d="M6.244 3.778s.26.1.452.1.17-.068.244-.101z" fill="#8fff8f"/>
+        <path d="M6.244 3.778s.26-.1.452-.1.244.045.244.099z" fill="green"/>
+      </g>
+      <g class="flower-leaf-0" stroke-width=".912" paint-order="markers fill stroke">
+        <path d="M7.734 4.311s-.285.11-.495.11-.193-.064-.27-.11z" fill="#8fff8f"/>
+        <path d="M7.734 4.311s-.284-.11-.495-.11c-.212 0-.27.05-.27.11z" fill="green"/>
+      </g>
+      <g paint-order="markers fill stroke">
+        <path class="flower-petal-1" d="M6.969 2.6s-.201.183-.201.571.09.393.2.393c.112 0 .202-.005.202-.393s-.2-.571-.2-.571z" fill="#ff2d79"/>
+        <path class="flower-petal-0" d="M6.8 2.957s-.032-.174-.032.214.09.393.2.393c.235-.02-.14-.412-.168-.607z" fill="#d42100"/>
+      </g>
+    </g>
+    <text class="card-text" x="3.98" y="4.521" fill="#ff9b9b" font-family="sans-serif" font-size="1.873" letter-spacing="0" stroke-width=".108" word-spacing="0" style="line-height:1.25">
+      <tspan x="3.98" y="4.521" font-family="Ubuntu" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal">Hi</tspan>
+    </text>
+  </g>
+  <g class="talk-bubble">
+    <rect class="talk-bubble-rect" x="1.056" y="1.994" width="4.242" height="3.686" ry=".25" fill="#fff" stroke="#000" stroke-dashoffset="16.97" stroke-linecap="round" stroke-linejoin="round" stroke-width=".104"/>
+    <g class="talk-bubble-tail" fill="#fff">
+      <path d="M5.24 3.191h.079v1.333H5.24z"/>
+      <path d="M5.298 5.387V4.46l.727-.585-.727-.585v-.974" stroke="#000" stroke-dashoffset="16.97" stroke-linecap="round" stroke-linejoin="round" stroke-width=".104"/>
+    </g>
+    <g class="talk-bubble-content" clip-path="url(#b)">
+      <g class="contrast">
+        <g class="color-container">
+          <circle cx="4.324" cy="2.74" r=".404" fill="none" stroke="#000" stroke-dashoffset="16.97" stroke-linecap="round" stroke-width=".047"/>
+          <circle class="color" cx="4.324" cy="2.74" r=".28" fill="#ff9b9b"/>
+        </g>
+        <g class="contrast-small-fail">
+          <path d="M4.32 3.502a.355.355 0 10.003 0z" fill="#fff"/>
+          <path d="M4.32 3.43a.427.427 0 00-.424.426.427.427 0 00.427.428.427.427 0 00.428-.427.427.427 0 00-.428-.428.427.427 0 00-.004 0zm-.168.202l.171.172.171-.171.053.052-.17.171.17.171-.053.053-.17-.17-.172.17-.052-.052.17-.17-.17-.172z" fill="#ba115b"/>
+        </g>
+        <g class="contrast-large-fail">
+          <path d="M4.32 4.58a.355.355 0 10.003 0z" fill="#fff"/>
+          <path d="M4.32 4.508a.427.427 0 00-.424.427.427.427 0 00.427.428.427.427 0 00.428-.429.427.427 0 00-.428-.427.427.427 0 00-.004 0zm-.168.204l.171.17.171-.17.053.052-.17.17.17.172-.053.052-.17-.17-.172.17-.052-.052.17-.172-.17-.17z" fill="#ba115b"/>
+        </g>
+        <g font-family="sans-serif" letter-spacing="0" word-spacing="0">
+          <text x="1.544" y="4.214" font-size="1.029" stroke-width=".223" style="line-height:1.25">
+            <tspan x="1.544" y="4.214" font-family="Ubuntu" font-weight="400" stroke-width=".05" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal">AA</tspan>
+          </text>
+          <text x="1.544" y="5.329" font-size="1.029" stroke-width=".223" style="line-height:1.25">
+            <tspan x="1.544" y="5.329" font-family="Ubuntu" font-weight="400" stroke-width=".05" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal">AAA</tspan>
+          </text>
+          <text x="1.499" y="3.083" font-size=".98" stroke-width=".057" style="line-height:1.25">
+            <tspan x="1.499" y="3.083" font-family="Ubuntu" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal">3.3</tspan>
+          </text>
+        </g>
+        <g class="contrast-large-success">
+          <circle cx="4.324" cy="4.934" r=".427" fill="#19ad19"/>
+          <path class="sucess-check" d="M4.076 4.945l.15.15.338-.338" fill="none" stroke="#fff" stroke-dasharray=".69" stroke-width=".075"/>
+        </g>
+        <g class="contrast-small-success">
+          <circle cx="4.324" cy="3.857" r=".427" fill="#19ad19"/>
+          <path class="success-check" d="M4.076 3.867l.15.15.338-.338" fill="none" stroke="#fff" stroke-dasharray=".69" stroke-width=".075"/>
+        </g>
+      </g>
+      <g class="rgb">
+        <text class="rgb-b" x="1.472" y="5.328" fill="#0808d7" font-family="sans-serif" font-size="1.029" letter-spacing="0" stroke-width=".223" word-spacing="0" style="line-height:1.25">
+          <tspan x="1.472" y="5.328" font-family="Ubuntu" font-weight="400" stroke-width=".05" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal"><tspan font-weight="500">B</tspan>lue</tspan>
+        </text>
+        <text class="rgb-r" x="1.476" y="3.081" fill="#d20000" font-family="sans-serif" font-size=".98" letter-spacing="0" stroke-width=".057" word-spacing="0" style="line-height:1.25">
+          <tspan x="1.476" y="3.081" font-family="Ubuntu" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal"><tspan font-weight="500">R</tspan>ed</tspan>
+        </text>
+        <path class="rgb-r-block" d="M1.237 2.8h2.201" fill="none" stroke="#b3b3b3" stroke-linecap="round" stroke-width=".13"/>
+        <text class="rgb-g" x="1.501" y="4.212" fill="#0c8e00" font-family="sans-serif" font-size="1.029" letter-spacing="0" stroke-width=".223" word-spacing="0" style="line-height:1.25">
+          <tspan x="1.501" y="4.212" font-family="Ubuntu" font-weight="400" stroke-width=".05" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal"><tspan font-weight="500">G</tspan>reen</tspan>
+        </text>
+        <path class="rgb-g-block" d="M1.237 3.916h3.34" fill="none" stroke="#b3b3b3" stroke-linecap="round" stroke-width=".13"/>
+        <path class="rgb-b-block" d="M1.237 5.055h2.647" fill="none" stroke="#b3b3b3" stroke-linecap="round" stroke-width=".13"/>
+      </g>
+    </g>
+  </g>
+</svg>

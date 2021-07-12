@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 9.413 7.684"
+   version="1.1"
+   id="svg62"
+   sodipodi:docname="responsive-animation.svg"
+   inkscape:version="1.0.2 (394de47547, 2021-03-26)">
+  <metadata
+     id="metadata68">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs66">
+    <mask
+       maskUnits="userSpaceOnUse"
+       id="mask922">
+      <rect
+         style="fill:#ffffff;stroke:none;stroke-width:1.05833;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:16.9701;paint-order:markers fill stroke"
+         id="rect924"
+         width="121.44752"
+         height="82.723419"
+         x="271.00836"
+         y="137.54692" />
+    </mask>
+    <mask
+       maskUnits="userSpaceOnUse"
+       id="mask940">
+      <rect
+         style="fill:#ffffff;stroke:none;stroke-width:1.05833;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:16.9701;paint-order:markers fill stroke"
+         id="rect942"
+         width="146.39174"
+         height="76.245262"
+         x="-53.106396"
+         y="119.94283" />
+    </mask>
+    <mask
+       maskUnits="userSpaceOnUse"
+       id="mask865">
+      <rect
+         width="5.099"
+         height="3.1400001"
+         x="2.4690001"
+         y="1.8609999"
+         ry="0.48300001"
+         fill="none"
+         stroke="#888f9b"
+         stroke-width="0.253"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-dashoffset="16.97"
+         paint-order="markers fill stroke"
+         id="rect867"
+         class="monitor"
+         style="fill:#ffffff;stroke:none" />
+    </mask>
+    <mask
+       maskUnits="userSpaceOnUse"
+       id="mask910">
+      <rect
+         style="fill:#ffffff;stroke-width:0.0307732;stroke-linecap:round;stroke-dashoffset:16.9701"
+         id="rect912"
+         width="2.8607054"
+         height="3.5552943"
+         x="1.1093055"
+         y="2.5551105"
+         ry="0"
+         class="mobile" />
+    </mask>
+  </defs>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1016"
+     id="namedview64"
+     showgrid="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:zoom="120.35249"
+     inkscape:cx="3.8210121"
+     inkscape:cy="5.1318719"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg62"
+     inkscape:document-rotation="0" />
+  <g
+     class="page"
+     id="g36"
+     mask="url(#mask865)">
+    <rect
+       style="fill:#ffffff;stroke-width:0.0408876;stroke-linecap:round;stroke-dashoffset:16.9701"
+       id="rect866"
+       width="8.8650007"
+       height="4.1536403"
+       x="0.31999999"
+       y="1.723"
+       ry="0" />
+    <path
+       d="M.466.696l8.48-.003.239.37v.66H.32v-.66z"
+       class="navbar-bg"
+       fill="#5d8aff"
+       paint-order="markers fill stroke"
+       id="path2" />
+    <path
+       d="M1.656 1.48l-.274-.116.274-.46.273.46z"
+       class="logo"
+       fill="#0030ab"
+       paint-order="markers fill stroke"
+       id="path4" />
+    <rect
+       width=".94"
+       height=".188"
+       x="7.174"
+       y="1.156"
+       ry=".068"
+       class="nav-link-2"
+       fill="#0030ab"
+       paint-order="markers fill stroke"
+       id="rect6" />
+    <rect
+       width=".94"
+       height=".188"
+       x="5.774"
+       y="1.156"
+       ry=".068"
+       class="nav-link-1"
+       fill="#0030ab"
+       paint-order="markers fill stroke"
+       id="rect8" />
+    <rect
+       width=".94"
+       height=".188"
+       x="4.374"
+       y="1.156"
+       ry=".068"
+       class="nav-link-0"
+       fill="#0030ab"
+       paint-order="markers fill stroke"
+       id="rect10" />
+    <g
+       class="page-content-column-0"
+       id="g16">
+      <rect
+         width="1.561"
+         height="1.305"
+         x="1.07"
+         y="1.933"
+         ry=".032"
+         fill="#ffd287"
+         paint-order="markers fill stroke"
+         id="rect12" />
+      <path
+         d="M1.118 3.725h1.437M1.118 4.171h.895M1.118 4.618h1.437"
+         class="page-text"
+         fill="none"
+         stroke="#c9ccdf"
+         stroke-width=".159"
+         id="path14" />
+    </g>
+    <g
+       class="page-content-column-1"
+       id="g22">
+      <rect
+         width="1.561"
+         height="1.305"
+         x="3.061"
+         y="1.933"
+         ry=".032"
+         fill="#77ffd1"
+         paint-order="markers fill stroke"
+         id="rect18" />
+      <path
+         d="M3.082 3.725h.964M3.082 4.171h1.437M3.082 4.618h1.437"
+         class="page-text"
+         fill="none"
+         stroke="#c9ccdf"
+         stroke-width=".159"
+         id="path20" />
+    </g>
+    <g
+       class="page-content-column-2"
+       id="g28">
+      <rect
+         width="1.561"
+         height="1.305"
+         x="5.053"
+         y="1.933"
+         ry=".032"
+         fill="#e881ff"
+         paint-order="markers fill stroke"
+         id="rect24" />
+      <path
+         d="M5.096 3.725h1.437M5.096 4.171h1.437M5.096 4.618h.817"
+         class="page-text"
+         fill="none"
+         stroke="#c9ccdf"
+         stroke-width=".159"
+         id="path26" />
+    </g>
+    <g
+       class="page-chat"
+       paint-order="markers fill stroke"
+       id="g34">
+      <rect
+         width="1.561"
+         height="3.536"
+         x="6.986"
+         y="1.933"
+         ry=".086"
+         fill="#acc1ff"
+         id="rect30" />
+      <rect
+         width="1.367"
+         height=".272"
+         x="7.076"
+         y="5.063"
+         ry=".007"
+         fill="#f9f9f9"
+         id="rect32" />
+    </g>
+  </g>
+  <g
+     class="main-container"
+     id="g48">
+    <g
+       class="screen-container"
+       id="g42">
+      <rect
+         width="5.099"
+         height="3.14"
+         x="2.469"
+         y="1.861"
+         ry=".483"
+         fill="none"
+         stroke="#888f9b"
+         stroke-width=".253"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-dashoffset="16.97"
+         paint-order="markers fill stroke"
+         id="rect38"
+         class="monitor-border" />
+      <path
+         d="M4.541 4.924v.709s-.017.117-.078.182a.71.71 0 01-.22.119h1.551s-.16-.055-.22-.12a.39.39 0 01-.078-.181v-.709z"
+         class="desktop-stand"
+         fill="#888f9b"
+         id="path40" />
+    </g>
+    <g
+       id="g897"
+       mask="url(#mask910)">
+      <rect
+         width="1.7460001"
+         height="2.8299999"
+         x="1.847"
+         y="2.983"
+         ry="0.28400001"
+         class="mobile-mask"
+         fill="#25385b"
+         stroke="#888f9b"
+         stroke-width="0.251"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         id="rect44"
+         mask="none" />
+    </g>
+  </g>
+  <g
+     class="laptop-bottom"
+     paint-order="markers fill stroke"
+     id="g54"
+     transform="matrix(0.98183858,0,0,1,0.08547656,0)">
+    <rect
+       width="8.7370005"
+       height="0.55500001"
+       x="0.338"
+       y="5.934"
+       ry="0.131"
+       fill="#888f9b"
+       id="rect50" />
+    <rect
+       width="1.368"
+       height="0.193"
+       x="4.0219998"
+       y="-6.1269999"
+       ry="0.046"
+       transform="scale(1,-1)"
+       fill="#545a64"
+       id="rect52" />
+  </g>
+  <g
+     id="g886"
+     class="tablet-bar">
+    <path
+       d="M 7.6243145,1.354 L 8.0784351,1.390963 L 8.133,5.5713379 l -0.5086855,0.098569 z"
+       fill="#888f9b"
+       id="path56"
+       style="stroke-width:0.880079;paint-order:markers fill stroke" />
+    <circle
+       cx="7.9094601"
+       cy="3.4397869"
+       r="0.15665404"
+       fill="#545a64"
+       id="circle58"
+       style="stroke-width:0.880079;paint-order:markers fill stroke" />
+  </g>
+</svg>

@@ -2,7 +2,7 @@ import { iconCode, iconLink } from "../../components/font-awesome/icons";
 import { createEffect, createSignal, For, onMount, useContext } from "solid-js";
 import { GlobalContext } from "../../context/context";
 import CONSTANTS from "../../constants";
-import { capitalize } from "../../utils";
+import { capitalize, isBrowser } from "../../utils";
 import { TechIconsCollapsed, TechIconsExpanded } from "./TechIcons";
 import { flip } from "../../utils/flip";
 import LoaderLogo from "../../components/Loader/LoaderLogo";
@@ -112,6 +112,7 @@ const Project = ({
           src={img.src}
           alt={img.alt}
           data-flip-key={`img-${name}`}
+          onClick={onClickReadMore}
         />
 
         <div className="card-link-container">
@@ -157,7 +158,7 @@ const Project = ({
           )}
         </button>
         <p className="card-pg">{about}</p>
-        {/* <button class="card-read-more" onClick={onClickReadMore}>
+        <button class="card-read-more" onClick={onClickReadMore}>
           <span>Read More</span>
           {context.blog.import &&
             !context.blog.finishedStaging &&
@@ -166,7 +167,7 @@ const Project = ({
                 <LoaderLogo></LoaderLogo>
               </span>
             )}
-        </button> */}
+        </button>
       </div>
     </div>
   );
@@ -182,29 +183,29 @@ const Projects = () => {
     setHeader({ activeLink: "projects" });
   };
 
-  //   onMount(() => {
-  //     const observerCb: IntersectionObserverCallback = (entries, observer) => {
-  //       entries.forEach((entry) => {
-  //         if (entry.intersectionRatio === 0) return;
-  //
-  //         setBlog({ import: true });
-  //
-  //         observer.disconnect();
-  //       });
-  //     };
-  //     const observer = new IntersectionObserver(observerCb);
-  //
-  //     setTimeout(() => {
-  //       const projectsEl = document.getElementById("projects")!;
-  //       const readMoreBtnEls = projectsEl.querySelectorAll(
-  //         ".card-read-more"
-  //       ) as NodeListOf<HTMLElement>;
-  //
-  //       readMoreBtnEls.forEach((readMoreBtnEl) => {
-  //         observer.observe(readMoreBtnEl);
-  //       });
-  //     }, 500);
-  //   });
+  onMount(() => {
+    const observerCb: IntersectionObserverCallback = (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.intersectionRatio === 0) return;
+
+        setBlog({ import: true });
+
+        observer.disconnect();
+      });
+    };
+    const observer = new IntersectionObserver(observerCb);
+
+    setTimeout(() => {
+      const projectsEl = document.getElementById("projects")!;
+      const readMoreBtnEls = projectsEl.querySelectorAll(
+        ".card-read-more"
+      ) as NodeListOf<HTMLElement>;
+
+      readMoreBtnEls.forEach((readMoreBtnEl) => {
+        observer.observe(readMoreBtnEl);
+      });
+    }, 500);
+  });
 
   return (
     <section id="projects" className="projects" tabindex="-1">

@@ -124,7 +124,7 @@ export const ResponsiveIcon = () => (
 export const ResumeIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    style="transform: translateY(2px);"
+    style="transform: translateY(3px);"
     width="19.635"
     height="28.361"
   >
@@ -136,14 +136,52 @@ export const ResumeIcon = () => (
   </svg>
 );
 
+export const BackArrowIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="47.017"
+    height="38.236"
+    viewBox="0 0 12.44 10.117"
+  >
+    <g
+      // @ts-ignore
+      stroke="currentColor"
+      fill="none"
+      stroke-width="1.587"
+      stroke-linecap="round"
+    >
+      <path d="M.794 5.058L5.16 9.323" />
+      <path d="M.794 5.058L5.16.794" />
+      <path d="M11.646 5.058H.813" />
+    </g>
+  </svg>
+);
+
+export const TableOfContentsIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9.568 9.585">
+    {/* @ts-ignore */}
+    <g stroke-width="1.058" fill="none" stroke="currentColor">
+      <path d="M0 .53h9.569" />
+      <path d="M3.002 4.792h6.395M0 4.792h1.306" />
+      <path d="M3.002 9.056h6.395M0 9.056h1.306" />
+    </g>
+  </svg>
+);
+
 export const Cevron = ({
   direction = "right",
-}: { direction?: "right" | "bottom" } = {}) => {
+  strokeWidth = 9.25,
+}: { direction?: "right" | "bottom" | "left"; strokeWidth?: number } = {}) => {
   const style: JSX.CSSProperties = {};
 
   if (direction === "bottom") {
     style.transform = "rotate(-90deg)";
   }
+
+  if (direction === "left") {
+    style.transform = "rotate(180deg)";
+  }
+
   return (
     <svg
       style={style}
@@ -151,11 +189,12 @@ export const Cevron = ({
       viewBox="0 0 55.127 100.001"
     >
       <path
-        d="M50 5.127L5.127 50 50 94.874"
+        d="M48.05 8.617L7.077 50l40.975 41.384"
         fill="none"
         stroke="currentColor"
-        stroke-width="7.25"
-        stroke-linecap="square"
+        stroke-width={strokeWidth}
+        stroke-linecap="round"
+        stroke-linejoin="round"
       />
     </svg>
   );

@@ -6,11 +6,6 @@
 //   outline: none;
 // }
 
-html,
-body {
-  overflow-x: hidden;
-}
-
 body {
   margin: 0;
   font-family: "Ubuntu", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
@@ -20,10 +15,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: var(--primary-bg);
   color: var(--primary-txt-color);
-}
-
-#app {
-  overflow: hidden;
 }
 
 code {

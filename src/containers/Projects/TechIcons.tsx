@@ -120,25 +120,26 @@ export const TechIconsExpanded = ({
   );
 };
 
+export const getTitle = (icon: string) => {
+  switch (icon) {
+    case "css":
+    case "html":
+    case "svg":
+      return icon.toUpperCase();
+    case "nodejs":
+      return "NodeJS";
+    default:
+      return capitalize(icon);
+  }
+};
+
 const TechIconsExpandedInner = ({ icons }: { icons: string[] }) => {
   return (
     <For each={icons}>
       {(icon) => {
         const iconJSX = programingIcons[icon as "bash"];
-        const getTitle = () => {
-          switch (icon) {
-            case "css":
-            case "html":
-            case "svg":
-              return icon.toUpperCase();
-            case "nodejs":
-              return "NodeJS";
-            default:
-              return capitalize(icon);
-          }
-        };
 
-        const title = getTitle();
+        const title = getTitle(icon);
 
         return (
           <div className="icon-box">

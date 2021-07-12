@@ -5,6 +5,7 @@ import copy from "rollup-plugin-copy";
 import typescript from "@rollup/plugin-typescript";
 import url from "@rollup/plugin-url";
 import del from "rollup-plugin-delete";
+import postcss from "rollup-plugin-postcss";
 import md5File from "md5-file";
 import sass from "sass";
 import CleanCSS from "clean-css";
@@ -17,6 +18,7 @@ const sassRegex = /^.*scss$/;
 export default [
   {
     input: "src/index.tsx",
+    // preserveModules: true,
     output: [
       {
         dir: "build/js",
@@ -30,6 +32,7 @@ export default [
     plugins: [
       del({ targets: "build" }),
       typescript(),
+      postcss({ minimize: true, modules: true, extract: false, use: ["sass"] }),
       nodeResolve({ extensions, exportConditions: ["solid"] }),
       babel({
         extensions,
@@ -104,6 +107,7 @@ export default [
           "**/*.jp(e)?g",
           "**/*.gif",
           "**/*.webp",
+          "**/*.mp4",
         ],
       }),
     ],
@@ -136,6 +140,7 @@ export default [
         preferBuiltins: true,
         exportConditions: ["solid"],
       }),
+      postcss({ minimize: true, modules: true, extract: false, use: ["sass"] }),
       babel({
         extensions,
         babelHelpers: "bundled",
@@ -157,6 +162,7 @@ export default [
           "**/*.jp(e)?g",
           "**/*.gif",
           "**/*.webp",
+          "**/*.mp4",
         ],
       }),
     ],
