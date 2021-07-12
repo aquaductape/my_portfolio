@@ -1,5 +1,6 @@
 import { JSX, onMount, useContext } from "solid-js";
 import CONSTANTS from "../../constants";
+import { setUrlHash } from "../../containers/NavigationBar/Links";
 import { GlobalContext, TGlobalContext } from "../../context/context";
 import { isBrowser } from "../../utils";
 
@@ -28,17 +29,20 @@ const callback: IntersectionObserverCallback = (entries, observer) => {
 
     if (targetId === "about-me") {
       setHeader({ activeLink: null });
+      setUrlHash({ id: null });
       return;
     }
 
     if (!links.includes(targetId)) return;
 
+    if (context.header.activeLink === targetId) return;
+    setUrlHash({ id: targetId });
     setHeader({ activeLink: targetId });
   });
 };
 
 const observer = isBrowser
-  ? new IntersectionObserver(callback, { threshold: [1] })
+  ? new IntersectionObserver(callback)
   : ({} as IntersectionObserver);
 let currentId = "";
 let init = true;
