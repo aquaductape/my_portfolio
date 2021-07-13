@@ -12,7 +12,7 @@ const Marker = () => {
   const [context] = useContext(GlobalContext);
   const { minWidth_400, minWidth_1680, minWidth_1900 } = useMatchMedia();
   const tableOfContents = context.tableOfContents;
-  const translateDuration = 300;
+  const translateDuration = 500;
   let prevContent: TTableOfContents;
   let markerElRef!: HTMLDivElement;
   let markerAnimation: Animation;

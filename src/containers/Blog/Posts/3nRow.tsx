@@ -95,7 +95,7 @@ const Post3nRow = () => {
       <ImgContainer
         src={consistencyImg}
         alt="Page layout is consistent, the main square is same size and shape relative to screen and holds main content"
-        size={"medium"}
+        styleSize={"medium"}
       ></ImgContainer>
 
       <p>
@@ -106,7 +106,7 @@ const Post3nRow = () => {
       <ImgContainer
         src={anatomyOfPlayerBtnImg}
         alt="Anatomy of Player Button, has three functions: Customize player, display player score, and display current player turn"
-        size={"medium"}
+        styleSize={"medium"}
       ></ImgContainer>
       <p>
         As you can see there's no text display of game state, such as which
@@ -168,7 +168,7 @@ const Post3nRow = () => {
       <ImgContainer
         src={mvcDiagramImg}
         alt="MCV (Model View Controller) Diagram"
-        size={"small"}
+        styleSize={"small"}
       ></ImgContainer>
       <p>
         There are many variations of MVC methodology, here's how I set up mine.
@@ -206,7 +206,7 @@ const Post3nRow = () => {
       <ImgContainer
         src={tooltipImg}
         alt="Comparing two tooltips, incorrect one is clipped by it's dropdown parent, and the other correctly displays in full view"
-        size={"medium"}
+        styleSize={"medium"}
       ></ImgContainer>
       <p>
         This requires a setup where the tooltip resides at the root placement so
@@ -305,7 +305,7 @@ const Post3nRow = () => {
         alt={
           "browser pixel render pipeline. Runs in following order: Javascript, Style, Layout, Painting then Composite."
         }
-        size={"xs-small"}
+        styleSize={"xs-small"}
       ></ImgContainer>
 
       <p>

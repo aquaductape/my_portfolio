@@ -8,6 +8,11 @@ import corsServerSuccess from "../../../assets/facify/img/cors-server-success.pn
 import buttonsComparisonImg from "../../../assets/facify/img/buttons-comparison.png";
 import alwaysInViewImg from "../../../assets/facify/img/alwaysInView.png";
 import uploadVid from "../../../assets/facify/video/upload.mp4";
+import textInputRemoveVid from "../../../assets/facify/video/text-input-remove.mp4";
+import scrollShadowVid from "../../../assets/facify/video/scroll-shadow.mp4";
+import badFixedHeaderVid from "../../../assets/facify/video/bad-fixed-header.mp4";
+import stickyHeaderDesktop from "../../../assets/facify/video/sticky-header-desktop.mp4";
+import stickyHeaderMobile from "../../../assets/facify/video/sticky-header-mobile.mp4";
 import notificationsComparisonsVid from "../../../assets/facify/video/notifications-comparisions.mp4";
 import { Heading2, Heading3, HyperLink, ImgContainer, Video } from "./Post";
 import { useContext } from "solid-js";
@@ -42,9 +47,9 @@ const PostFacify = () => {
     {
       title: "Highlights",
       children: [
-        { title: "Fixed Table Header" },
         { title: "URL Text Input" },
         { title: "Scroll Shadows" },
+        { title: "Fixed Table Header" },
       ],
     },
   ];
@@ -59,13 +64,11 @@ const PostFacify = () => {
         By scanning photos, the app can detect faces and also estimates the
         person’s age, gender and multicultural appearance.
       </p>
-
       <p>
-        Uploading images are done via Drag N Drop, pasting URL or webcam. The
+        Uploading images are done via Drag and Drop, pasting URL or webcam. The
         URL Text Input gives visual feedback if the inputs are valid images and
         also allows you to paste multiple URLs and easily update them.
       </p>
-
       <p>
         Successfull upload displays an image with tagged faces accompanied by a
         Table containing persons’ data. The Table Headers, which contain the
@@ -75,7 +78,6 @@ const PostFacify = () => {
         layout, but is also done in a performant manner that doesn’t slow down
         the page when scrolling.
       </p>
-
       <p style="margin-top: 40px; font-size: 20px;">Tools & Technologies</p>
       <TechList
         items={[
@@ -85,9 +87,7 @@ const PostFacify = () => {
           ...skills.api,
         ]}
       ></TechList>
-
       <Heading2>Design</Heading2>
-
       <p>
         The theme is sharp corners and angles, everything is encapsulated in
         rectangles or squares, even the icons don’t have rounded edges.
@@ -284,9 +284,9 @@ const PostFacify = () => {
       <Heading3>API Services</Heading3>
       <p>
         Face detection as well as demographic estimation, was made possible by
-        using a service called Clarifai. Clarifai is an object detection in
-        image service, by using machine learning AI. Face detection is one of
-        the many models that Clarifai provides, and in order to use it, they
+        using a service called Clarifai. Clarifai is a service that uses object
+        detection in images, by using machine learning AI. Face detection is one
+        of the many models that Clarifai provides, and in order to use it, they
         provide a NodeJS package for the backend.{" "}
       </p>
       <p>
@@ -295,27 +295,114 @@ const PostFacify = () => {
         validated and images are compressed if they over the size limit.
       </p>
       <Heading2>Highlights</Heading2>
-      <Heading3>Fixed Table Header</Heading3>
-      <p>
-        There are two different ways to create a sticky Header. One way is using
-        JavaScript by setting the header’s position while you scroll. That
-        method is okay as long as updating the position is done by using CSS
-        transform property, so that the browser doesn’t recalculate expensive
-        Layout changes every frame you scroll. However if there’s too many
-        JavaScript tasks running, the header’s position will be delayed
-        resulting in poor user experience. The second is using the CSS property
-        “position: sticky” which is placed relative to its parent container and
-        remains in view. This is the best solution because CSS based solutions
-        are more performant because it won’t be interrupted by JavaScript.
-      </p>
       <Heading3>URL Text Input</Heading3>
       <p>
-        Rather than having a simple text input, I wanted to have editor-like
-        experience. Dealing with image URLs can get gnarly because the text can
-        look cryptic and long, which is why the text result is shortened to the
-        image name, it also helps that the image name is accompanied by it’s
-        image.
+        Rather than having a simple text input, I wanted to have an editor-like
+        experience. When you type an Image URL and then press ‘Spacebar’ key
+        after each URL, it will be added as an item in a list, where it contains
+        the image of the URL and the name of the image. URL items can be
+        removed, which will come in handy because a valid URL doesn’t guarantee
+        an existing image.
       </p>
+      <Video src={textInputRemoveVid}></Video>
+      <p>
+        Dealing with image URLs can get gnarly because the text can look cryptic
+        and long, which is why the text result is shortened to the image name.
+      </p>
+      <p>
+        Of course no one types image URLs by hand, the easier alternatives are
+        copy/paste and Drag and Drop (yes, you can Drag and Drop text between
+        apps), both which are supported in this app.
+      </p>
+      <p>
+        There’s no need to paste one URL at a time, if the copied text contains
+        multiple URLs, they will be added as separate URLs.
+      </p>
+      <p>
+        In fact, the user doesn’t have to worry about copying only URLs, the
+        user can paste unknown text and the Text Input will filter out non-URLs.
+      </p>
+      <Heading3>Scroll Shadows</Heading3>
+      <p>
+        It’s helpful to give feedback to the user if the content is in a
+        scrollable container. Most obvious one is displaying scrollbars. But in
+        Mobile, it’s common not to present scrollbars because they take up too
+        much space. The common pattern is to show a Shadow to help the user
+        understand that the content is inside a scrollable container.
+      </p>
+      <Video src={scrollShadowVid}></Video>
+      <p>
+        This used to be easy to implement in CSS, by using the{" "}
+        <HyperLink
+          text={" background-attachment property "}
+          href={"https://lea.verou.me/2012/04/background-attachment-local/"}
+        ></HyperLink>
+      </p>
+      <p>
+        However this CSS trick no longer works in Safari, the solution had to be
+        done through JavaScript.
+      </p>
+      <p>
+        The easiest way to solve it, is by checking scroll position and check if
+        it’s at the beginning or end, by using the scroll event. The issue with
+        this solution is that calculating the scroll container’s size can be
+        expensive and that procedure is fired continuously throughout the scroll
+        duration. Worst case scenario result is that scrolling through content
+        will be noticeably slow or janky to the user.
+      </p>
+      <p>
+        The optimal solution is using{" "}
+        <HyperLink
+          text={" Intersection Observer API"}
+          href={
+            "https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API"
+          }
+        ></HyperLink>
+        . I placed two “sentries” elements at the top of the scroll container
+        and one at the bottom. If a “sentry” is in view, it will trigger the
+        shadow element to hide, but if not the shadow will appear. This is much
+        more performant than relying on a scroll event.
+      </p>
+      <Heading3>Fixed Table Header</Heading3>
+      <p>There are two different ways to create a sticky Header.</p>
+      <p>
+        One way is using JavaScript by setting the header’s position while you
+        scroll. That method is okay as long as updating the position is done by
+        using CSS transform property, so that the browser doesn’t recalculate
+        expensive Layout changes every frame you scroll. However if there’s too
+        many JavaScript tasks running, the header’s position will be delayed
+        resulting in poor user experience.
+      </p>
+      <p>
+        The second is using the CSS property “position: sticky” which is placed
+        relative to its parent container and remains in view. This is the best
+        solution because CSS based solutions are more performant because it
+        won’t be interrupted by JavaScript. For the rest of this section the
+        “fixed” behavior will be referred to as “sticky”.
+      </p>
+      <p>
+        So I used the CSS sticky solution
+        <HyperLink
+          text={" based from this helpful article"}
+          href={"https://adrianroselli.com/2020/01/fixed-table-headers.html"}
+        ></HyperLink>
+        . Unfortunately I ran into problems. When wrapped in scroll container,
+        sticky will be relative to its scroll container and won’t respond.
+      </p>
+      <p>
+        This video example shows that the sticky table Header doesn’t respond to
+        the scroll of the body element (the outermost container).
+      </p>
+      <Video src={badFixedHeaderVid}></Video>
+      <p>
+        The solution was using “sentry” elements that utilize the Intersection
+        Observer API, that way to image data Header sticky behavior is emulated
+        when scrolling in the outermost container such as the “body” element.
+      </p>
+      <Video src={stickyHeaderDesktop}></Video>
+      Sticky Header example on Desktop devices
+      <Video src={stickyHeaderMobile}></Video>
+      Sticky Header example on Mobile devices
     </div>
   );
 };

@@ -1,6 +1,5 @@
 import { onMount, useContext } from "solid-js";
 import { GlobalContext, TGlobalContext } from "../../../context/context";
-import { isBrowser } from "../../../utils";
 import smoothScrollTo from "../../../utils/smoothScrollTo";
 import style from "./Post.module.scss";
 
@@ -19,19 +18,19 @@ const observerVideoCb: IntersectionObserverCallback = (entries) => {
       return;
     }
 
-    if (!entry.isIntersecting) {
-      videoEl.pause();
-      return;
-    }
-    videoEl.play();
+    try {
+      if (!entry.isIntersecting) {
+        videoEl.pause();
+        return;
+      }
+      videoEl.play();
+    } catch (err) {}
   });
 };
 
-const videoObserver = isBrowser
-  ? new IntersectionObserver(observerVideoCb, {
-      rootMargin: "250px 0px 250px 0px",
-    })
-  : ({} as IntersectionObserver);
+const videoObserver = new IntersectionObserver(observerVideoCb, {
+  rootMargin: "250px 0px 250px 0px",
+});
 
 export const Video = ({ src }: { src: string }) => {
   let videoElRef!: HTMLVideoElement;
@@ -43,7 +42,7 @@ export const Video = ({ src }: { src: string }) => {
 
   return (
     <div className={style["video-container"]}>
-      <video ref={videoElRef} muted loop controls playsinline>
+      <video ref={videoElRef} muted loop controls playsinline preload="none">
         <source src={src} type="video/mp4" />
       </video>
     </div>
@@ -52,16 +51,20 @@ export const Video = ({ src }: { src: string }) => {
 
 export const ImgContainer = ({
   alt,
-  size,
+  styleSize,
   src,
 }: {
   src: string;
   alt: string;
-  size?: "xs-small" | "small" | "medium";
+  styleSize?: "xs-small" | "small" | "medium";
 }) => {
   return (
-    <div className={`${style["img-container"]} ${style[`media-${size}`]}`}>
-      <img src={src} alt={alt} />
+    <div
+      className={`${style["img-container"]} ${
+        styleSize ? style[`media-${styleSize}`] : ""
+      }`}
+    >
+      <img src={src} alt={alt} loading="lazy" />
     </div>
   );
 };
@@ -100,7 +103,7 @@ export const HyperLink = ({
 
     smoothScrollTo({
       destination: el,
-      duration: 300,
+      duration: 500,
       padding,
       onEnd: () => {
         el.focus();
@@ -147,9 +150,7 @@ const observerHeadingCb: IntersectionObserverCallback = (entries) => {
   });
 };
 
-const headingObserver = isBrowser
-  ? new IntersectionObserver(observerHeadingCb)
-  : ({} as IntersectionObserver);
+const headingObserver = new IntersectionObserver(observerHeadingCb);
 
 let globalContext: TGlobalContext;
 let headingsMounted = false;

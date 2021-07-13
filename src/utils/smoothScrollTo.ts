@@ -5,6 +5,7 @@ type smoothScrollToProps = {
   padding?: number;
   currentPosition?: number;
   onEnd?: Function;
+  native?: boolean;
   locked?: { release?: number; forever?: boolean } | boolean;
   easing?:
     | "linear"
@@ -32,6 +33,7 @@ const smoothScrollTo = ({
   currentPosition,
   locked: lockedProp = false,
   easing = "linear",
+  native = true,
   onEnd,
 }: smoothScrollToProps) => {
   if (currentPosition == null) {
@@ -66,7 +68,7 @@ const smoothScrollTo = ({
     const destx = destination as number;
     let start: number | null = null;
     let end = null;
-    let x = (null as unknown) as number;
+    let x = null as unknown as number;
 
     const animate = (timeStamp: number) => {
       start = timeStamp;
@@ -77,6 +79,7 @@ const smoothScrollTo = ({
     const onStop = () => {
       locked.x = destination as number;
       scrollTo(destination as number);
+      console.log({ destination });
 
       requestAnimationFrame(() => {
         onEnd && onEnd();
@@ -121,6 +124,7 @@ const smoothScrollTo = ({
       const p = (now - start!) / duration;
       const val = easingFunctions[easing](p);
       x = startx! + (destx - startx!) * val;
+      console.log(x);
 
       locked.x = x;
       scrollTo(x);
@@ -131,17 +135,105 @@ const smoothScrollTo = ({
     requestAnimationFrame(animate);
   };
 
+  setDestination();
+
+  if (!!container.scrollTo && supportsSmoothScrolling() && native) {
+    nativeSmoothScrollTo({
+      destination: destination as number,
+      container,
+    }).then(() => {
+      onEnd && onEnd();
+    });
+    return;
+  }
+
   if (lockedProp) {
     container.addEventListener("scroll", onLockScroll);
   }
 
   instances++;
-  setDestination();
   animateScroll();
 
   if (typeof lockedProp === "boolean") return;
   return onLockScroll;
 };
+
+type nativeSmoothScrollToProps = {
+  destination: number;
+  container?: Window | HTMLElement;
+  onEnd?: Function;
+};
+
+function nativeSmoothScrollTo({
+  destination,
+  container = window,
+  onEnd,
+}: nativeSmoothScrollToProps) {
+  return new Promise<boolean>((resolve, reject) => {
+    let same = 0; // a counter
+    const elem = document.scrollingElement!;
+
+    // last known scroll positions
+    let lastPos_top = elem.scrollTop;
+
+    // pass the user defined options along with our default
+    const scrollOptions = {
+      behavior: "smooth" as ScrollBehavior,
+      top: destination,
+    };
+
+    // expected final position
+    const maxScroll_top = elem.scrollHeight - elem.clientHeight;
+    // const maxScroll_left = elem.scrollWidth - elem.clientWidth;
+    const targetPos_top = Math.max(
+      0,
+      Math.min(maxScroll_top, scrollOptions.top)
+    );
+    // const targetPos_left = Math.max(
+    //   0,
+    //   Math.min(maxScroll_left, scrollOptions.left)
+    // );
+
+    container.scrollTo(scrollOptions);
+    requestAnimationFrame(check);
+
+    // this function will be called every painting frame
+    // for the duration of the smooth scroll operation
+    function check() {
+      // check our current position
+      const newPos_top = elem.scrollTop;
+      // const newPos_left = elem.scrollLeft;
+      // we add a 1px margin to be safe
+      // (can happen with floating values + when reaching one end)
+      const at_destination = Math.abs(newPos_top - targetPos_top) <= 1;
+      // && Math.abs(newPos_left - targetPos_left) <= 1;
+      // same as previous
+      if (
+        newPos_top === lastPos_top
+        // && newPos_left === lastPos_left
+      ) {
+        if (same++ > 2) {
+          // if it's more than two frames
+          if (at_destination) {
+            return resolve(true);
+          }
+          return reject();
+        }
+      } else {
+        same = 0; // reset our counter
+        // remember our current position
+        lastPos_top = newPos_top;
+        // lastPos_left = newPos_left;
+      }
+      // check again next painting frame
+      requestAnimationFrame(check);
+    }
+  });
+}
+
+function supportsSmoothScrolling() {
+  return "scrollBehavior" in document.documentElement.style;
+}
 
 const easingFunctions = {
   // no easing, no acceleration

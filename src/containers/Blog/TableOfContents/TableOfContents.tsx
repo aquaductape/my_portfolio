@@ -74,7 +74,7 @@ const Row = ({
 
     smoothScrollTo({
       destination: el,
-      duration: 300,
+      duration: 500,
       padding,
       onEnd: () => {
         if (!minWidth_400.matches) {
