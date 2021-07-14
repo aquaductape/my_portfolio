@@ -1,11 +1,14 @@
-import { iconCode, iconLink } from "../../components/font-awesome/icons";
 import { createEffect, createSignal, For, onMount, useContext } from "solid-js";
 import { GlobalContext } from "../../context/context";
 import CONSTANTS from "../../constants";
-import { capitalize, isBrowser } from "../../utils";
+import { capitalize } from "../../utils";
 import { TechIconsCollapsed, TechIconsExpanded } from "./TechIcons";
 import { flip } from "../../utils/flip";
 import LoaderLogo from "../../components/Loader/LoaderLogo";
+import {
+  iconLinkJSX,
+  iconSourceCodeJSX,
+} from "../../components/font-awesome/icons";
 
 const Project = ({
   name,
@@ -122,7 +125,7 @@ const Project = ({
             target="blank"
             data-flip-key={`link-website-${name}`}
           >
-            <span innerHTML={iconLink}></span>
+            <span>{iconLinkJSX()}</span>
             Website
           </a>
           <a
@@ -131,7 +134,7 @@ const Project = ({
             target="blank"
             data-flip-key={`link-source-code-${name}`}
           >
-            <span innerHTML={iconCode}></span>
+            <span>{iconSourceCodeJSX()}</span>
             Source Code
           </a>
         </div>

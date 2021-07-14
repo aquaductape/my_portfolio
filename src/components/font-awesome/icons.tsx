@@ -1,15 +1,20 @@
-import { library, icon, config } from "@fortawesome/fontawesome-svg-core";
+// import { library, icon, config } from "@fortawesome/fontawesome-svg-core";
 // import "@fortawesome/fontawesome-svg-core/styles.css";
-import {
-  faGithub,
-  faLinkedin,
-  faStackOverflow,
-} from "@fortawesome/free-brands-svg-icons";
-import { faDownload, faLink, faCode } from "@fortawesome/free-solid-svg-icons";
+// import {
+//   faGithub,
+//   faLinkedin,
+//   faStackOverflow,
+// } from "@fortawesome/free-brands-svg-icons";
+// import { faDownload, faLink, faCode } from "@fortawesome/free-solid-svg-icons";
 
-config.autoAddCss = false;
+// config.autoAddCss = false;
 
-library.add(faGithub, faLinkedin, faStackOverflow, faDownload, faLink, faCode);
+// library.add(
+//   // faGithub, faLinkedin, faStackOverflow,
+//   faDownload,
+//   faLink,
+//   faCode
+// );
 
 // export const iconGithub = icon({ prefix: "fab", iconName: "github" }).html[0];
 // export const iconLinkedin = icon({ prefix: "fab", iconName: "linkedin" })
@@ -18,8 +23,8 @@ library.add(faGithub, faLinkedin, faStackOverflow, faDownload, faLink, faCode);
 //   prefix: "fab",
 //   iconName: "stack-overflow",
 // }).html[0];
-export const iconLink = icon({ prefix: "fas", iconName: "link" }).html[0];
-export const iconCode = icon({ prefix: "fas", iconName: "code" }).html[0];
+// export const iconLink = icon({ prefix: "fas", iconName: "link" }).html[0];
+// export const iconCode = icon({ prefix: "fas", iconName: "code" }).html[0];
 
 //
 export const iconGithubJSX = () => (
@@ -74,6 +79,44 @@ export const iconStackOverflowJSX = () => (
     <path
       fill="currentColor"
       d="M290.7 311L95 269.7 86.8 309l195.7 41zm51-87L188.2 95.7l-25.5 30.8 153.5 128.3zm-31.2 39.7L129.2 179l-16.7 36.5L293.7 300zM262 32l-32 24 119.3 160.3 32-24zm20.5 328h-200v39.7h200zm39.7 80H42.7V320h-40v160h359.5V320h-40z"
+    ></path>
+  </svg>
+);
+
+export const iconLinkJSX = () => (
+  <svg
+    aria-hidden="true"
+    // @ts-ignore
+    focusable="false"
+    data-prefix="fas"
+    data-icon="link"
+    class="svg-inline--fa fa-link fa-w-16"
+    role="img"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 512 512"
+  >
+    <path
+      fill="currentColor"
+      d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"
+    ></path>
+  </svg>
+);
+
+export const iconSourceCodeJSX = () => (
+  <svg
+    aria-hidden="true"
+    // @ts-ignore
+    focusable="false"
+    data-prefix="fas"
+    data-icon="code"
+    class="svg-inline--fa fa-code fa-w-20"
+    role="img"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 640 512"
+  >
+    <path
+      fill="currentColor"
+      d="M278.9 511.5l-61-17.7c-6.4-1.8-10-8.5-8.2-14.9L346.2 8.7c1.8-6.4 8.5-10 14.9-8.2l61 17.7c6.4 1.8 10 8.5 8.2 14.9L293.8 503.3c-1.9 6.4-8.5 10.1-14.9 8.2zm-114-112.2l43.5-46.4c4.6-4.9 4.3-12.7-.8-17.2L117 256l90.6-79.7c5.1-4.5 5.5-12.3.8-17.2l-43.5-46.4c-4.5-4.8-12.1-5.1-17-.5L3.8 247.2c-5.1 4.7-5.1 12.8 0 17.5l144.1 135.1c4.9 4.6 12.5 4.4 17-.5zm327.2.6l144.1-135.1c5.1-4.7 5.1-12.8 0-17.5L492.1 112.1c-4.8-4.5-12.4-4.3-17 .5L431.6 159c-4.6 4.9-4.3 12.7.8 17.2L523 256l-90.6 79.7c-5.1 4.5-5.5 12.3-.8 17.2l43.5 46.4c4.5 4.9 12.1 5.1 17 .6z"
     ></path>
   </svg>
 );

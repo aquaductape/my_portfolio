@@ -1,4 +1,3 @@
-import { iconCode, iconLink } from "../../components/font-awesome/icons";
 import {
   createEffect,
   createSignal,
@@ -14,8 +13,11 @@ import BlogPage from "./BlogPage";
 import CONSTANTS from "../../constants";
 import style from "./Blog.module.scss";
 import Nav from "./Nav/Nav";
-import { isBrowser } from "../../utils";
 import { setUrlHash } from "../NavigationBar/Links";
+import {
+  iconLinkJSX,
+  iconSourceCodeJSX,
+} from "../../components/font-awesome/icons";
 
 const BlogInner = (props: { setShowBlog: (v: boolean) => boolean }) => {
   const [context, { setHeader, setBlog, setSmoothScroll, setTableOfContents }] =
@@ -55,7 +57,7 @@ const BlogInner = (props: { setShowBlog: (v: boolean) => boolean }) => {
   let observerInit = true;
 
   const createReizeObserver = () => {
-    return new (window as any).ResizeObserver((entries: any) => {
+    return new ResizeObserver((entries) => {
       if (observerInit) {
         observerInit = false;
         return;
@@ -176,6 +178,7 @@ const BlogInner = (props: { setShowBlog: (v: boolean) => boolean }) => {
       "load",
       () => {
         setBlog({ finishedStaging: true });
+        console.log("run again again");
         heroImgContainerElHeight = heroRef.clientHeight;
 
         blogRef.classList.add(style["onEnter"]);
@@ -240,6 +243,7 @@ const BlogInner = (props: { setShowBlog: (v: boolean) => boolean }) => {
           smoothScrollTo({
             destination: 0,
             duration: 0,
+            native: false,
             onEnd: () => {
               setShowPost(true);
               // blogRef.style.height = "";
@@ -272,6 +276,7 @@ const BlogInner = (props: { setShowBlog: (v: boolean) => boolean }) => {
         scrollTo = header.activeLink ? header.activeLink : "about-me";
         // setScrollToId();
       }
+      // console.log(scrollToId());
       exitAnimation({ scrollTo: scrollTo || (scrollToId() as any) });
     }
   });
@@ -333,7 +338,7 @@ const BlogInner = (props: { setShowBlog: (v: boolean) => boolean }) => {
                 target="blank"
                 ref={linkWebsiteRef}
               >
-                <span innerHTML={iconLink}></span>
+                <span>{iconLinkJSX()}</span>
                 Website
               </a>
               <a
@@ -342,7 +347,7 @@ const BlogInner = (props: { setShowBlog: (v: boolean) => boolean }) => {
                 target="blank"
                 ref={linkSourcCodeRef}
               >
-                <span innerHTML={iconCode}></span>
+                <span>{iconSourceCodeJSX()}</span>
                 Source Code
               </a>
             </div>
