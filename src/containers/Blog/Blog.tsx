@@ -57,7 +57,7 @@ const BlogInner = (props: { setShowBlog: (v: boolean) => boolean }) => {
   let observerInit = true;
 
   const createReizeObserver = () => {
-    return new ResizeObserver((entries) => {
+    return new (window as any).ResizeObserver((entries: any) => {
       if (observerInit) {
         observerInit = false;
         return;

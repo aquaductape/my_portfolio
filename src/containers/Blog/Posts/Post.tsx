@@ -1,5 +1,6 @@
 import { onMount, useContext } from "solid-js";
 import { GlobalContext, TGlobalContext } from "../../../context/context";
+import { isBrowser } from "../../../utils";
 import smoothScrollTo from "../../../utils/smoothScrollTo";
 import style from "./Post.module.scss";
 
@@ -28,9 +29,11 @@ const observerVideoCb: IntersectionObserverCallback = (entries) => {
   });
 };
 
-const videoObserver = new IntersectionObserver(observerVideoCb, {
-  rootMargin: "250px 0px 250px 0px",
-});
+const videoObserver = isBrowser
+  ? new IntersectionObserver(observerVideoCb, {
+      rootMargin: "250px 0px 250px 0px",
+    })
+  : ({} as IntersectionObserver);
 
 export const Video = ({ src }: { src: string }) => {
   let videoElRef!: HTMLVideoElement;
@@ -150,7 +153,9 @@ const observerHeadingCb: IntersectionObserverCallback = (entries) => {
   });
 };
 
-const headingObserver = new IntersectionObserver(observerHeadingCb);
+const headingObserver = isBrowser
+  ? new IntersectionObserver(observerHeadingCb)
+  : ({} as IntersectionObserver);
 
 let globalContext: TGlobalContext;
 let headingsMounted = false;
