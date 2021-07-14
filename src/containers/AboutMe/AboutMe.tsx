@@ -4,17 +4,15 @@ import {
   iconStackOverflowJSX,
 } from "../../components/font-awesome/icons";
 
-import resumePDF from "../../assets/pdf/Caleb_Taylor_Resume.pdf?url";
+import resumePDF from "../../assets/pdf/Caleb_Taylor_Resume.pdf";
 import {
   For,
   JSX,
   createState,
   createEffect,
   batch,
-  on,
   createSignal,
   useContext,
-  onMount,
 } from "solid-js";
 import { ResumeIcon } from "../../components/svg/icons/icons";
 import {

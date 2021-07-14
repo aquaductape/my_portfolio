@@ -30,14 +30,10 @@ const AboutMeLogo = () => {
   let bcr!: DOMRect;
   let svgEl!: HTMLElement;
   let paths: TLogoPath[];
-  let deltaSize = minWidth_400.matches ? 15 : devicePixelRatio;
+  let deltaSize = 15;
   let sentinelHeroAnimationEl!: HTMLDivElement;
   let addedEventsListeners = false;
   let touchstartFired = false;
-
-  minWidth_400.addEventListener("change", (e) => {
-    deltaSize = e.matches ? 15 : devicePixelRatio;
-  });
 
   const getBCR = () => {
     if (hasCalcBCR) return bcr;
@@ -117,6 +113,12 @@ const AboutMeLogo = () => {
   onMount(() => {
     const observer = createIntersectionObserver();
     observer.observe(sentinelHeroAnimationEl);
+
+    deltaSize = minWidth_400.matches ? 15 : devicePixelRatio;
+
+    minWidth_400.addEventListener("change", (e) => {
+      deltaSize = e.matches ? 15 : devicePixelRatio;
+    });
 
     window.addEventListener(
       "resize",
