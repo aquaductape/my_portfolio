@@ -4,7 +4,7 @@ import {
   iconStackOverflowJSX,
 } from "../../components/font-awesome/icons";
 
-import resumePDF from "../../assets/pdf/Caleb_Taylor_Resume.pdf";
+import resumePDF from "../../assets/pdf/Caleb_Taylor_Resume.pdf?url";
 import {
   For,
   JSX,
@@ -251,6 +251,9 @@ const AboutMe = () => {
                     rel="noreferrer noopener"
                     target="_blank"
                     download={item.download ? item.download : null}
+                    // innerHTML={
+                    //   typeof item.icon === "string" ? item.icon : undefined
+                    // }
                   >
                     {item.icon()}
                   </a>

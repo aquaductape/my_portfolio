@@ -8,7 +8,6 @@ import {
 import FullnameLogo from "../../components/svg/logos/Fullname/FullnameLogo";
 import { GlobalContext } from "../../context/context";
 import useMatchMedia from "../../hooks/useMatchMedia";
-import { isBrowser } from "../../utils";
 
 export type TLogoPath = HTMLElement;
 
@@ -31,10 +30,14 @@ const AboutMeLogo = () => {
   let bcr!: DOMRect;
   let svgEl!: HTMLElement;
   let paths: TLogoPath[];
-  let deltaSize = !isBrowser || minWidth_400.matches ? 15 : 5;
+  let deltaSize = minWidth_400.matches ? 15 : devicePixelRatio;
   let sentinelHeroAnimationEl!: HTMLDivElement;
   let addedEventsListeners = false;
   let touchstartFired = false;
+
+  minWidth_400.addEventListener("change", (e) => {
+    deltaSize = e.matches ? 15 : devicePixelRatio;
+  });
 
   const getBCR = () => {
     if (hasCalcBCR) return bcr;
@@ -114,10 +117,6 @@ const AboutMeLogo = () => {
   onMount(() => {
     const observer = createIntersectionObserver();
     observer.observe(sentinelHeroAnimationEl);
-
-    minWidth_400.addEventListener("change", (e) => {
-      deltaSize = e.matches ? 15 : 5;
-    });
 
     window.addEventListener(
       "resize",

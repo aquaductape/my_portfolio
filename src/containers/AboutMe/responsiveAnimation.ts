@@ -63,7 +63,6 @@ export const responsiveAnimation = ({
 }) => {
   const query = (s: string): HTMLElement =>
     target.querySelector(s) as HTMLElement;
-
   const screenContainer = query(".screen-container");
   const pageInnerEl = query(".page-inner");
   const pageEl = query(".page");
