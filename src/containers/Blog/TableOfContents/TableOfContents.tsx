@@ -179,7 +179,9 @@ const TableOfContents = ({
       });
     };
 
-    const observer = new IntersectionObserver(observerCb);
+    const observer = new IntersectionObserver(observerCb, {
+      rootMargin: "-6%",
+    });
 
     observer.observe(tabelElREf);
   });

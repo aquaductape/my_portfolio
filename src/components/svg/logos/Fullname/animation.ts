@@ -12,7 +12,6 @@ export const createDuplicatedPaths = (svgEl: HTMLElement) => {
   ) as HTMLElement;
   let firstEl = fullNameShadowEl.firstElementChild as HTMLElement;
 
-  // debugger;
   const transition = "transform 250ms";
   const paths = Array.from({ length: numberOfNodes }, (_, idx) => {
     if (idx === 0) {

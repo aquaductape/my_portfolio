@@ -1,5 +1,6 @@
 import { createEffect, onMount, useContext } from "solid-js";
 import { GlobalContext } from "../../../../context/context";
+import useMatchMedia from "../../../../hooks/useMatchMedia";
 
 type TAnimatedBGNode = {
   el: HTMLElement | null;
@@ -22,8 +23,12 @@ type TAnimatedBGNode = {
  */
 const FullnameLogo = (props: { ref: HTMLElement }) => {
   const [context, { setHero }] = useContext(GlobalContext);
+  const { minWidth_400 } = useMatchMedia();
   const bgNodes: TAnimatedBGNode[] = [];
   let animateBGId: number | null = null;
+  let skipFrameCounter = 0;
+  let skipAmount = 1;
+  let positionAmount = 0.035;
 
   const animateBG = (props: TAnimatedBGNode) => {
     const { el, endPosition, position, startPosition } = props;
@@ -32,13 +37,22 @@ const FullnameLogo = (props: { ref: HTMLElement }) => {
     }
 
     el!.style.transform = `translateY(${position}px)`;
-    props.position += 0.035;
+    props.position += positionAmount;
   };
 
-  const animateBGs = () => {
-    bgNodes.forEach((node) => animateBG(node));
+  const animateBGs = (
+    { bodyOnly = false }: { bodyOnly?: boolean } = { bodyOnly: false }
+  ) => {
+    if (skipFrameCounter === 0) {
+      for (let i = 0; i < bgNodes.length; i++) {
+        if (bodyOnly && (i === 0 || i === 1)) continue;
+        animateBG(bgNodes[i]);
+      }
+    }
 
-    animateBGId = window.requestAnimationFrame(animateBGs);
+    skipFrameCounter = (skipFrameCounter + 1) % skipAmount;
+
+    animateBGId = window.requestAnimationFrame(() => animateBGs({ bodyOnly }));
   };
 
   const calculateBGNodes = (
@@ -113,13 +127,44 @@ const FullnameLogo = (props: { ref: HTMLElement }) => {
   });
 
   createEffect(() => {
-    if (!context.hero.active || !context.hero.bgActive) {
+    const active = context.hero.active;
+    const bgActive = context.hero.bgActive;
+    if (
+      !active
+      // || (FireFox && !context.hero.bgActive)
+    ) {
       window.cancelAnimationFrame(animateBGId!);
       return;
     }
 
+    window.cancelAnimationFrame(animateBGId!);
+
+    if (!bgActive) {
+      skipAmount = 2;
+      positionAmount = 0.04;
+      skipFrameCounter = 0;
+      animateBGs({ bodyOnly: true });
+      return;
+    } else {
+      skipAmount = 1;
+      positionAmount = 0.035;
+      skipFrameCounter = 0;
+    }
+
     animateBGs();
   });
+
+  // createEffect(() => {
+  //   if (
+  //     !context.hero.bgActive
+  //     // || !context.hero.bgActive
+  //   ) {
+  //     // console.log("throttle!!!");
+  //     // window.cancelAnimationFrame(animateBGId!);
+  //     // animateBGsThrottled();
+  //     return;
+  //   }
+  // });
 
   return (
     <>
@@ -140,9 +185,13 @@ const FullnameLogo = (props: { ref: HTMLElement }) => {
             </g>
           </mask>
         </defs>
-        <g mask="url(#fullname-logo-c)">
+        <g
+          class="fullname-shadow-bg-container"
+          opacity="0"
+          mask="url(#fullname-logo-c)"
+        >
           <path d="M-.02-.088v38.71h50.026V-.087z" fill="#1c2942" />
-          <g class="fullname-shadow-bg-container" opacity="0">
+          <g>
             <g class="fullname-shadow-bg">
               <path
                 d="M.09-45.156L-.212-5.447l50.518-.945-.013-38.764z"
