@@ -1,13 +1,12 @@
 .sr-only {
-  position: fixed !important;
-  clip: rect(1px, 1px, 1px, 1px);
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 0;
-  opacity: 0;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
   overflow: hidden;
-  pointer-events: none;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
 
 .sentinel {
@@ -96,9 +95,12 @@ section {
   font-weight: 500;
   text-transform: uppercase;
 }
-
-.flex-gap {
-  margin: 0 auto;
+.section-title-3 {
+  margin: 25px 0;
+  font-family: "Comfortaa";
+  font-size: 28px;
+  font-weight: 500;
+  text-align: left;
 }
 
 /************ navigation ***********/
@@ -143,7 +145,7 @@ section {
 
 .header-bar-inner {
   display: flex;
-  max-width: 1145px;
+  max-width: 1155px;
   width: 100%;
   padding: 0 22px;
   height: 58px;
@@ -614,18 +616,18 @@ section {
   }
 }
 
+.skill-icon__clipPath-circle {
+  transform: scale(0);
+  transition: 800ms;
+  transform-origin: center;
+  backface-visibility: hidden;
+}
+
 .skills-item {
   color: var(--icon-color);
   text-align: center;
   font-size: 16px;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-
-  // RIP CSS animations for IE
-  .skill-icon__clipPath-circle {
-    transform: scale(0);
-    transition: 800ms;
-    transform-origin: center;
-  }
 
   &:hover,
   &:focus {
@@ -634,6 +636,56 @@ section {
       transition: 1500ms;
     }
   }
+}
+
+/************ Metrics **********/
+.metrics {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  .sentinel {
+    top: -15vh;
+  }
+
+  .list {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    color: var(--icon-color);
+    height: 60px;
+    font-size: 20px;
+  }
+
+  .list-text a {
+    transition: color 250ms;
+  }
+
+  .list-text a:hover {
+    color: #fff;
+  }
+
+  .list-icon {
+    display: flex;
+    align-items: center;
+    width: 40px;
+    margin-right: 15px;
+  }
+
+  .list-inner {
+    display: inline-flex;
+    align-items: center;
+
+    &:hover,
+    &:focus {
+      .skill-icon__clipPath-circle {
+        transform: scale(20);
+        transition: 1500ms;
+      }
+    }
+  }
+}
+.made-with {
 }
 
 /************ footer ***********/
@@ -887,6 +939,11 @@ section {
 }
 
 @media (min-width: 500px) {
+  .metrics {
+    .sentinel {
+      top: -35vh;
+    }
+  }
   .fullname-shadow {
     path {
       // transition: transform 150ms;
@@ -936,17 +993,6 @@ section {
   .about-me-intro,
   .card-pg {
     font-size: 20px;
-  }
-  .card {
-    margin: 50px 20px;
-  }
-
-  .card-link-item {
-    font-size: 18px;
-  }
-
-  .card-title {
-    font-size: 25px;
   }
 
   .social-links__li {
@@ -1032,6 +1078,12 @@ section {
 }
 
 @media (min-width: 800px) {
+  .metrics {
+    .list {
+      font-size: 22px;
+    }
+  }
+
   .nav-list-link {
     margin: 0 35px;
   }
@@ -1041,9 +1093,6 @@ section {
     font-size: 22px;
   }
 
-  .card-title {
-    font-size: 30px;
-  }
   .about-me-group-list {
     margin-left: 40px;
   }
@@ -1071,10 +1120,6 @@ section {
 }
 
 @media (min-width: 1000px) {
-  .card {
-    max-width: 380px;
-  }
-
   .skills-item {
     font-size: 20px;
   }
@@ -1094,11 +1139,14 @@ section {
     height: 65px;
     width: auto;
   }
-}
 
-@media (min-width: 1300px) {
-  .card {
-    max-width: 420px;
+  .metrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    .sentinel {
+      top: -75vh;
+    }
   }
 }
 

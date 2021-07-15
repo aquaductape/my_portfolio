@@ -199,3 +199,38 @@ export const Cevron = ({
     </svg>
   );
 };
+
+export const Percentage = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2.632 2.632">
+    <circle
+      transform="rotate(-90)"
+      r="1.179"
+      cy="1.316"
+      cx="-1.316"
+      class="percent-progress-bar"
+      fill="none"
+      stroke="currentColor"
+      stroke-width=".25"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-dashoffset="16.97"
+      stroke-dasharray="16.97"
+      paint-order="markers fill stroke"
+    />
+    <text
+      class="percent-text"
+      style="line-height:1.25;text-align:center"
+      x="1.294"
+      y="1.672"
+      font-size="0.95"
+      font-family="sans-serif"
+      letter-spacing="0"
+      word-spacing="0"
+      text-anchor="middle"
+      fill="currentColor"
+      stroke-width=".06"
+    >
+      0
+    </text>
+  </svg>
+);

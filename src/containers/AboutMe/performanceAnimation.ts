@@ -572,6 +572,8 @@ export const performanceAnimation = ({
   };
 
   const loop = () => {
+    percentTextEl.textContent = "0";
+
     mTimeline.scene(
       () => {
         mTimeline.animate(
