@@ -1,6 +1,9 @@
 import { For, JSX, onMount } from "solid-js";
 import { isBrowser } from "../../utils";
 
+{
+  /* <a data-hk="0.0.0.6.0.2.1" class="contact-email" href="mailto:caleb1taylor2@gmail.com">caleb1taylor2@gmail.com <span class="foo"></span> </a> */
+}
 const S_Link = (props: { children?: JSX.Element }) => {
   const children = props.children as unknown as Element;
 
@@ -15,25 +18,20 @@ const S_Link = (props: { children?: JSX.Element }) => {
     const sLinkStr = (sLink as any).t;
     const childrenStr = (children as any).t as string;
 
-    let result = childrenStr.replace(
+    const result = childrenStr.replace(
       /(<a\s.+>)(.+)(<\/a>)/,
       (_, opening, content, closing) => {
         if (opening && content && closing) {
+          opening = opening.replace(/class=".+"/, (_) => {
+            return `${_}  rel="noopener"`;
+          });
           return `${opening}${content} ${sLinkStr}${closing}`;
         }
         return _;
       }
     );
 
-    result = result.replace(
-      /(<a\s.+)(class=".+")(.+>)/,
-      (_, start, className, end) => {
-        if (start && className && end) {
-          return `${start}${className} rel="noopener" ${end}`;
-        }
-        return _;
-      }
-    );
+    console.log(result);
 
     // @ts-ignore
     children.t = result;
