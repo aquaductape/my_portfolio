@@ -6,7 +6,7 @@ const S_Link = (props: { children?: JSX.Element }) => {
 
   const sLink = (
     <span class="s-link">
-      <span class="s-link-gradient"></span>
+      hi <span class="s-link-gradient"></span>{" "}
       <span class="s-link-solid"></span>
     </span>
   );
@@ -23,12 +23,16 @@ const S_Link = (props: { children?: JSX.Element }) => {
     const sLinkStr = (sLink as any).t;
     const childrenStr = (children as any).t as string;
 
-    const result = childrenStr.replace(/<a\s.+>(.+)<\/a>/, (_, content) => {
-      if (content) {
-        return `${_}${content}${sLinkStr}`;
+    const result = childrenStr.replace(
+      /(<a\s.+>)(.+)(<\/a>)/g,
+      (_, opening, content, closing) => {
+        if (content) {
+          return `${opening}${content} ${sLinkStr}${closing}`;
+        }
+        return _;
       }
-      return _;
-    });
+    );
+    console.log(result);
 
     // @ts-ignore
     children.t = result;
