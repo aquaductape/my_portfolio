@@ -21,7 +21,7 @@ const S_Link = (props: { children?: JSX.Element }) => {
     //   </span>
     // );
     const sLinkStr = (sLink as any).t;
-    const childrenStr = children as any as string;
+    const childrenStr = (children as any).t as string;
 
     const result = childrenStr.replace(/<a\s.+>(.+)<\/a>/, (_, content) => {
       if (content) {
