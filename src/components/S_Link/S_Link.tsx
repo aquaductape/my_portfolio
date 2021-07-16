@@ -23,7 +23,7 @@ const S_Link = (props: { children?: JSX.Element }) => {
       (_, opening, content, closing) => {
         if (opening && content && closing) {
           opening = opening.replace(/href=".+"/, (_: any) => {
-            return `${_} rel="noopener"`;
+            return `${_} target="_blank" rel="noopener"`;
           });
 
           return `${opening}${content} ${sLinkStr}${closing}`;
