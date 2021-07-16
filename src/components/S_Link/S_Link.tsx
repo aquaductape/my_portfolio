@@ -12,7 +12,9 @@ const S_Link = (props: { children?: JSX.Element }) => {
   );
 
   if (!isBrowser) {
-    const sLinkStr = (sLink as any).t;
+    // const sLinkStr = (sLink as any).t;
+    const sLinkStr =
+      '<span class="s-link-gradient"></span> <span class="s-link-solid"></span></span>';
     const childrenStr = (children as any).t as string;
 
     const result = childrenStr.replace(

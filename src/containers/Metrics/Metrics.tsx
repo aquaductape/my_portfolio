@@ -107,7 +107,7 @@ const Metrics = () => {
     const observer = new IntersectionObserver((entries, observer) => {
       for (const entry of entries) {
         // debugger;
-        // console.log(entry.boundingClientRect.top);
+
         if (
           // !(entry.boundingClientRect.top < 0) ||
           entry.boundingClientRect.top >

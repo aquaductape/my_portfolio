@@ -776,7 +776,6 @@ export class MainTimeline {
     }
 
     if (this.closingScene) {
-      console.log("this.closingScene", this.finished);
       const { duration, timestamp } = this.closingScene;
       const newDuration = duration - (Date.now() - timestamp);
       this.finished = true;
@@ -790,7 +789,6 @@ export class MainTimeline {
       }
 
       const finalTimeout = window.setTimeout(() => {
-        console.log("final!!!");
         this.finished = false;
         this.closingScene = null;
         this.animationMap.clear();
@@ -802,7 +800,6 @@ export class MainTimeline {
     }
 
     if (!this.running) return;
-    console.log("STOP");
 
     this.running = false;
     this.sceneRunning = false;
@@ -829,7 +826,6 @@ export class MainTimeline {
         onEnd: () => {
           el.setAttribute("transform", "");
           if (hasInitOpacity) {
-            // console.log(el);
             el.style.opacity = "";
           }
         },
@@ -846,7 +842,6 @@ export class MainTimeline {
       this.finished = false;
       this.closingScene = null;
       this.animationMap.clear();
-      console.log("DONE!!!");
     }, duration + 100);
   }
 }

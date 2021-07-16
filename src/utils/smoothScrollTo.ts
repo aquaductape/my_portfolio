@@ -79,7 +79,6 @@ const smoothScrollTo = ({
     const onStop = () => {
       locked.x = destination as number;
       scrollTo(destination as number);
-      console.log({ destination });
 
       requestAnimationFrame(() => {
         onEnd && onEnd();
@@ -124,7 +123,6 @@ const smoothScrollTo = ({
       const p = (now - start!) / duration;
       const val = easingFunctions[easing](p);
       x = startx! + (destx - startx!) * val;
-      console.log(x);
 
       locked.x = x;
       scrollTo(x);

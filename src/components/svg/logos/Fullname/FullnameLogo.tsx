@@ -159,7 +159,7 @@ const FullnameLogo = (props: { ref: HTMLElement }) => {
   //     !context.hero.bgActive
   //     // || !context.hero.bgActive
   //   ) {
-  //     // console.log("throttle!!!");
+
   //     // window.cancelAnimationFrame(animateBGId!);
   //     // animateBGsThrottled();
   //     return;

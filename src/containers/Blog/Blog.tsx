@@ -178,7 +178,7 @@ const BlogInner = (props: { setShowBlog: (v: boolean) => boolean }) => {
       "load",
       () => {
         setBlog({ finishedStaging: true });
-        console.log("run again again");
+
         heroImgContainerElHeight = heroRef.clientHeight;
 
         blogRef.classList.add(style["onEnter"]);
@@ -276,7 +276,7 @@ const BlogInner = (props: { setShowBlog: (v: boolean) => boolean }) => {
         scrollTo = header.activeLink ? header.activeLink : "about-me";
         // setScrollToId();
       }
-      // console.log(scrollToId());
+
       exitAnimation({ scrollTo: scrollTo || (scrollToId() as any) });
     }
   });
