@@ -12,16 +12,24 @@ const S_Link = (props: { children?: JSX.Element }) => {
   );
 
   if (!isBrowser) {
-    // const sLinkStr = (sLink as any).t;
-    const sLinkStr =
-      '<span class="s-link-gradient"></span> <span class="s-link-solid"></span></span>';
+    const sLinkStr = (sLink as any).t;
     const childrenStr = (children as any).t as string;
 
-    const result = childrenStr.replace(
+    let result = childrenStr.replace(
       /(<a\s.+>)(.+)(<\/a>)/,
       (_, opening, content, closing) => {
-        if (content) {
+        if (opening && content && closing) {
           return `${opening}${content} ${sLinkStr}${closing}`;
+        }
+        return _;
+      }
+    );
+
+    result = result.replace(
+      /(<a\s.+)(class=".+")(.+>)/,
+      (_, start, className, end) => {
+        if (start && className && end) {
+          return `${start}${className} rel="noopener" ${end}`;
         }
         return _;
       }
@@ -30,12 +38,12 @@ const S_Link = (props: { children?: JSX.Element }) => {
     // @ts-ignore
     children.t = result;
   } else {
-    //     const anchorEl =
-    //       children.tagName.toLowerCase() === "a"
-    //         ? children
-    //         : children.querySelector("a")!;
-    //
-    //     anchorEl.appendChild(sLink as any);
+    const anchorEl =
+      children.tagName.toLowerCase() === "a"
+        ? children
+        : children.querySelector("a")!;
+
+    anchorEl.appendChild(sLink as any);
   }
 
   return children;
