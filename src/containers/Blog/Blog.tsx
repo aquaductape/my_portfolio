@@ -336,6 +336,8 @@ const BlogInner = (props: { setShowBlog: (v: boolean) => boolean }) => {
                 className="card-link-item"
                 href={project.links.website}
                 ref={linkWebsiteRef}
+                target="_blank"
+                rel="noopener"
               >
                 <span>{iconLinkJSX()}</span>
                 Website
@@ -344,6 +346,8 @@ const BlogInner = (props: { setShowBlog: (v: boolean) => boolean }) => {
                 className="card-link-item"
                 href={project.links.sourceCode}
                 ref={linkSourcCodeRef}
+                target="_blank"
+                rel="noopener"
               >
                 <span>{iconSourceCodeJSX()}</span>
                 Source Code
