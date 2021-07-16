@@ -30,7 +30,7 @@ const Footer = () => {
             // aria-label="Github"
             title="Github"
             href="https://github.com/aquaductape"
-            target="_blank"
+
             // innerHTML={iconGithubJSX}
           >
             {iconGithubJSX()}
@@ -42,7 +42,7 @@ const Footer = () => {
             // aria-label="LinkedIn"
             title="LinkedIn"
             href="https://www.linkedin.com/in/caleb1taylor2/"
-            target="_blank"
+
             // innerHTML={iconLinkedinJSX}
           >
             {iconLinkedinJSX()}
@@ -54,7 +54,7 @@ const Footer = () => {
             // aria-label="Stack Overflow"
             title="Stack Overflow"
             href="https://stackoverflow.com/users/8234457/caleb-taylor"
-            target="_blank"
+
             // innerHTML={iconStackOverflowJSX}
           >
             {iconStackOverflowJSX()}

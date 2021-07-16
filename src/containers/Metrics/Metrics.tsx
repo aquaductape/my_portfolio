@@ -156,9 +156,7 @@ const Metrics = () => {
                       <span class="list-text">
                         {link ? (
                           <S_Link>
-                            <a href={link} target="_blank">
-                              {text}
-                            </a>
+                            <a href={link}>{text}</a>
                           </S_Link>
                         ) : (
                           text
@@ -197,10 +195,7 @@ const Metrics = () => {
                           Wat? Near perfect page score? <br /> Don't believe me?
                           See the <br />
                           <S_Link>
-                            <a
-                              href="https://lighthouse-dot-webdotdevsite.appspot.com//lh/html?url=https%3A%2F%2Fcalebetaylor.com%2F"
-                              target="_blank"
-                            >
+                            <a href="https://lighthouse-dot-webdotdevsite.appspot.com//lh/html?url=https%3A%2F%2Fcalebetaylor.com%2F">
                               Lighthouse report here!
                             </a>
                           </S_Link>

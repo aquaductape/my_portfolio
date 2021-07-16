@@ -126,12 +126,7 @@ export const HyperLink = ({
     <S_Link>
       <span>
         {text[0] === " " ? " " : ""}
-        <a
-          class={style["hyperlink"]}
-          href={href}
-          onClick={onClick}
-          target="_blank"
-        >
+        <a class={style["hyperlink"]} href={href} onClick={onClick}>
           {text.trim()}
         </a>
         {text[text.length - 1] === " " ? " " : ""}
