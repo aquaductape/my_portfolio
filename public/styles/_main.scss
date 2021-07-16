@@ -676,6 +676,10 @@ section {
     align-items: center;
     width: 40px;
     margin-right: 15px;
+
+    svg {
+      width: 100%;
+    }
   }
 
   .list-inner {
