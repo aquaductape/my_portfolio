@@ -65,10 +65,10 @@ const Metrics = () => {
       lightHouseInfo: true,
     },
     {
-      text: "2.3 MB upon initial page load",
+      text: "579 kB upon initial page load",
     },
     {
-      text: "142 files",
+      text: "142 files in source code",
     },
   ];
   let id = 1;
@@ -192,7 +192,7 @@ const Metrics = () => {
                           <span class="drawing-arrow">
                             <DrawingArrow></DrawingArrow>
                           </span>
-                          Wat? Near perfect page score? <br /> Don't believe me?
+                          Wat? A perfect page score? <br /> Don't believe me?
                           See the <br />
                           <S_Link>
                             <a href="https://lighthouse-dot-webdotdevsite.appspot.com//lh/html?url=https%3A%2F%2Fcalebetaylor.com%2F">
