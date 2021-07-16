@@ -22,7 +22,7 @@ const S_Link = (props: { children?: JSX.Element }) => {
       /(<a\s.+>)(.+)(<\/a>)/,
       (_, opening, content, closing) => {
         if (opening && content && closing) {
-          opening = opening.replace(/class=".+"/, (_) => {
+          opening = opening.replace(/class=".+"/, (_: any) => {
             return `${_}  rel="noopener"`;
           });
           return `${opening}${content} ${sLinkStr}${closing}`;
