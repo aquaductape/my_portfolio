@@ -25,6 +25,22 @@ const S_Link = (props: { children?: JSX.Element }) => {
 
     children.t = result;
     // console.log(children);
+  } else {
+    const sLink = (
+      <span class="s-link">
+        <span class="s-link-gradient"></span>
+        <span class="s-link-solid"></span>
+      </span>
+    );
+
+    const anchorEl =
+      // @ts-ignore
+      children.tagName.toLowerCase() === "a"
+        ? children
+        : // @ts-ignore
+          children.querySelector("a")!;
+
+    anchorEl.appendChild(sLink as any);
   }
 
   // t: '<a data-hk="0.0.0.6.0.2.1" class="contact-email" href="mailto:caleb1taylor2@gmail.com">caleb1taylor2@gmail.com</a>'
