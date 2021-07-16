@@ -6,7 +6,7 @@ const S_Link = (props: { children?: JSX.Element }) => {
 
   const sLink = (
     <span class="s-link">
-      hi <span class="s-link-gradient"></span>{" "}
+      <span class="s-link-gradient"></span>
       <span class="s-link-solid"></span>
     </span>
   );
@@ -32,7 +32,6 @@ const S_Link = (props: { children?: JSX.Element }) => {
         return _;
       }
     );
-    console.log(result);
 
     // @ts-ignore
     children.t = result;
