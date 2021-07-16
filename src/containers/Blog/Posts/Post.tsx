@@ -1,4 +1,5 @@
 import { onMount, useContext } from "solid-js";
+import S_Link from "../../../components/S_Link/S_Link";
 import { GlobalContext, TGlobalContext } from "../../../context/context";
 import { isBrowser } from "../../../utils";
 import smoothScrollTo from "../../../utils/smoothScrollTo";
@@ -121,20 +122,21 @@ export const HyperLink = ({
       },
     });
   };
-
   return (
-    <span>
-      {text[0] === " " ? " " : ""}
-      <a
-        class={style["hyperlink"]}
-        href={href}
-        onClick={onClick}
-        target="blank"
-      >
-        {text.trim()}
-      </a>
-      {text[text.length - 1] === " " ? " " : ""}
-    </span>
+    <S_Link>
+      <span>
+        {text[0] === " " ? " " : ""}
+        <a
+          class={style["hyperlink"]}
+          href={href}
+          onClick={onClick}
+          target="_blank"
+        >
+          {text.trim()}
+        </a>
+        {text[text.length - 1] === " " ? " " : ""}
+      </span>
+    </S_Link>
   );
 };
 

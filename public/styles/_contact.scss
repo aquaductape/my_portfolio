@@ -1,6 +1,10 @@
 .contact-me {
-  padding: 100px 0;
   margin-top: -200px;
+
+  .list-item {
+    display: inline-flex;
+    margin: 20px 0;
+  }
 
   .inputs,
   .inputs-label {
@@ -10,6 +14,7 @@
 
   .label-container {
     display: flex;
+    margin-left: 12px;
   }
 
   .label-error {
@@ -61,24 +66,28 @@
     font-size: 20px;
   }
 
+  .contact-container {
+    max-width: 1000px;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 100px;
+  }
+
   .card {
     padding: 20px;
-    max-width: 1000px;
-    margin: 0 auto;
   }
 
   textarea {
     height: 180px;
-    margin-bottom: 80px;
+    margin-bottom: 20px;
   }
 
   .btn-send-message {
-    position: relative;
-    top: -85px;
     border: none;
     border-radius: 10px;
     width: 180px;
     height: 65px;
+    margin-bottom: 10px;
     font-size: 20px;
     color: #fff;
     background: #4a57be;
@@ -99,6 +108,45 @@
       outline: 2px solid #fff;
       outline-offset: 5px;
     }
+  }
+}
+
+.contact-info-title {
+  font-size: 25px;
+  font-family: "Comfortaa";
+  margin: 0;
+  font-weight: 400;
+  padding: 30px 0;
+  background: linear-gradient(90deg, rgba(10, 27, 61, 1), rgba(10, 27, 61, 0));
+}
+
+.card.email-box {
+  padding: 15px;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .content {
+    text-align: left;
+    max-width: min-content;
+    margin: 10px 28px;
+    font-size: min(4.5vw, 16px);
+  }
+}
+
+.card.card-contact-info {
+  --s-link-alpha-color: #142546;
+  border-radius: 20px;
+  padding: 0;
+  font-size: 18px;
+  overflow: hidden;
+  margin-bottom: 50px;
+
+  .icon {
+    margin-right: min(4.5vw, 20px);
   }
 }
 
@@ -140,5 +188,42 @@
     .btn-send-message {
       top: -100px;
     }
+  }
+}
+
+@media (min-width: 1015px) {
+  .contact-me {
+    padding-bottom: 300px;
+
+    form {
+      width: 80%;
+    }
+  }
+
+  .card.email-box {
+    width: 76%;
+  }
+
+  .contact-info {
+    .content {
+      margin: auto;
+      font-size: 18px;
+    }
+  }
+
+  .card.card-contact-info {
+    position: absolute;
+    top: 58px;
+    right: 0;
+    background: #233556;
+    --s-link-alpha-color: #233556;
+    border-radius: 25px;
+    width: 38%;
+    height: 55%;
+    font-size: 18px;
+  }
+
+  .contact-info-title {
+    font-size: 33px;
   }
 }

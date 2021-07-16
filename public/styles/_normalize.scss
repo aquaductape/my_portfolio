@@ -61,3 +61,10 @@ a {
 //   -webkit-animation-name: autofill;
 //   -webkit-animation-fill-mode: both;
 // }
+
+figure,
+blockquote,
+figcaption {
+  margin: 0;
+  padding: 0;
+}

@@ -4,7 +4,8 @@ import {
   inkscape,
   solidJS,
 } from "../../components/svg/icons/animated-icons";
-import { Percentage } from "../../components/svg/icons/icons";
+import { DrawingArrow, Percentage } from "../../components/svg/icons/icons";
+import S_Link from "../../components/S_Link/S_Link";
 import { MainTimeline } from "../AboutMe/animateProjectPromise";
 
 const Metrics = () => {
@@ -36,40 +37,40 @@ const Metrics = () => {
     },
   ];
 
-  // const statsItems: {
-  //   text: string;
-  //   aria?: string;
-  //   hasIcon?: boolean;
-  //   lightHouseInfo?: boolean;
-  // }[] = [
-  //   {
-  //     text: "Performance",
-  //     hasIcon: true,
-  //     aria: "score is 100 out of 100",
-  //   },
-  //   {
-  //     text: "Accessibility",
-  //     hasIcon: true,
-  //     aria: "score is 100 out of 100",
-  //   },
-  //   {
-  //     text: "Best Practices",
-  //     hasIcon: true,
-  //     aria: "score is 100 out of 100",
-  //   },
-  //   {
-  //     text: "SEO",
-  //     hasIcon: true,
-  //     aria: "score is 100 out of 100",
-  //     lightHouseInfo: true,
-  //   },
-  //   {
-  //     text: "2.3 MB upon initial page load",
-  //   },
-  //   {
-  //     text: "142 files",
-  //   },
-  // ];
+  const statsItems: {
+    text: string;
+    aria?: string;
+    hasIcon?: boolean;
+    lightHouseInfo?: boolean;
+  }[] = [
+    {
+      text: "Performance",
+      hasIcon: true,
+      aria: "score is 100 out of 100",
+    },
+    {
+      text: "Accessibility",
+      hasIcon: true,
+      aria: "score is 100 out of 100",
+    },
+    {
+      text: "Best Practices",
+      hasIcon: true,
+      aria: "score is 100 out of 100",
+    },
+    {
+      text: "SEO",
+      hasIcon: true,
+      aria: "score is 100 out of 100",
+      lightHouseInfo: true,
+    },
+    {
+      text: "2.3 MB upon initial page load",
+    },
+    {
+      text: "142 files",
+    },
+  ];
   let id = 1;
 
   let sentinelEl!: HTMLDivElement;
@@ -106,7 +107,12 @@ const Metrics = () => {
     const observer = new IntersectionObserver((entries, observer) => {
       for (const entry of entries) {
         // debugger;
-        if (entry.boundingClientRect.top > entry.rootBounds!.height * 0.8) {
+        // console.log(entry.boundingClientRect.top);
+        if (
+          // !(entry.boundingClientRect.top < 0) ||
+          entry.boundingClientRect.top >
+          entry.rootBounds!.height * 0.8
+        ) {
           return;
         }
 
@@ -131,7 +137,7 @@ const Metrics = () => {
       }
     });
 
-    observer.observe(sentinelEl);
+    setTimeout(() => observer.observe(sentinelEl), 100);
   });
 
   return (
@@ -149,9 +155,11 @@ const Metrics = () => {
                       {icon && <span class="list-icon">{icon(id)}</span>}
                       <span class="list-text">
                         {link ? (
-                          <a href={link} target="_blank">
-                            {text}
-                          </a>
+                          <S_Link>
+                            <a href={link} target="_blank">
+                              {text}
+                            </a>
+                          </S_Link>
                         ) : (
                           text
                         )}
@@ -164,13 +172,13 @@ const Metrics = () => {
           </ul>
         </div>
 
-        {/* <div className="stats" ref={statsEl}>
+        <div className="stats" ref={statsEl}>
           <h3 class="section-title-3">Stats</h3>
           <ul>
             <For each={statsItems}>
-              {({ text, hasIcon, aria }) => {
+              {({ text, hasIcon, aria, lightHouseInfo }) => {
                 return (
-                  <li class="list">
+                  <li class={`list ${lightHouseInfo ? "has-lighthouse" : ""}`}>
                     <div className="list-inner">
                       {hasIcon && (
                         <span class="list-icon">
@@ -181,13 +189,30 @@ const Metrics = () => {
                         {text}
                         {aria && <span class="sr-only">{" " + aria}</span>}
                       </span>
+                      {lightHouseInfo && (
+                        <span class="lighthouse-info">
+                          <span class="drawing-arrow">
+                            <DrawingArrow></DrawingArrow>
+                          </span>
+                          Wat? Near perfect page score? <br /> Don't believe me?
+                          See the <br />
+                          <S_Link>
+                            <a
+                              href="https://lighthouse-dot-webdotdevsite.appspot.com//lh/html?url=https%3A%2F%2Fcalebetaylor.com%2F"
+                              target="_blank"
+                            >
+                              Lighthouse report here!
+                            </a>
+                          </S_Link>
+                        </span>
+                      )}
                     </div>
                   </li>
                 );
               }}
             </For>
           </ul>
-        </div> */}
+        </div>
       </div>
     </section>
   );

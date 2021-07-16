@@ -1,0 +1,63 @@
+.s-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  &::after {
+    position: absolute;
+    top: -2px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    content: "";
+  }
+}
+
+.s-link-solid,
+.s-link-gradient {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: currentColor;
+  pointer-events: none;
+  transform: scaleX(1);
+  transform-origin: right;
+  transition: transform 250ms;
+}
+
+.s-link-solid {
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.s-link-gradient {
+  height: 3px;
+  background: linear-gradient(
+    270deg,
+    currentColor,
+    var(--s-link-alpha-color) 140%
+  );
+  opacity: 0.9;
+}
+
+a {
+  position: relative;
+  text-decoration: none;
+
+  &.focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 5px;
+  }
+
+  &:hover .s-link-solid {
+    transform: scaleX(1);
+    transition: transform 250ms 250ms;
+  }
+  &:hover .s-link-gradient {
+    transform: scaleX(0);
+  }
+}

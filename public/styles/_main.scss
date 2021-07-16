@@ -383,17 +383,6 @@ section {
   left: 0;
 }
 
-.contact-item {
-  margin: 0;
-  margin-bottom: 10px;
-  font-size: 18px;
-  opacity: 0.8;
-}
-
-.contact-city {
-  text-transform: uppercase;
-}
-
 .contact-email {
   text-decoration: none;
   font-weight: 400;
@@ -401,7 +390,6 @@ section {
   &:hover,
   &.focus-visible {
     color: var(--btn-bg-focus);
-    text-decoration: underline;
   }
 
   &.focus-visible {
@@ -637,9 +625,26 @@ section {
     }
   }
 }
+// .whoami {
+//   img {
+//     border-radius: 8px;
+//     box-shadow: 3px 5px 12px #000;
+//   }
+//
+//   .content {
+//     font-size: 18px;
+//     color: var(--icon-color);
+//     text-align: left;
+//     margin: 0 auto;
+//     max-width: 1000px;
+//   }
+// }
 
 /************ Metrics **********/
 .metrics {
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: 40px;
   position: relative;
   max-width: 1000px;
   margin: 0 auto;
@@ -655,6 +660,7 @@ section {
     color: var(--icon-color);
     height: 60px;
     font-size: 20px;
+    position: relative;
   }
 
   .list-text a {
@@ -688,6 +694,29 @@ section {
 .made-with {
 }
 
+.lighthouse-info {
+  position: absolute;
+  top: 85px;
+  left: 25px;
+  transform: scale(0.8) rotate(-3deg);
+  opacity: 0.9;
+  transform-origin: left;
+  white-space: nowrap;
+  backface-visibility: hidden;
+}
+
+.list.has-lighthouse {
+  margin-bottom: 125px;
+}
+
+.drawing-arrow {
+  display: block;
+  position: absolute;
+  top: -88px;
+  right: -21px;
+  width: 34px;
+}
+
 /************ footer ***********/
 
 .pfooter {
@@ -695,6 +724,7 @@ section {
   flex-direction: column;
   padding: 30px 10px;
   background: var(--nav-bg-color);
+  --s-link-alpha-color: var(--nav-bg-color);
   color: var(--nav-txt-color);
   transition: $transitionTheme;
 }
@@ -906,6 +936,11 @@ section {
     font-size: 14px;
     padding: 20px 5px;
   }
+
+  .lighthouse-info {
+    left: 18px;
+    transform: scale(0.7) rotate(5deg);
+  }
 }
 
 @media (max-width: 380px) and (min-height: 800px) {
@@ -1078,6 +1113,22 @@ section {
 }
 
 @media (min-width: 800px) {
+  //   .whoami {
+  //     img {
+  //       width: 45px;
+  //       height: 45px;
+  //     }
+  //
+  //     .content {
+  //       font-size: 22px;
+  //     }
+  //     .intro {
+  //       display: flex;
+  //       align-items: center;
+  //       font-size: 25px;
+  //     }
+  //   }
+
   .metrics {
     .list {
       font-size: 22px;
@@ -1141,7 +1192,7 @@ section {
   }
 
   .metrics {
-    display: grid;
+    grid-template-rows: none;
     grid-template-columns: 1fr 1fr;
 
     .sentinel {
@@ -1151,6 +1202,23 @@ section {
 }
 
 @media (min-width: 1650px) {
+  .lighthouse-info {
+    top: -94px;
+    left: 291px;
+    white-space: nowrap;
+    transform: scale(0.8) rotate(5deg);
+  }
+
+  .drawing-arrow {
+    top: -59px;
+    left: -15px;
+    transform: rotate(-53deg);
+  }
+
+  .list.list.has-lighthouse {
+    margin-bottom: 0;
+  }
+
   .skip-to-content__inner {
     background: transparent;
   }
