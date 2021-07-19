@@ -201,10 +201,10 @@ const Contact = () => {
         ref={ariaLiveRegionRef}
         role="region"
         aria-live="polite"
-        className="live-region sr-only"
+        class="live-region sr-only"
       ></div> */}
-      <h2 className="section-title">Contact Me</h2>
-      <div className="contact-container">
+      <h2 class="section-title">Contact Me</h2>
+      <div class="contact-container">
         <div class="card card-contact-info">
           <div class="contact-info">
             <h3 class="contact-info-title">Contact Info</h3>
@@ -229,7 +229,7 @@ const Contact = () => {
             </ul>
           </div>
         </div>
-        <div className="card email-box">
+        <div class="card email-box">
           <form
             ref={formRef}
             onSubmit={onSubmit}
@@ -265,7 +265,7 @@ const InputContainer = (input: TFormInput) => {
       <div class="label-container">
         <div>{input.label}</div>
         <div
-          className="label-error"
+          class="label-error"
           style={input.error ? { padding: "0 5px" } : {}}
         >
           {input.error}

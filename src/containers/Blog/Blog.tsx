@@ -309,7 +309,7 @@ const BlogInner = (props: { setShowBlog: (v: boolean) => boolean }) => {
 
   return (
     <div class={style.blog} ref={blogRef}>
-      <div className={style["blog-bg"]} ref={blogBgRef}></div>
+      <div class={style["blog-bg"]} ref={blogBgRef}></div>
       <article class={style["blog-container"]}>
         <Nav
           navActive={navActive}
@@ -317,10 +317,10 @@ const BlogInner = (props: { setShowBlog: (v: boolean) => boolean }) => {
           setScrollToId={setScrollToId}
           refs={refs}
         ></Nav>
-        <div className={style["static-container"]} ref={staticContainerRef}>
+        <div class={style["static-container"]} ref={staticContainerRef}>
           <div class={style["hero"]} ref={heroRef}>
             <div
-              className={style["hero-img-sentinel"]}
+              class={style["hero-img-sentinel"]}
               ref={heroImgSentinelRef}
             ></div>
             <img
@@ -330,10 +330,10 @@ const BlogInner = (props: { setShowBlog: (v: boolean) => boolean }) => {
               ref={heroImgRef}
             />
           </div>
-          <div className={style["links"]}>
-            <div className={style["inner"]}>
+          <div class={style["links"]}>
+            <div class={style["inner"]}>
               <a
-                className="card-link-item"
+                class="card-link-item"
                 href={project.links.website}
                 ref={linkWebsiteRef}
                 target="_blank"
@@ -343,7 +343,7 @@ const BlogInner = (props: { setShowBlog: (v: boolean) => boolean }) => {
                 Website
               </a>
               <a
-                className="card-link-item"
+                class="card-link-item"
                 href={project.links.sourceCode}
                 ref={linkSourcCodeRef}
                 target="_blank"
@@ -354,7 +354,7 @@ const BlogInner = (props: { setShowBlog: (v: boolean) => boolean }) => {
               </a>
             </div>
           </div>
-          <div className={style["blog-page-container"]} ref={blogPageRef}>
+          <div class={style["blog-page-container"]} ref={blogPageRef}>
             <Show when={showPost()}>
               <BlogPage type={blog.type!}></BlogPage>
             </Show>

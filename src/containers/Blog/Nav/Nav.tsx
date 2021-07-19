@@ -74,22 +74,22 @@ const Nav = ({ project, navActive, refs, setScrollToId }: TNavProps) => {
       }`}
     >
       <div
-        className={`${style["nav-bg-hider"]} ${
+        class={`${style["nav-bg-hider"]} ${
           navActive() ? style["passed-hero-active"] : ""
         }`}
       ></div>
       <div
-        className={`${style["nav-shadow"]} ${
+        class={`${style["nav-shadow"]} ${
           navActive() ? style["passed-hero-active"] : ""
         }`}
       ></div>
       <div
-        className={`${style["nav-inner"]} ${
+        class={`${style["nav-inner"]} ${
           navActive() ? style["passed-hero-active"] : ""
         } `}
       >
-        <div className={style["nav-bg"]} ref={refs.navBg}></div>
-        <div className={style["nav-content"]}>
+        <div class={style["nav-bg"]} ref={refs.navBg}></div>
+        <div class={style["nav-content"]}>
           <button
             class={style["back-btn"]}
             onClick={onClickBackBtn}

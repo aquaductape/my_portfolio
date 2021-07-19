@@ -45,7 +45,7 @@ export const Video = ({ src }: { src: string }) => {
   });
 
   return (
-    <div className={style["video-container"]}>
+    <div class={style["video-container"]}>
       <video
         ref={videoElRef}
         muted
@@ -71,7 +71,7 @@ export const ImgContainer = ({
 }) => {
   return (
     <div
-      className={`${style["img-container"]} ${
+      class={`${style["img-container"]} ${
         styleSize ? style[`media-${styleSize}`] : ""
       }`}
     >

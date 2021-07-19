@@ -170,14 +170,10 @@ const NavigationBar = () => {
 
   return (
     <header>
-      <div className="top-page-sentinel" ref={topPageSentinelElRef}></div>
+      <div class="top-page-sentinel" ref={topPageSentinelElRef}></div>
       <div class={`header-bar ${shadowHeaderCss()} ${hideHeaderCss()}`}>
         <div class="header-bar-inner">
-          <a
-            href="#about-me-logo"
-            onFocus={onFocus}
-            className="skip-to-content"
-          >
+          <a href="#about-me-logo" onFocus={onFocus} class="skip-to-content">
             <div class="skip-to-content__inner">Skip to Main Content</div>
           </a>
           <div class="logo">

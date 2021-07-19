@@ -280,7 +280,7 @@ export const AsideTableOfContents = () => {
   return (
     <Show when={showTable() && !!context.tableOfContents.contents}>
       <aside class={style["aside"]}>
-        <div className={style["inner"]}>
+        <div class={style["inner"]}>
           <TableOfContents
             visualMarker={true}
             observer={false}

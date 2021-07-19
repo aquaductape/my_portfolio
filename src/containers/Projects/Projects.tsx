@@ -108,19 +108,19 @@ const Project = ({
   });
 
   return (
-    <div data-flip-key={`card-${name}`} className="card">
-      <div className="card-img-container">
+    <div data-flip-key={`card-${name}`} class="card">
+      <div class="card-img-container">
         <img
-          className="card-img"
+          class="card-img"
           src={img.src}
           alt={img.alt}
           data-flip-key={`img-${name}`}
           onClick={onClickReadMore}
         />
 
-        <div className="card-link-container">
+        <div class="card-link-container">
           <a
-            className="card-link-item"
+            class="card-link-item"
             href={links.website}
             target="_blank"
             rel="noopener"
@@ -130,7 +130,7 @@ const Project = ({
             Website
           </a>
           <a
-            className="card-link-item"
+            class="card-link-item"
             href={links.sourceCode}
             target="_blank"
             rel="noopener"
@@ -141,28 +141,28 @@ const Project = ({
           </a>
         </div>
       </div>
-      <div className="card-content">
-        <h3 className="card-title">
+      <div class="card-content">
+        <h3 class="card-title">
           <span data-flip-key={`title-${name}`}>{capitalize(name)}</span>
         </h3>
 
         <button
-          className={`tech-icons ${toggleTech() ? "active" : ""}`}
+          class={`tech-icons ${toggleTech() ? "active" : ""}`}
           aria-label={`Tech Used: ${collapsedIcons.join(", ")}`}
           onClick={onClickToggleTech}
           ref={buttonRef}
         >
           {toggleTech() ? (
-            <div className="expanded">
+            <div class="expanded">
               <TechIconsExpanded skills={skills}></TechIconsExpanded>
             </div>
           ) : (
-            <div className="collapsed">
+            <div class="collapsed">
               <TechIconsCollapsed icons={collapsedIcons}></TechIconsCollapsed>
             </div>
           )}
         </button>
-        <p className="card-pg">{about}</p>
+        <p class="card-pg">{about}</p>
         <button class="card-read-more" onClick={onClickReadMore}>
           <span>Read More</span>
           {context.blog.import &&
@@ -213,12 +213,12 @@ const Projects = () => {
   });
 
   return (
-    <section id="projects" className="projects" tabindex="-1">
-      <h2 className="section-title">Projects</h2>
-      <div className="card-container">
+    <section id="projects" class="projects" tabindex="-1">
+      <h2 class="section-title">Projects</h2>
+      <div class="card-container">
         <For each={projects}>
           {({ project, about, img, links, skills }) => (
-            <div className="flex-gap">
+            <div class="flex-gap">
               <Project
                 name={project}
                 about={about}

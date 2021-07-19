@@ -15,7 +15,7 @@ const BlogPage = ({ type }: { type: "3nRow" | "facify" }) => {
 
   return (
     <div class={style["blog-page"]}>
-      <div className={style["content"]}>
+      <div class={style["content"]}>
         <AsideTableOfContents></AsideTableOfContents>
         {getPost()}
       </div>

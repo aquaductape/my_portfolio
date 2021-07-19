@@ -53,13 +53,13 @@ const Graph = () => {
     <section
       ref={sectionRef}
       id="recent-coding-activity"
-      className="coding-activity"
+      class="coding-activity"
     >
-      <h2 className="section-title coding-activity-title">
+      <h2 class="section-title coding-activity-title">
         Recent Coding Activity
       </h2>
       <p class="wakatime">(Powered by wakatime.com)</p>
-      <div role="presentation" className="container">
+      <div role="presentation" class="container">
         {loading() && (
           <div class="graph-loader">
             <div>Fetching graph data ...</div>

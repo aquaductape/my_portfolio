@@ -142,16 +142,16 @@ const Metrics = () => {
 
   return (
     <section>
-      <div className="metrics">
-        <div className="sentinel" ref={sentinelEl}></div>
-        <div className="made-with">
+      <div class="metrics">
+        <div class="sentinel" ref={sentinelEl}></div>
+        <div class="made-with">
           <h3 class="section-title-3">Made with</h3>
           <ul>
             <For each={madeWithItems}>
               {({ text, icon, link }) => {
                 return (
                   <li class="list">
-                    <div className="list-inner">
+                    <div class="list-inner">
                       {icon && <span class="list-icon">{icon(id)}</span>}
                       <span class="list-text">
                         {link ? (
@@ -170,14 +170,14 @@ const Metrics = () => {
           </ul>
         </div>
 
-        <div className="stats" ref={statsEl}>
+        <div class="stats" ref={statsEl}>
           <h3 class="section-title-3">Stats</h3>
           <ul>
             <For each={statsItems}>
               {({ text, hasIcon, aria, lightHouseInfo }) => {
                 return (
                   <li class={`list ${lightHouseInfo ? "has-lighthouse" : ""}`}>
-                    <div className="list-inner">
+                    <div class="list-inner">
                       {hasIcon && (
                         <span class="list-icon">
                           <Percentage></Percentage>

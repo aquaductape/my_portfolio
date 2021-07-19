@@ -44,16 +44,16 @@ const Icon = ({ name, icon }: { name: string; icon: () => JSX.Element }) => {
 export const TechIconsCollapsed = ({ icons }: { icons: string[] }) => {
   return (
     <>
-      <div className="header">
-        <div className="text">
+      <div class="header">
+        <div class="text">
           <em>Tech Used</em>
         </div>
-        <div className="cevron">
+        <div class="cevron">
           <Cevron></Cevron>
         </div>
-        <div className="border"></div>
+        <div class="border"></div>
       </div>
-      <div className="icons">
+      <div class="icons">
         <For each={icons}>
           {(icon) => {
             const iconJSX = programingIcons[icon as "bash"];
@@ -76,18 +76,18 @@ const Category = ({
 }) => {
   return (
     <>
-      <div className="header">
-        <div className="text">
+      <div class="header">
+        <div class="text">
           <em>{title}</em>
         </div>
         {cevron && (
-          <div className="cevron">
+          <div class="cevron">
             <Cevron direction={"bottom"}></Cevron>
           </div>
         )}
-        <div className="border"></div>
+        <div class="border"></div>
       </div>
-      <div className="icons">
+      <div class="icons">
         <TechIconsExpandedInner icons={icons}></TechIconsExpandedInner>
       </div>
     </>
@@ -142,9 +142,9 @@ const TechIconsExpandedInner = ({ icons }: { icons: string[] }) => {
         const title = getTitle(icon);
 
         return (
-          <div className="icon-box">
+          <div class="icon-box">
             <Icon name={icon} icon={iconJSX}></Icon>
-            <div className="title">{title}</div>
+            <div class="title">{title}</div>
           </div>
         );
       }}

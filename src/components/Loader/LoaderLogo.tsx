@@ -2,7 +2,7 @@ import MonochromeCircleLogo from "../svg/logos/MonochromeCircleLogo";
 
 const LoaderLogo = () => {
   return (
-    <div className="loader">
+    <div class="loader">
       <MonochromeCircleLogo></MonochromeCircleLogo>
     </div>
   );

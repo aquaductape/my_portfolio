@@ -1,9 +1,6 @@
-import { For, JSX, onMount } from "solid-js";
+import { JSX } from "solid-js";
 import { isBrowser } from "../../utils";
 
-{
-  /* <a data-hk="0.0.0.6.0.2.1" class="contact-email" href="mailto:caleb1taylor2@gmail.com">caleb1taylor2@gmail.com <span class="foo"></span> </a> */
-}
 const S_Link = (props: { children?: JSX.Element }) => {
   const children = props.children as unknown as Element;
 
@@ -31,8 +28,6 @@ const S_Link = (props: { children?: JSX.Element }) => {
         return _;
       }
     );
-
-    console.log(result);
 
     // @ts-ignore
     children.t = result;

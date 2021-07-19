@@ -202,7 +202,7 @@ const AboutMe = () => {
                       }`}
                     >
                       <div
-                        className="capture-interaction"
+                        class="capture-interaction"
                         onMouseEnter={() => mouseEnterProjectPromise(idx())}
                         style={{
                           display: props.active ? "none" : "block",
@@ -247,10 +247,8 @@ const AboutMe = () => {
                     title={item.ariaLabel}
                     href={item.href}
                     rel="noreferrer noopener"
+                    target="_blank"
                     download={item.download ? item.download : null}
-                    // innerHTML={
-                    //   typeof item.icon === "string" ? item.icon : undefined
-                    // }
                   >
                     {item.icon()}
                   </a>

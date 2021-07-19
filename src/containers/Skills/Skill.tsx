@@ -9,7 +9,7 @@ const Skill = ({ title, icon }: ISkillProps) => {
   let id = 0;
 
   return (
-    <li className="skills-item">
+    <li class="skills-item">
       <span aria-hidden="true">{icon(id)}</span>
       <p class="title">{title}</p>
     </li>

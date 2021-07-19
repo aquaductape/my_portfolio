@@ -181,10 +181,7 @@ const AboutMeLogo = () => {
       aria-label="Caleb Taylor"
       tabindex="-1"
     >
-      <div
-        className="sentinel-hero-animation"
-        ref={sentinelHeroAnimationEl}
-      ></div>
+      <div class="sentinel-hero-animation" ref={sentinelHeroAnimationEl}></div>
       <FullnameLogo ref={svgEl}></FullnameLogo>
     </h1>
   );

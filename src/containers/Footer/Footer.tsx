@@ -8,9 +8,9 @@ import S_Link from "../../components/S_Link/S_Link";
 
 const Footer = () => {
   return (
-    <footer className="pfooter">
-      <div className="pfooter-contact">
-        <div className="pfooter-contact-item">
+    <footer class="pfooter">
+      <div class="pfooter-contact">
+        <div class="pfooter-contact-item">
           <S_Link>
             <a
               aria-label="Download PDF Resume"
@@ -23,39 +23,33 @@ const Footer = () => {
           </S_Link>
         </div>
       </div>
-      <div className="pfooter-social">
-        <div className="pfooter-social-item">
+      <div class="pfooter-social">
+        <div class="pfooter-social-item">
           <a
-            className="pfooter-social-item-link"
-            // aria-label="Github"
+            class="pfooter-social-item-link"
             title="Github"
             href="https://github.com/aquaductape"
-
-            // innerHTML={iconGithubJSX}
+            target="_blank"
           >
             {iconGithubJSX()}
           </a>
         </div>
-        <div className="pfooter-social-item">
+        <div class="pfooter-social-item">
           <a
-            className="pfooter-social-item-link"
-            // aria-label="LinkedIn"
+            class="pfooter-social-item-link"
             title="LinkedIn"
             href="https://www.linkedin.com/in/caleb1taylor2/"
-
-            // innerHTML={iconLinkedinJSX}
+            target="_blank"
           >
             {iconLinkedinJSX()}
           </a>
         </div>
-        <div className="pfooter-social-item">
+        <div class="pfooter-social-item">
           <a
-            className="pfooter-social-item-link"
-            // aria-label="Stack Overflow"
+            class="pfooter-social-item-link"
             title="Stack Overflow"
             href="https://stackoverflow.com/users/8234457/caleb-taylor"
-
-            // innerHTML={iconStackOverflowJSX}
+            target="_blank"
           >
             {iconStackOverflowJSX()}
           </a>

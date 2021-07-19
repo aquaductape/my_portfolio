@@ -68,7 +68,7 @@ const SpySection = ({
   return (
     <div style={{ position: "relative" }}>
       <div
-        className="sentinel"
+        class="sentinel"
         style={sentinelStyle}
         data-hash={hash}
         data-nav-link={hasNavLink}

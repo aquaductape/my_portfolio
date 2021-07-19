@@ -38,10 +38,10 @@ const Skills = () => {
   );
 
   return (
-    <section id="skills" className="skills" tabindex="-1">
-      <h2 className="section-title skills-title">Skills</h2>
+    <section id="skills" class="skills" tabindex="-1">
+      <h2 class="section-title skills-title">Skills</h2>
 
-      <ul className="skills-group">{skillItems}</ul>
+      <ul class="skills-group">{skillItems}</ul>
     </section>
   );
 };

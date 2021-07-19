@@ -1,6 +1,6 @@
 const SVGDefs = () => {
   return (
-    <div className="svg-defs" style={{ height: 0, width: 0 }}>
+    <div class="svg-defs" style={{ height: 0, width: 0 }}>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
         <defs>
           <linearGradient id="gradient-to-solid">
