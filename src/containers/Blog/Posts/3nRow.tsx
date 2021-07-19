@@ -64,13 +64,21 @@ const Post3nRow = () => {
     <div class={style["blog-post"]}>
       <MainTableOfContents></MainTableOfContents>
       <Heading2>Summary</Heading2>
-      <p>It’s a Tic Tac Toe game. </p>
+      <p>
+        It’s a Tic Tac Toe game, but with extra fluff. There's player
+        customization, where you can change the icon and it's color. You can
+        choose play against an AI or another human.
+      </p>
       <p>
         For the client side, I didn’t use libraries or frameworks such as React
         or jQuery, instead used plain Javascript with MVC pattern. This results
         in a lighter and performant application.
       </p>
-      <p>Game animations were done using SVG files.</p>
+      <p>
+        Game animations were done using SVG files. No need to use canvas based
+        animations, which would have forced the user to download large amounts
+        of data.
+      </p>
       <p>
         For backend, multiplayer is supported by Colyseus framework which runs
         on Nodejs.
@@ -87,10 +95,10 @@ const Post3nRow = () => {
 
       <Heading2>Design</Heading2>
       <p>
-        The theme is fun playful design. There are no sharp corners, from
-        buttons to containers, they have rounded edges. The content, which are
-        the menu, game lobby and most obviously the game board is centered
-        around the main square.
+        The theme a is fun playful design. There are no sharp corners. Instead
+        the UI elements, such as buttons and containers, have rounded edges. The
+        content, which are the menu, game lobby and most obviously the game
+        board, is centered around the main square.
       </p>
       <ImgContainer
         src={consistencyImg}
@@ -99,8 +107,8 @@ const Post3nRow = () => {
       ></ImgContainer>
 
       <p>
-        Here's an anatomy of the displaying game state during play. Button has 3
-        functions, display score, display current player turn, and customize
+        Here's an anatomy of displaying game state during play. Button has 3
+        functions: display score, display current player turn, and customize
         player color/shape
       </p>
       <ImgContainer
@@ -109,29 +117,29 @@ const Post3nRow = () => {
         styleSize={"medium"}
       ></ImgContainer>
       <p>
-        As you can see there's no text display of game state, such as which
+        As you can see there's no text display of the game state, such as which
         player's turn it is. The issue I had using text is that the board would
-        have to shift down to accommodate it.
+        have to shift down to accommodate it, this takes a lot of valuable space
+        in mobile.
       </p>
       <ImgContainer
         src={deadSpaceImg}
         alt="Introducing text to display game state, results in spacing problems"
       ></ImgContainer>
       <p>
-        It works nicely when the game is being played, but during other stages
-        of the app, such as navigating the menu or the lobby, there's an
-        unnecessary dead space between the main square and the player buttons. I
-        could change the position of the main square only during gameplay, but
-        personally I'm not comfortable translating this large piece of content
-        just to fix this issue.
+        Providing game state as text works nicely when the game is being played,
+        but during other stages of the app, such as navigating the menu or the
+        lobby, there's an unnecessary dead space between the main square and the
+        player buttons. I could change the position of the main square only
+        during gameplay, but personally I'm not comfortable translating this
+        large piece of content just to fix this issue.
       </p>
       <p>
         The animations also ensure fun experience, such as placing the ‘X’ or
         ‘O’s, where the shapes “draw themselves” out, rather than suddenly
-        appearing, or when choosing shape and active state is animated. Although
-        animations are there to ensure experience or usability, some users would
-        prefer none, which is why there’s a setting to reduce the animations,
-        yay!
+        appearing. Although animations are there to ensure experience or
+        usability, some users would prefer none, which is why there’s a setting
+        to reduce the animations, yay!
       </p>
       <Heading2>Tech Stack</Heading2>
       <p>
@@ -150,19 +158,23 @@ const Post3nRow = () => {
         similar ones from scratch. It was a difficult but fun process. I can't
         claim that I did everything by myself, a lot of the code I wrote was
         made possible by studying through resources such as StackOverflow,
-        Github Issues, or other tech blogs. The backend of the code, which
-        supports multiplayer, I used several frameworks.
+        Github Issues, or other tech blogs.
+      </p>
+      <p>
+        For the backend, which supports multiplayer, I didn't build the
+        multiplayer logic from scratch. I used several frameworks such as
+        Node.js and Colyseus.
       </p>
       <Heading3>Frontend</Heading3>
       <p>
-        Normally a developer would choose a JavaScript Framework such as React
-        or Angular, because they take care of nitty gritty details of managing
-        data that translates into visible UI, while ensuring performance and
-        developer experience. Another important aspect that they take care of is
-        establishing basic code structure. Since I'm not using a JavaScript
-        Framework, I do have to follow a code architecture, otherwise it would
-        be difficult to maintain the files and folders as the app scales. I
-        choose the Model View Controller ( MVC ) methodology.
+        Normally a developer chooses a JavaScript Framework, such as React or
+        Angular, because they take care of nitty gritty details of managing data
+        that translates into visible UI, while ensuring performance and
+        developer experience. Frameworks also ensure basic code structure. Since
+        I'm not using a JavaScript Framework, I do have to follow a code
+        architecture, otherwise it would be difficult to maintain the files and
+        folders as the app scales. I choose the Model View Controller ( MVC )
+        methodology.
       </p>
 
       <ImgContainer
@@ -177,14 +189,15 @@ const Post3nRow = () => {
         opponent human or ai ). The Views are responsible for transforming the
         state/data into UI displayed on the page. The Controllers are
         responsible for updating the Model, then use that updated state from
-        Model to update the View. Controllers are triggered by user input.
+        Model to update the View.
       </p>
 
       <Video src={mvcDiagramVid}></Video>
       <p>
-        Bringing back code architecture/maintenance topic, I choose Typescript,
-        a static type checker which compiles to Javascript, because I'm able to
-        document my work, ensure type safety.
+        Bringing back code architecture/maintenance topic, I choose Typescript.
+        Typescript is a static type checker which compiles to Javascript, and it
+        allows me to document my work, ensure type safety and productive
+        maintaince.
       </p>
       <p>
         When updating DOM, there's no diffing Algorithm involved, it's done by
@@ -199,9 +212,9 @@ const Post3nRow = () => {
         One straightforward way to have tooltip popup, is wrap the tooltip
         element inside the target, so that it's relative to the target's
         position. What's awesome is that it's a pure CSS solution. However there
-        are cases where this is not possible, if target is in parent container
-        where overflowed content is clipped/removed, the tooltip will be clipped
-        as well.
+        are cases where this is not possible, if target is inside a parent
+        container where overflowed content is clipped/removed, the tooltip will
+        be clipped as well.
       </p>
       <ImgContainer
         src={tooltipImg}
