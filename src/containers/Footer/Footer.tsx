@@ -30,6 +30,7 @@ const Footer = () => {
             title="Github"
             href="https://github.com/aquaductape"
             target="_blank"
+            rel="noopener"
           >
             {iconGithubJSX()}
           </a>
@@ -40,6 +41,7 @@ const Footer = () => {
             title="LinkedIn"
             href="https://www.linkedin.com/in/caleb1taylor2/"
             target="_blank"
+            rel="noopener"
           >
             {iconLinkedinJSX()}
           </a>
@@ -50,6 +52,7 @@ const Footer = () => {
             title="Stack Overflow"
             href="https://stackoverflow.com/users/8234457/caleb-taylor"
             target="_blank"
+            rel="noopener"
           >
             {iconStackOverflowJSX()}
           </a>
