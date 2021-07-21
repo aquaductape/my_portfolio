@@ -2,6 +2,7 @@ import { onMount, useContext } from "solid-js";
 import S_Link from "../../../components/S_Link/S_Link";
 import { GlobalContext, TGlobalContext } from "../../../context/context";
 import { isBrowser } from "../../../utils";
+import { getRootBounds } from "../../../utils/getRootBounds";
 import smoothScrollTo from "../../../utils/smoothScrollTo";
 import style from "./Post.module.scss";
 
@@ -147,9 +148,11 @@ const observerHeadingCb: IntersectionObserverCallback = (entries) => {
 
     if (!result) return;
 
+    const rootBounds = getRootBounds(entry);
+
     const anchorId = (entry.target as HTMLElement).dataset.anchor;
 
-    if (entry.boundingClientRect.top > entry.rootBounds!.height * 0.8) {
+    if (entry.boundingClientRect.top > rootBounds.height * 0.8) {
       return;
     }
 

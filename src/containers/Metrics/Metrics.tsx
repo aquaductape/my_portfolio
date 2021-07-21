@@ -6,6 +6,7 @@ import {
 } from "../../components/svg/icons/animated-icons";
 import { DrawingArrow, Percentage } from "../../components/svg/icons/icons";
 import S_Link from "../../components/S_Link/S_Link";
+import { getRootBounds } from "../../utils/getRootBounds";
 import { MainTimeline } from "../AboutMe/animateProjectPromise";
 
 const Metrics = () => {
@@ -106,13 +107,9 @@ const Metrics = () => {
 
     const observer = new IntersectionObserver((entries, observer) => {
       for (const entry of entries) {
-        // debugger;
+        const rootBounds = getRootBounds(entry);
 
-        if (
-          // !(entry.boundingClientRect.top < 0) ||
-          entry.boundingClientRect.top >
-          entry.rootBounds!.height * 0.8
-        ) {
+        if (entry.boundingClientRect.top > rootBounds.height * 0.8) {
           return;
         }
 
