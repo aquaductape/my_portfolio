@@ -606,7 +606,7 @@ section {
 
 .skill-icon__clipPath-circle {
   transform: scale(0);
-  transition: 800ms;
+  transition: transform 800ms;
   transform-origin: center;
   backface-visibility: hidden;
 }
@@ -621,7 +621,7 @@ section {
   &:focus {
     .skill-icon__clipPath-circle {
       transform: scale(20);
-      transition: 1500ms;
+      transition: transform 1500ms;
     }
   }
 }
@@ -690,7 +690,7 @@ section {
     &:focus {
       .skill-icon__clipPath-circle {
         transform: scale(20);
-        transition: 1500ms;
+        transition: transform 1500ms;
       }
     }
   }
