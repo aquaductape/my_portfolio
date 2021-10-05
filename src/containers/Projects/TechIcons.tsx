@@ -1,4 +1,4 @@
-import { For, JSX } from "solid-js";
+import { Component, For, JSX } from "solid-js";
 import { Cevron } from "../../components/svg/icons/icons";
 import {
   bash,
@@ -142,6 +142,8 @@ export const getTitle = (icon: string) => {
       return icon.toUpperCase();
     case "nodejs":
       return "NodeJS";
+    case "npm":
+      return "npm";
     default:
       return capitalize(icon);
   }
@@ -165,3 +167,33 @@ const TechIconsExpandedInner = ({ icons }: { icons: string[] }) => {
     </For>
   );
 };
+
+const TechIcons: Component<{
+  toggle: () => boolean;
+  collapsedIcons: any;
+  skills: any;
+  onClick: () => void;
+  ref: any;
+}> = (props) => {
+  const { onClick } = props;
+  return (
+    <button
+      class={`tech-icons ${props.toggle() ? "active" : ""}`}
+      aria-label={`Tech Used: ${props.collapsedIcons.join(", ")}`}
+      onClick={onClick}
+      ref={props.ref}
+    >
+      {props.toggle() ? (
+        <div class="expanded">
+          <TechIconsExpanded skills={props.skills}></TechIconsExpanded>
+        </div>
+      ) : (
+        <div class="collapsed">
+          <TechIconsCollapsed icons={props.collapsedIcons}></TechIconsCollapsed>
+        </div>
+      )}
+    </button>
+  );
+};
+
+export default TechIcons;

@@ -1,14 +1,22 @@
-import { createEffect, createSignal, For, onMount, useContext } from "solid-js";
+import {
+  createEffect,
+  createSignal,
+  For,
+  lazy,
+  onMount,
+  useContext,
+} from "solid-js";
 import { GlobalContext } from "../../context/context";
 import CONSTANTS from "../../constants";
 import { capitalize } from "../../utils";
-import { TechIconsCollapsed, TechIconsExpanded } from "./TechIcons";
+// import { TechIconsCollapsed, TechIconsExpanded } from "./TechIcons";
 import { flip } from "../../utils/flip";
 import LoaderLogo from "../../components/Loader/LoaderLogo";
 import {
   iconLinkJSX,
   iconSourceCodeJSX,
 } from "../../components/font-awesome/icons";
+const TechIcons = lazy(() => import("./TechIcons"));
 
 const Project = ({
   name,
@@ -150,7 +158,17 @@ const Project = ({
           <span data-flip-key={`title-${name}`}>{capitalize(name)}</span>
         </h3>
 
-        <button
+        <div class="tech-icons-container">
+          <TechIcons
+            onClick={onClickToggleTech}
+            toggle={toggleTech}
+            skills={skills}
+            collapsedIcons={collapsedIcons}
+            ref={buttonRef}
+          ></TechIcons>
+        </div>
+
+        {/* <button
           class={`tech-icons ${toggleTech() ? "active" : ""}`}
           aria-label={`Tech Used: ${collapsedIcons.join(", ")}`}
           onClick={onClickToggleTech}
@@ -165,7 +183,8 @@ const Project = ({
               <TechIconsCollapsed icons={collapsedIcons}></TechIconsCollapsed>
             </div>
           )}
-        </button>
+        </button> */}
+
         <p class="card-pg">{about}</p>
         <button class="card-read-more" onClick={onClickReadMore}>
           <span>Read More</span>
