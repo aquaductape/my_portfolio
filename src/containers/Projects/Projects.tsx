@@ -54,8 +54,10 @@ const Project = ({
   let iconsBCRs: DOMRect[] = [];
   let animationRunning = false;
 
-  const onClickToggleTech = () => {
+  const onClickToggleTech = (e: MouseEvent) => {
     if (animationRunning) return true;
+
+    const buttonRef = e.currentTarget as HTMLElement;
 
     const textEl = buttonRef.querySelector(".text")!;
     const borderEl = buttonRef.querySelector(".border")!;
@@ -97,7 +99,7 @@ const Project = ({
   };
 
   createEffect(() => {
-    if (!buttonRef || !toggleTech()) return;
+    if (!toggleTech()) return;
 
     const icons = buttonRef.querySelectorAll(
       ".icon"

@@ -174,7 +174,7 @@ const TechIcons: Component<{
   toggle: () => boolean;
   collapsedIcons: any;
   skills: any;
-  onClick: () => void;
+  onClick: (e: MouseEvent) => void;
   ref: any;
 }> = (props) => {
   const { onClick } = props;
