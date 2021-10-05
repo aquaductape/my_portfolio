@@ -46,6 +46,8 @@ const PostSolidDismiss = () => {
           ...skills.backend,
           ...skills.buildTool,
           ...skills.api,
+          ...skills.testing,
+          ...skills.packageManager,
         ]}
       ></TechList>
     </div>
