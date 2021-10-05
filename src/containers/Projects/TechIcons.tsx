@@ -14,6 +14,10 @@ import {
   svg,
   typescript,
   webpack,
+  npm,
+  testcafe,
+  solid,
+  rollup,
 } from "../../components/svg/icons/programming-icons";
 import { capitalize } from "../../utils";
 
@@ -31,6 +35,10 @@ const programingIcons = {
   svg,
   typescript,
   webpack,
+  rollup,
+  solid,
+  testcafe,
+  npm,
 };
 
 const Icon = ({ name, icon }: { name: string; icon: () => JSX.Element }) => {
@@ -102,9 +110,11 @@ export const TechIconsExpanded = ({
     backend: string[];
     buildTool: string[];
     api: string[];
+    testing: string[];
+    packageManager: string[];
   };
 }) => {
-  const { frontend, backend, buildTool, api } = skills;
+  const { frontend, backend, buildTool, api, packageManager, testing } = skills;
 
   return (
     <>
@@ -116,6 +126,10 @@ export const TechIconsExpanded = ({
         <Category title="Build Tools" icons={buildTool}></Category>
       )}
       {api.length && <Category title="API" icons={api}></Category>}
+      {testing.length && <Category title="Testing" icons={testing}></Category>}
+      {packageManager.length && (
+        <Category title="Package Manager" icons={packageManager}></Category>
+      )}
     </>
   );
 };

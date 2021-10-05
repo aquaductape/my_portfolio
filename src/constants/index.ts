@@ -1,5 +1,6 @@
 import threeNRowHeroImg from "../assets/3nRow/img/hero.png";
 import facifyHeroImg from "../assets/facify/img/hero.png";
+import solidDismissHeroImg from "../assets/solid-dismiss/img/hero.png";
 
 const CONSTANTS = {
   links: ["skills", "projects", "contact"],
@@ -21,6 +22,9 @@ const CONSTANTS = {
         backend: ["colyseus", "nodejs"],
         buildTool: ["webpack", "bash"],
         api: [],
+
+        testing: [],
+        packageManager: [],
       },
     },
     {
@@ -40,6 +44,28 @@ const CONSTANTS = {
         backend: ["nodejs"],
         buildTool: [],
         api: ["clarifai"],
+        testing: [],
+        packageManager: [],
+      },
+    },
+    {
+      project: "Solid Dismiss",
+      about: `A library that handles "click outside" behavior to close dropdowns/popups for Solid.`,
+      img: {
+        src: solidDismissHeroImg,
+        alt: "banner of solid dismiss",
+      },
+      links: {
+        website: "https://aquaductape.github.io/solid-dismiss/",
+        sourceCode: "https://github.com/aquaductape/solid-dismiss",
+      },
+      skills: {
+        frontend: ["solid", "typescript", "css"],
+        backend: [],
+        buildTool: ["rollup"],
+        api: [],
+        testing: ["testcafe"],
+        packageManager: ["npm"],
       },
     },
   ],

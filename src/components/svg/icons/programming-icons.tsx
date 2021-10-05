@@ -198,6 +198,235 @@ export const nodejs = () => (
   </svg>
 );
 
+export const testcafe = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <path
+      fill="#172535"
+      d="M19.38 18.989l-.966.996h3.862l3.863 3.487H5.862l3.862-3.487h2.897l-.966-.996H8.76L2 24.966h28l-6.758-5.977z"
+    />
+    <path
+      fill="#1274cc"
+      d="M27.969 9.449l-2.402-2.415L15.48 17.179l-3.843-3.865-2.401 2.416 6.244 6.28z"
+    />
+  </svg>
+);
+
+export const solid = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <defs>
+      <linearGradient
+        id="SolidJS-a"
+        gradientUnits="userSpaceOnUse"
+        x1="27.5"
+        y1="3"
+        x2="152"
+        y2="63.5"
+      >
+        <stop offset=".1" stop-color="#76b3e1" />
+        <stop offset=".3" stop-color="#dcf2fd" />
+        <stop offset="1" stop-color="#76b3e1" />
+      </linearGradient>
+      <linearGradient
+        id="SolidJS-b"
+        gradientUnits="userSpaceOnUse"
+        x1="95.8"
+        y1="32.6"
+        x2="74"
+        y2="105.2"
+      >
+        <stop offset="0" stop-color="#76b3e1" />
+        <stop offset=".5" stop-color="#4377bb" />
+        <stop offset="1" stop-color="#1f3b77" />
+      </linearGradient>
+      <linearGradient
+        id="SolidJS-c"
+        gradientUnits="userSpaceOnUse"
+        x1="18.4"
+        y1="64.2"
+        x2="144.3"
+        y2="149.8"
+      >
+        <stop offset="0" stop-color="#315aa9" />
+        <stop offset=".5" stop-color="#518ac8" />
+        <stop offset="1" stop-color="#315aa9" />
+      </linearGradient>
+      <linearGradient
+        id="SolidJS-d"
+        gradientUnits="userSpaceOnUse"
+        x1="75.2"
+        y1="74.5"
+        x2="24.4"
+        y2="260.8"
+      >
+        <stop offset="0" stop-color="#4377bb" />
+        <stop offset=".5" stop-color="#1a336b" />
+        <stop offset="1" stop-color="#1a336b" />
+      </linearGradient>
+    </defs>
+    <path
+      d="M30 8.493S20.667 1.625 13.447 3.21l-.529.176c-1.056.352-1.937.88-2.465 1.585L10.1 5.5l-2.642 4.579 4.579.88c1.937 1.233 4.402 1.762 6.692 1.233l8.1 1.585z"
+      fill="#76b3e1"
+    />
+    <path
+      d="M163 35S110-4 69 5l-3 1c-6 2-11 5-14 9l-2 3-15 26 26 5c11 7 25 10 38 7l46 9z"
+      opacity=".3"
+      fill="url(#SolidJS-a)"
+      transform="translate(1.296 2.33) scale(.1761)"
+    />
+    <path
+      d="M10.453 8.493l-.705.176c-2.993.88-3.874 3.698-2.289 6.164 1.761 2.29 5.46 3.522 8.453 2.641l10.918-3.698s-9.333-6.868-16.377-5.283z"
+      fill="#518ac8"
+    />
+    <path
+      d="M52 35l-4 1c-17 5-22 21-13 35 10 13 31 20 48 15l62-21S92 26 52 35z"
+      opacity=".3"
+      fill="url(#SolidJS-b)"
+      transform="translate(1.296 2.33) scale(.1761)"
+    />
+    <path
+      d="M134 80a45 45 0 00-48-15L24 85 4 120l112 19 20-36c4-7 3-15-2-23z"
+      fill="url(#SolidJS-c)"
+      transform="translate(1.296 2.33) scale(.1761)"
+    />
+    <path
+      d="M114 115a45 45 0 00-48-15L4 120s53 40 94 30l3-1c17-5 23-21 13-34z"
+      fill="url(#SolidJS-d)"
+      transform="translate(1.296 2.33) scale(.1761)"
+    />
+  </svg>
+);
+
+export const npm = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <path
+      d="M 2.6846088,10.906645 H 28.979394 v 8.389403 H 15.580319 l -0.719092,1.438183 -3.811186,0.143819 -0.575273,-1.582002 H 2.6846088 Z"
+      fill="#fff"
+    />
+    <path
+      d="M2,10.555H30v9.335H16v1.556H9.778V19.889H2Zm1.556,7.779H6.667V13.666H8.222v4.667H9.778V12.111H3.556Zm7.778-6.223v7.779h3.111V18.334h3.111V12.111Zm3.111,1.556H16v3.112H14.444Zm4.667-1.556v6.223h3.111V13.666h1.556v4.667h1.556V13.666h1.556v4.667h1.556V12.111Z"
+      fill="#cb3837"
+    />
+  </svg>
+);
+
+export const rollup = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" version="1.1">
+    <g transform="translate(-8.66 -8.896) scale(.04906)">
+      <g id="XMLID_14_">
+        <linearGradient
+          id="XMLID_4_"
+          gradientUnits="userSpaceOnUse"
+          x1="444.469"
+          y1="526.051"
+          x2="598.469"
+          y2="562.051"
+        >
+          <stop offset="0" stop-color="#FF6533" />
+          <stop offset=".157" stop-color="#FF5633" />
+          <stop offset=".434" stop-color="#FF4333" />
+          <stop offset=".714" stop-color="#FF3733" />
+          <stop offset="1" stop-color="#F33" />
+        </linearGradient>
+        <path
+          id="XMLID_15_"
+          class="st0"
+          d="M721 410c0-33.6-8.8-65.1-24.3-92.4-41.1-42.3-130.5-52.1-152.7-.2-22.8 53.2 38.3 112.4 65 107.7 34-6-6-84-6-84 52 98 40 68-54 158S359 779 345 787c-.6.4-1.2.7-1.9 1h368.7c6.5 0 10.7-6.9 7.8-12.7l-96.4-190.8c-2.1-4.1-.6-9.2 3.4-11.5C683 540.6 721 479.8 721 410Z"
+        />
+      </g>
+      <g id="XMLID_2_">
+        <linearGradient
+          id="XMLID_5_"
+          gradientUnits="userSpaceOnUse"
+          x1="420.382"
+          y1="475.002"
+          x2="696.383"
+          y2="689.002"
+        >
+          <stop offset="0" stop-color="#BF3338" />
+          <stop offset="1" stop-color="#F33" />
+        </linearGradient>
+        <path
+          id="XMLID_10_"
+          class="st1"
+          d="M721 410c0-33.6-8.8-65.1-24.3-92.4-41.1-42.3-130.5-52.1-152.7-.2-22.8 53.2 38.3 112.4 65 107.7 34-6-6-84-6-84 52 98 40 68-54 158S359 779 345 787c-.6.4-1.2.7-1.9 1h368.7c6.5 0 10.7-6.9 7.8-12.7l-96.4-190.8c-2.1-4.1-.6-9.2 3.4-11.5C683 540.6 721 479.8 721 410Z"
+        />
+      </g>
+      <linearGradient
+        id="XMLID_8_"
+        gradientUnits="userSpaceOnUse"
+        x1="429.386"
+        y1="517.156"
+        x2="469.386"
+        y2="559.156"
+      >
+        <stop offset="0" stop-color="#FF6533" />
+        <stop offset=".157" stop-color="#FF5633" />
+        <stop offset=".434" stop-color="#FF4333" />
+        <stop offset=".714" stop-color="#FF3733" />
+        <stop offset="1" stop-color="#F33" />
+      </linearGradient>
+      <path
+        id="XMLID_3_"
+        class="st2"
+        d="M345 787c14-8 110-198 204-288s106-60 54-158c0 0-199 279-271 417"
+      />
+      <g id="XMLID_7_">
+        <linearGradient
+          id="XMLID_9_"
+          gradientUnits="userSpaceOnUse"
+          x1="502.111"
+          y1="589.457"
+          x2="490.111"
+          y2="417.457"
+        >
+          <stop offset="0" stop-color="#FF6533" />
+          <stop offset=".157" stop-color="#FF5633" />
+          <stop offset=".434" stop-color="#FF4333" />
+          <stop offset=".714" stop-color="#FF3733" />
+          <stop offset="1" stop-color="#F33" />
+        </linearGradient>
+        <path
+          id="XMLID_12_"
+          class="st3"
+          d="M373 537c134.4-247.1 152-272 222-272 36.8 0 73.9 16.6 97.9 46.1-32.7-52.7-90.6-88-156.9-89H307.7c-4.8 0-8.7 3.9-8.7 8.7V691c13.6-35.1 36.7-85.3 74-154Z"
+        />
+      </g>
+      <linearGradient
+        id="XMLID_11_"
+        gradientUnits="userSpaceOnUse"
+        x1="450.125"
+        y1="514.209"
+        x2="506.943"
+        y2="552.846"
+      >
+        <stop offset="0" stop-color="#FBB040" />
+        <stop offset="1" stop-color="#FB8840" />
+      </linearGradient>
+      <path
+        id="XMLID_6_"
+        class="st4"
+        d="M549 499c-94 90-190 280-204 288s-37.5 9-50-5c-13.3-14.9-34-39 78-245 134.4-247.1 152-272 222-272 36.8 0 73.9 16.6 97.9 46.1 1.3 2.1 2.6 4.3 3.9 6.5-41.1-42.3-130.5-52.1-152.7-.2-22.8 53.2 38.3 112.4 65 107.7 34-6-6-84-6-84C655 439 643 409 549 499Z"
+      />
+      <linearGradient
+        id="XMLID_16_"
+        gradientUnits="userSpaceOnUse"
+        x1="508.333"
+        y1="295.758"
+        x2="450.333"
+        y2="933.758"
+      >
+        <stop offset="0" stop-color="#FFF" />
+        <stop offset="1" stop-color="#FFF" stop-opacity="0" />
+      </linearGradient>
+      <path
+        id="XMLID_13_"
+        class="st5"
+        d="M384 548c134.4-247.1 152-272 222-272 30.3 0 60.8 11.3 84 31.7-24-27.4-59.6-42.7-95-42.7-70 0-87.6 24.9-222 272-112 206-91.3 230.1-78 245 1.9 2.1 4.1 3.9 6.4 5.4-11.7-17-16.9-56.5 82.6-239.4Z"
+      />
+    </g>
+  </svg>
+);
+
 export const bash = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
     <path

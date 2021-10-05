@@ -27,6 +27,8 @@ const Project = ({
     backend: string[];
     buildTool: string[];
     api: string[];
+    testing: string[];
+    packageManager: string[];
   };
   onClick: () => void;
 }) => {
@@ -36,6 +38,8 @@ const Project = ({
     ...skills.backend,
     ...skills.buildTool,
     ...skills.api,
+    ...skills.testing,
+    ...skills.packageManager,
   ];
   const [toggleTech, setToggleTech] = createSignal(false);
   let buttonRef!: HTMLButtonElement;

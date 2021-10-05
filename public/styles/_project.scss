@@ -223,6 +223,7 @@
   font-size: 16px;
   border-radius: 10px;
   margin: 0 auto;
+  margin-top: auto;
   transition: 250ms border-color, 250ms color;
 
   &.focus-visible {
@@ -297,6 +298,16 @@
   .card-container {
     grid-template-columns: 1fr 1fr;
     column-gap: min(4vw, 50px);
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .card-content {
+    flex-basis: 100%;
   }
 }
 
