@@ -144,6 +144,8 @@ export const getTitle = (icon: string) => {
       return "NodeJS";
     case "npm":
       return "npm";
+    case "testcafe":
+      return "TestCafe";
     default:
       return capitalize(icon);
   }
