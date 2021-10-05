@@ -4,7 +4,7 @@
 }
 
 .tech-icons-container {
-  height: 50px;
+  min-height: 50px;
   margin: 18px 0;
 }
 
@@ -306,15 +306,15 @@
     column-gap: min(4vw, 50px);
   }
 
-  .card {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-
-  .card-content {
-    flex-basis: 100%;
-  }
+  //   .card {
+  //     display: flex;
+  //     flex-direction: column;
+  //     height: 100%;
+  //   }
+  //
+  //   .card-content {
+  //     flex-basis: 100%;
+  //   }
 }
 
 @media not all and (pointer: coarse) {
