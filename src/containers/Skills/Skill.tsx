@@ -13,7 +13,7 @@ const Skill = ({ title, icon }: ISkillProps) => {
     if (!Chrome || ChromeForAndroid) return;
     const target = e.currentTarget as HTMLElement;
 
-    target.classList.add("deactivate-css-transition");
+    target.classList.add("animate-on-radius");
     return;
   };
 

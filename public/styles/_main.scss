@@ -647,7 +647,7 @@ section {
 }
 // Chrome 92 has svg degradation animation
 .skills-item {
-  &.deactivate-css-transition {
+  &.animate-on-radius {
     .skill-icon__clipPath-circle {
       r: 0;
       transform: scale(1);
