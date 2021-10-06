@@ -645,6 +645,30 @@ section {
     }
   }
 }
+// Chrome 92 has svg degradation animation
+.skills-item {
+  &.deactivate-css-transition {
+    .skill-icon__clipPath-circle {
+      r: 0;
+      transform: scale(1);
+      transition: all 800ms;
+      transform-origin: center;
+      backface-visibility: hidden;
+    }
+
+    &:hover,
+    &:focus {
+      .skill-icon__clipPath-circle[fill="url(#match-background)"] {
+        r: 24;
+      }
+
+      .skill-icon__clipPath-circle {
+        r: 20;
+        transition: all 1500ms;
+      }
+    }
+  }
+}
 // .whoami {
 //   img {
 //     border-radius: 8px;
