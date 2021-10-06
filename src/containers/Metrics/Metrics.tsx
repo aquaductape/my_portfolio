@@ -6,6 +6,7 @@ import {
 } from "../../components/svg/icons/animated-icons";
 import { DrawingArrow, Percentage } from "../../components/svg/icons/icons";
 import S_Link from "../../components/S_Link/S_Link";
+import { Chrome, ChromeForAndroid } from "../../lib/browserInfo";
 import { getRootBounds } from "../../utils/getRootBounds";
 import { MainTimeline } from "../AboutMe/animateProjectPromise";
 
@@ -146,9 +147,18 @@ const Metrics = () => {
           <ul>
             <For each={madeWithItems}>
               {({ text, icon, link }) => {
+                const onMouseEnter = (e: MouseEvent) => {
+                  // Chrome 92 has svg degradation animation
+                  if (!Chrome || ChromeForAndroid) return;
+                  const target = e.currentTarget as HTMLElement;
+
+                  target.classList.add("animate-on-radius");
+                  return;
+                };
+
                 return (
                   <li class="list">
-                    <div class="list-inner">
+                    <div class="list-inner" onMouseEnter={onMouseEnter}>
                       {icon && <span class="list-icon">{icon(id)}</span>}
                       <span class="list-text">
                         {link ? (
