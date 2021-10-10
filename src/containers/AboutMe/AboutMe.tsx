@@ -166,7 +166,7 @@ const AboutMe = () => {
           <AboutMeLogo></AboutMeLogo>
           <div class="about-me-intro">
             <p class="about-me-intro__declaration">
-              Dedicated self-taught Front-End developer.
+              I'm a Front-End developer.
             </p>
             <p id="project-promises">Building projects that are:</p>
             <ul
