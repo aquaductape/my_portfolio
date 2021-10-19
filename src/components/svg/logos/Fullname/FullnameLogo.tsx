@@ -169,8 +169,10 @@ const FullnameLogo = (props: { ref: HTMLElement }) => {
   return (
     <>
       <svg
+        aria-hidden="true"
         // @ts-ignore
         ref={props.ref}
+        focusable="false"
         viewBox="0 0 49.913 38.486"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -226,6 +228,9 @@ const FullnameLogo = (props: { ref: HTMLElement }) => {
         </g>
       </svg>
       <svg
+        aria-hidden="true"
+        // @ts-ignore
+        focusable="false"
         viewBox="0 0 49.913 38.486"
         xmlns="http://www.w3.org/2000/svg"
         style="transform: translateY(-101.5%)"

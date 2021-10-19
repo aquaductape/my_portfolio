@@ -62,7 +62,7 @@ export default async (req) => {
       ${faviconFiles.join("")}
           
       <meta name="description"
-        content="Dedicated self-taught Front-End developer. Building projects that are responsive, performant and accessible." />
+        content="A Front-End developer that enjoys contributing and helping others! Building projects that are responsive, performant and accessible." />
       <meta name="author" content="Caleb Taylor" />
       <meta name="keywords" content="JavaScript, React, Front end, Fullstack, Sass, Los Angeles">
       <meta name="theme-color" content="#25385b">
@@ -83,7 +83,7 @@ export default async (req) => {
       <meta property="og:title" content="Caleb Taylor" />
       <meta property="og:image:alt" content="Caleb Taylor vector letters" />
       <meta property="og:description"
-        content="Dedicated self-taught Front-End developer. Building projects that are responsive, performant and accessible." />
+        content="A Front-End developer that enjoys contributing and helping others! Building projects that are responsive, performant and accessible." />
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://calebetaylor.com/" />
       <meta property="og:image" content="https://calebetaylor.com/open-graph/calebtaylorlogo_og-image1.png" />
@@ -92,7 +92,7 @@ export default async (req) => {
       <meta name="twitter:card" content="summary"> <!-- there are other card types you can choose -->
       <meta name="twitter:title" content="Caleb Taylor">
       <meta name="twitter:description"
-        content="Dedicated self-taught Front-End developer. Building projects that are responsive, performant and accessible.">
+        content="A Front-End developer that enjoys contributing and helping others! Building projects that are responsive, performant and accessible.">
         <meta name="twitter:image:alt" content="Caleb Taylor vector letters">
         <meta name="twitter:image" content="https://calebetaylor.com/open-graph/calebtaylorlogo_og-image1.png">
       ${script}

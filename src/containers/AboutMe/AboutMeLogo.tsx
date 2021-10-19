@@ -175,13 +175,13 @@ const AboutMeLogo = () => {
   });
 
   return (
-    <h1
-      id="about-me-logo"
-      class="about-me-logo"
-      aria-label="Caleb Taylor"
-      tabindex="-1"
-    >
-      <div class="sentinel-hero-animation" ref={sentinelHeroAnimationEl}></div>
+    <h1 id="about-me-logo" class="about-me-logo" tabindex="-1">
+      <span class="sr-only">Caleb Taylor</span>
+      <div
+        class="sentinel-hero-animation"
+        aria-hidden="true"
+        ref={sentinelHeroAnimationEl}
+      ></div>
       <FullnameLogo ref={svgEl}></FullnameLogo>
     </h1>
   );
