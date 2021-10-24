@@ -6,25 +6,23 @@ const CONSTANTS = {
   links: ["skills", "projects", "contact"],
   projects: [
     {
-      project: "3nRow",
-      about:
-        "A versatile tic-tac-toe game! Has multiplayer, color/shape choices, play against AI, along with neat animations.",
+      project: "Solid Dismiss",
+      about: `A library that handles "click outside" behavior to close dropdowns/popups for Solid.`,
       img: {
-        src: threeNRowHeroImg,
-        alt: "screenshot of tic-tac-toe game",
+        src: solidDismissHeroImg,
+        alt: "banner of solid dismiss",
       },
       links: {
-        website: "https://aquaductape.github.io/3nRow/",
-        sourceCode: "https://github.com/aquaductape/3nRow",
+        website: "https://aquaductape.github.io/solid-dismiss/",
+        sourceCode: "https://github.com/aquaductape/solid-dismiss",
       },
       skills: {
-        frontend: ["html", "sass", "svg", "typescript"],
-        backend: ["colyseus", "nodejs"],
-        buildTool: ["webpack", "bash"],
+        frontend: ["solidJS", "typescript", "sass"],
+        backend: [],
+        buildTool: ["vite", "rollup"],
         api: [],
-
-        testing: [],
-        packageManager: [],
+        testing: ["testcafe"],
+        packageManager: ["npm"],
       },
     },
     {
@@ -49,23 +47,24 @@ const CONSTANTS = {
       },
     },
     {
-      project: "Solid Dismiss",
-      about: `A library that handles "click outside" behavior to close dropdowns/popups for Solid.`,
+      project: "3nRow",
+      about:
+        "A versatile tic-tac-toe game! Has multiplayer, color/shape choices, play against AI, along with neat animations.",
       img: {
-        src: solidDismissHeroImg,
-        alt: "banner of solid dismiss",
+        src: threeNRowHeroImg,
+        alt: "screenshot of tic-tac-toe game",
       },
       links: {
-        website: "https://aquaductape.github.io/solid-dismiss/",
-        sourceCode: "https://github.com/aquaductape/solid-dismiss",
+        website: "https://aquaductape.github.io/3nRow/",
+        sourceCode: "https://github.com/aquaductape/3nRow",
       },
       skills: {
-        frontend: ["solid", "typescript", "css"],
-        backend: [],
-        buildTool: ["rollup"],
+        frontend: ["html", "sass", "svg", "typescript"],
+        backend: ["colyseus", "nodejs"],
+        buildTool: ["webpack", "bash"],
         api: [],
-        testing: ["testcafe"],
-        packageManager: ["npm"],
+        testing: [],
+        packageManager: [],
       },
     },
   ],

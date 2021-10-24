@@ -16,8 +16,9 @@ import {
   webpack,
   npm,
   testcafe,
-  solid,
+  solidJS,
   rollup,
+  vite,
 } from "../../components/svg/icons/programming-icons";
 import { capitalize } from "../../utils";
 
@@ -36,7 +37,8 @@ const programingIcons = {
   typescript,
   webpack,
   rollup,
-  solid,
+  solidJS,
+  vite,
   testcafe,
   npm,
 };

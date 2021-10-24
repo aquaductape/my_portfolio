@@ -21,7 +21,7 @@ const Skills = () => {
     [typescript, "TypeScript"],
     [react, "React"],
     [redux, "Redux"],
-    [solidJS, "Solid"],
+    [solidJS, "SolidJS"],
     [git, "Git"],
     // [npm, "NPM"]
     // [nodejs, "NodeJS"],

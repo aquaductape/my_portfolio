@@ -17,7 +17,7 @@ const Metrics = () => {
     link?: string;
   }[] = [
     {
-      text: "Solid",
+      text: "SolidJS",
       icon: solidJS,
       link: "https://www.solidjs.com/",
     },

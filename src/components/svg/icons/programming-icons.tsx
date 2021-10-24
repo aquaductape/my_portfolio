@@ -211,7 +211,7 @@ export const testcafe = () => (
   </svg>
 );
 
-export const solid = () => (
+export const solidJS = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
     <defs>
       <linearGradient
@@ -292,6 +292,46 @@ export const solid = () => (
       d="M114 115a45 45 0 00-48-15L4 120s53 40 94 30l3-1c17-5 23-21 13-34z"
       fill="url(#SolidJS-d)"
       transform="translate(1.296 2.33) scale(.1761)"
+    />
+  </svg>
+);
+
+export const vite = () => (
+  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient
+        id="vite-icon-b"
+        x1="6.0002"
+        x2="235"
+        y1="33"
+        y2="344"
+        gradientTransform="matrix(.0714 0 0 .0714 1.3576 1.8945)"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stop-color="#41D1FF" offset="0" />
+        <stop stop-color="#BD34FE" offset="1" />
+      </linearGradient>
+      <linearGradient
+        id="vite-icon-a"
+        x1="194.65"
+        x2="236.08"
+        y1="8.8182"
+        y2="292.99"
+        gradientTransform="matrix(.0714 0 0 .0714 1.3576 1.8945)"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stop-color="#FFEA83" offset="0" />
+        <stop stop-color="#FFDD35" offset=".0833" />
+        <stop stop-color="#FFA800" offset="1" />
+      </linearGradient>
+    </defs>
+    <path
+      d="m29.89 6.1442-13.136 23.49c-.2712.485-.968.4878-1.2433.0052L2.1137 6.1464c-.3-.526.1498-1.163.7458-1.0565l13.151 2.3506a.714.714 0 0 0 .2537-.0004l12.876-2.3468c.594-.1083 1.0459.5238.7512 1.0508z"
+      fill="url(#vite-icon-b)"
+    />
+    <path
+      d="m22.274 2.0069-9.7214 1.9049a.357.357 0 0 0-.2877.3292l-.598 10.1c-.014.238.2044.4225.4366.369l2.7066-.6246c.2532-.0584.482.1646.43.4193l-.8042 3.9376c-.054.265.1947.4916.4535.413l1.6717-.508c.2592-.0786.5082.1487.4534.4139l-1.2779 6.185c-.08.387.4347.598.6493.2662l.1433-.2215 7.9215-15.809c.1327-.2647-.096-.5665-.3868-.5104l-2.786.5377c-.2618.0505-.4846-.1934-.4107-.4495l1.8184-6.3035c.074-.2566-.1495-.5006-.4116-.4492z"
+      fill="url(#vite-icon-a)"
     />
   </svg>
 );
