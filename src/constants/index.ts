@@ -7,7 +7,7 @@ const CONSTANTS = {
   projects: [
     {
       project: "Solid Dismiss",
-      about: `A library that handles "click outside" behavior to close dropdowns/popups for Solid.`,
+      about: `A library that handles "click outside" behavior to close dropdowns/popups for SolidJS.`,
       img: {
         src: solidDismissHeroImg,
         alt: "banner of solid dismiss",

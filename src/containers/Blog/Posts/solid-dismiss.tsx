@@ -61,7 +61,13 @@ const PostSolidDismiss = () => {
       <Heading2>Summary</Heading2>
       <p>
         It’s a utility library, for developers, to create “click outside”
-        behavior to close dropdown/popup menus.
+        behavior to close dropdown/popup menus. It's published as an npm
+        package,{" "}
+        <HyperLink
+          text="https://www.npmjs.com/package/solid-dismiss"
+          href="https://www.npmjs.com/package/solid-dismiss"
+        />
+        .
       </p>
       <p>
         Closing dropdowns are triggered either by clicking outside the dropdown,
@@ -71,7 +77,7 @@ const PostSolidDismiss = () => {
       <p>
         I created this library to contribute to Solid's new growing ecosystem,
         in order to encourage developer adoption towards the{" "}
-        <HyperLink text="Solid" href="https://www.solidjs.com/"></HyperLink>{" "}
+        <HyperLink text="SolidJS" href="https://www.solidjs.com/"></HyperLink>{" "}
         framework.
       </p>
       <p style="margin-top: 40px; font-size: 20px;">Tools & Technologies</p>
