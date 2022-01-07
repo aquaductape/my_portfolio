@@ -67,7 +67,7 @@ const Metrics = () => {
       lightHouseInfo: true,
     },
     {
-      text: "579kB (uncompressed) on initial page load",
+      text: "537kB (uncompressed) on initial page load",
     },
     {
       text: "142 files in source code",
