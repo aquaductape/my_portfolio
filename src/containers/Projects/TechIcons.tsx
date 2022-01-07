@@ -1,25 +1,44 @@
 import { Component, For, JSX } from "solid-js";
 import { Cevron } from "../../components/svg/icons/icons";
-import {
-  bash,
-  clarifai,
-  colyseus,
-  css,
-  html,
-  javascript,
-  nodejs,
-  react,
-  redux,
-  sass,
-  svg,
-  typescript,
-  webpack,
-  npm,
-  testcafe,
-  solidJS,
-  rollup,
-  vite,
-} from "../../components/svg/icons/programming-icons";
+// import {
+//   bash,
+//   clarifai,
+//   colyseus,
+//   css,
+//   html,
+//   javascript,
+//   nodejs,
+//   react,
+//   redux,
+//   sass,
+//   svg,
+//   typescript,
+//   webpack,
+//   npm,
+//   testcafe,
+//   solidJS,
+//   rollup,
+//   vite,
+// } from "../../components/svg/icons/programming-icons";
+import bash from "../../assets/icons/bash.svg";
+import clarifai from "../../assets/icons/clarifai.svg";
+import colyseus from "../../assets/icons/colyseus.svg";
+import css from "../../assets/icons/css.svg";
+import html from "../../assets/icons/html.svg";
+import javascript from "../../assets/icons/javascript.svg";
+import nodejs from "../../assets/icons/nodejs.svg";
+import react from "../../assets/icons/react.svg";
+import redux from "../../assets/icons/redux.svg";
+import sass from "../../assets/icons/sass.svg";
+import svg from "../../assets/icons/svg.svg";
+import typescript from "../../assets/icons/typescript.svg";
+import webpack from "../../assets/icons/webpack.svg";
+import npm from "../../assets/icons/npm.svg";
+import testcafe from "../../assets/icons/testcafe.svg";
+import solidJS from "../../assets/icons/solidJS.svg";
+import rollup from "../../assets/icons/rollup.svg";
+import vite from "../../assets/icons/vite.svg";
+
 import { capitalize } from "../../utils";
 
 const programingIcons = {
@@ -43,11 +62,25 @@ const programingIcons = {
   npm,
 };
 
-const Icon = ({ name, icon }: { name: string; icon: () => JSX.Element }) => {
+const Icon = ({
+  name,
+  icon,
+  title,
+}: {
+  name: string;
+  icon: string;
+  title: string;
+}) => {
   return (
-    <div class="icon" data-flip-key={`programming-icon-${name}`}>
-      {icon()}
-    </div>
+    <img
+      class="icon"
+      src={icon}
+      alt={title}
+      data-flip-key={`programming-icon-${name}`}
+    />
+    // <div class="icon" data-flip-key={`programming-icon-${name}`}>
+    //   {icon()}
+    // </div>
   );
 };
 
@@ -66,8 +99,10 @@ export const TechIconsCollapsed = ({ icons }: { icons: string[] }) => {
       <div class="icons">
         <For each={icons}>
           {(icon) => {
-            const iconJSX = programingIcons[icon as "bash"];
-            return <Icon name={icon} icon={iconJSX}></Icon>;
+            const title = getTitle(icon);
+            // const iconJSX = programingIcons[icon as "bash"];
+            const iconImg = programingIcons[icon as "bash"];
+            return <Icon name={icon} title={title} icon={iconImg}></Icon>;
           }}
         </For>
       </div>
@@ -157,13 +192,14 @@ const TechIconsExpandedInner = ({ icons }: { icons: string[] }) => {
   return (
     <For each={icons}>
       {(icon) => {
-        const iconJSX = programingIcons[icon as "bash"];
+        // const iconJSX = programingIcons[icon as "bash"];
+        const iconImg = programingIcons[icon as "bash"];
 
         const title = getTitle(icon);
 
         return (
           <div class="icon-box">
-            <Icon name={icon} icon={iconJSX}></Icon>
+            <Icon name={icon} title={title} icon={iconImg}></Icon>
             <div class="title">{title}</div>
           </div>
         );

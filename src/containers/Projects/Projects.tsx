@@ -9,14 +9,14 @@ import {
 import { GlobalContext } from "../../context/context";
 import CONSTANTS from "../../constants";
 import { capitalize } from "../../utils";
-// import { TechIconsCollapsed, TechIconsExpanded } from "./TechIcons";
 import { flip } from "../../utils/flip";
 import LoaderLogo from "../../components/Loader/LoaderLogo";
 import {
   iconLinkJSX,
   iconSourceCodeJSX,
 } from "../../components/font-awesome/icons";
-const TechIcons = lazy(() => import("./TechIcons"));
+import TechIcons from "./TechIcons";
+// const TechIcons = lazy(() => import("./TechIcons"));
 
 const Project = ({
   name,
@@ -27,7 +27,7 @@ const Project = ({
   onClick: onClickReadMore,
 }: {
   name: string;
-  img: { src: string; alt: string };
+  img: { src: { png: string; avif: string }; alt: string };
   about: string;
   links: { website: string; sourceCode: string };
   skills: {
@@ -124,13 +124,16 @@ const Project = ({
   return (
     <div data-flip-key={`card-${name}`} class="card">
       <div class="card-img-container">
-        <img
-          class="card-img"
-          src={img.src}
-          alt={img.alt}
-          data-flip-key={`img-${name}`}
-          onClick={onClickReadMore}
-        />
+        <picture>
+          <source srcset={img.src.avif} />
+          <img
+            class="card-img"
+            src={img.src.png}
+            alt={img.alt}
+            data-flip-key={`img-${name}`}
+            onClick={onClickReadMore}
+          />
+        </picture>
 
         <div class="card-link-container">
           <a

@@ -103,6 +103,7 @@ export default [
         include: [
           "**/*.pdf",
           "**/*.svg",
+          "**/*.avif",
           "**/*.png",
           "**/*.jp(e)?g",
           "**/*.gif",
@@ -157,6 +158,7 @@ export default [
         publicPath: "assets/",
         include: [
           "**/*.pdf",
+          "**/*.avif",
           "**/*.svg",
           "**/*.png",
           "**/*.jp(e)?g",

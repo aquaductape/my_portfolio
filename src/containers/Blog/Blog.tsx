@@ -323,12 +323,15 @@ const BlogInner = (props: { setShowBlog: (v: boolean) => boolean }) => {
               class={style["hero-img-sentinel"]}
               ref={heroImgSentinelRef}
             ></div>
-            <img
-              class={style["hero-img"]}
-              src={project.img.src}
-              alt={project.img.alt}
-              ref={heroImgRef}
-            />
+            <picture>
+              <source srcset={project.img.src.avif} />
+              <img
+                class={style["hero-img"]}
+                src={project.img.src.png}
+                alt={project.img.alt}
+                ref={heroImgRef}
+              />
+            </picture>
           </div>
           <div class={style["links"]}>
             <div class={style["inner"]}>

@@ -1,6 +1,9 @@
-import threeNRowHeroImg from "../assets/3nRow/img/hero.png";
-import facifyHeroImg from "../assets/facify/img/hero.png";
-import solidDismissHeroImg from "../assets/solid-dismiss/img/hero.png";
+import threeNRowHeroImgPng from "../assets/3nRow/img/hero.png";
+import facifyHeroImgPng from "../assets/facify/img/hero.png";
+import solidDismissHeroImgPng from "../assets/solid-dismiss/img/hero.png";
+import threeNRowHeroImgAvif from "../assets/3nRow/img/hero.avif";
+import facifyHeroImgAvif from "../assets/facify/img/hero.avif";
+import solidDismissHeroImgAvif from "../assets/solid-dismiss/img/hero.avif";
 
 const CONSTANTS = {
   links: ["skills", "projects", "contact"],
@@ -9,7 +12,10 @@ const CONSTANTS = {
       project: "Solid Dismiss",
       about: `A library that handles "click outside" behavior to close dropdowns/popups for SolidJS.`,
       img: {
-        src: solidDismissHeroImg,
+        src: {
+          avif: solidDismissHeroImgAvif,
+          png: solidDismissHeroImgPng,
+        },
         alt: "banner of solid dismiss",
       },
       links: {
@@ -30,7 +36,10 @@ const CONSTANTS = {
       about:
         "Locate human faces from an image. Also estimates age, gender and multicultural appearance.",
       img: {
-        src: facifyHeroImg,
+        src: {
+          avif: facifyHeroImgAvif,
+          png: facifyHeroImgPng,
+        },
         alt: "screenshot of facify application",
       },
       links: {
@@ -51,7 +60,10 @@ const CONSTANTS = {
       about:
         "A versatile tic-tac-toe game! Has multiplayer, color/shape choices, play against AI, along with neat animations.",
       img: {
-        src: threeNRowHeroImg,
+        src: {
+          avif: threeNRowHeroImgAvif,
+          png: threeNRowHeroImgPng,
+        },
         alt: "screenshot of tic-tac-toe game",
       },
       links: {
