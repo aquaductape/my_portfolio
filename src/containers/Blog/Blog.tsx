@@ -324,7 +324,7 @@ const BlogInner = (props: { setShowBlog: (v: boolean) => boolean }) => {
               ref={heroImgSentinelRef}
             ></div>
             <picture>
-              <source srcset={project.img.src.avif} />
+              <source srcset={project.img.src.avif} type="image/avif" />
               <img
                 class={style["hero-img"]}
                 src={project.img.src.png}

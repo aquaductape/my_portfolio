@@ -125,7 +125,7 @@ const Project = ({
     <div data-flip-key={`card-${name}`} class="card">
       <div class="card-img-container">
         <picture>
-          <source srcset={img.src.avif} />
+          <source srcset={img.src.avif} type="image/avif" />
           <img
             class="card-img"
             src={img.src.png}
