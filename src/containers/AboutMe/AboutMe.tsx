@@ -59,7 +59,7 @@ const AboutMe = () => {
     },
     {
       ariaLabel: "LinkedIn",
-      href: "https://github.com/aquaductape",
+      href: "https://www.linkedin.com/in/caleb1taylor2/",
       icon: iconLinkedinJSX,
     },
     {
