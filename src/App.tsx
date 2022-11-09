@@ -54,9 +54,9 @@ function App() {
           <SpySection hash="projects" hasNavLink={true}>
             <Projects></Projects>
           </SpySection>
-          <SpySection hash="recent-coding-activity">
+          {/* <SpySection hash="recent-coding-activity">
             <Graph></Graph>
-          </SpySection>
+          </SpySection> */}
           <SpySection hash="contact" hasNavLink={true}>
             <Contact></Contact>
           </SpySection>
