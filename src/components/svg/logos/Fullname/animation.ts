@@ -103,8 +103,11 @@ const animateStutter = ({
     stutterRevert({ max, paths, steps, x, y });
 
     setTimeout(() => {
-      paths.forEach((path) => (path.style.transition = ""));
+      paths.forEach((path) => (path.style.transition = "transform 50ms"));
     }, 1200);
+    setTimeout(() => {
+      paths.forEach((path) => (path.style.transition = ""));
+    }, 4200);
   }, 500);
 
   if (stutter >= 25) {

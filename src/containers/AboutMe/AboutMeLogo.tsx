@@ -175,7 +175,12 @@ const AboutMeLogo = () => {
   });
 
   return (
-    <h1 id="about-me-logo" class="about-me-logo" tabindex="-1">
+    <h1
+      id="about-me-logo"
+      class="about-me-logo"
+      tabindex="-1"
+      style={{ "will-change": "transform" }}
+    >
       <span class="sr-only">Caleb Taylor</span>
       <div
         class="sentinel-hero-animation"
