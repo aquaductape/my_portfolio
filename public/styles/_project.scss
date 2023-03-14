@@ -151,6 +151,11 @@
   box-shadow: 0 14px 24px -6px #13131391;
 }
 
+.card-img-not-clickable {
+  cursor: auto !important;
+  transform: none !important;
+}
+
 .card-title {
   display: flex;
   font-size: 25px;

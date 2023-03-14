@@ -1,13 +1,66 @@
 import threeNRowHeroImgPng from "../assets/3nRow/img/hero.png";
 import facifyHeroImgPng from "../assets/facify/img/hero.png";
 import solidDismissHeroImgPng from "../assets/solid-dismiss/img/hero.png";
+import solidPrimitivesHeroImgPng from "../assets/solid-primitives/img/hero.avif";
+import htmlToSolidJSXHeroImgPng from "../assets/html-to-solidjsx/img/hero.png";
 import threeNRowHeroImgAvif from "../assets/3nRow/img/hero.avif";
 import facifyHeroImgAvif from "../assets/facify/img/hero.avif";
 import solidDismissHeroImgAvif from "../assets/solid-dismiss/img/hero.avif";
+import solidPrimitivesHeroImgAvif from "../assets/solid-primitives/img/hero.avif";
+import htmlToSolidJSXHeroImgAvif from "../assets/html-to-solidjsx/img/hero.avif";
 
 const CONSTANTS = {
   links: ["skills", "projects", "contact"],
   projects: [
+    {
+      project: "Solid Primitives Website",
+      about: `A documentation website for Solid-Primitives, a library of high-quality primitives that extend SolidJS reactivity.`,
+      img: {
+        src: {
+          avif: solidPrimitivesHeroImgAvif,
+          png: solidPrimitivesHeroImgPng,
+        },
+        alt: "banner of solid primitives",
+      },
+      links: {
+        website: "https://solid-primitives.netlify.app/",
+        sourceCode:
+          "https://github.com/solidjs-community/solid-primitives/tree/main/site",
+      },
+      skills: {
+        frontend: ["solidJS", "typescript", "tailwind"],
+        backend: [],
+        buildTool: ["vite", "esbuild"],
+        api: [],
+        testing: [],
+        packageManager: ["pnpm"],
+      },
+      hasBlog: false,
+    },
+    {
+      project: "HTML To SolidJSX",
+      about: `An online HTML to Solid JSX converter, making Solid's goal to stay close to HTML standards, a reality`,
+      img: {
+        src: {
+          avif: htmlToSolidJSXHeroImgAvif,
+          png: htmlToSolidJSXHeroImgPng,
+        },
+        alt: "banner of HTML to SolidJSX",
+      },
+      links: {
+        website: "https://solidjs-community.github.io/html-to-solidjsx/",
+        sourceCode: "https://github.com/solidjs-community/html-to-solidjsx",
+      },
+      skills: {
+        frontend: ["solidJS", "typescript", "unocss"],
+        backend: [],
+        buildTool: ["vite"],
+        api: [],
+        testing: [],
+        packageManager: ["pnpm"],
+      },
+      hasBlog: false,
+    },
     {
       project: "Solid Dismiss",
       about: `A library that handles "click outside" behavior to close dropdowns/popups for SolidJS.`,
@@ -30,6 +83,7 @@ const CONSTANTS = {
         testing: ["testcafe"],
         packageManager: ["npm"],
       },
+      hasBlog: true,
     },
     {
       project: "facify",
@@ -54,6 +108,7 @@ const CONSTANTS = {
         testing: [],
         packageManager: [],
       },
+      hasBlog: true,
     },
     {
       project: "3nRow",
@@ -78,6 +133,7 @@ const CONSTANTS = {
         testing: [],
         packageManager: [],
       },
+      hasBlog: true,
     },
   ],
 };

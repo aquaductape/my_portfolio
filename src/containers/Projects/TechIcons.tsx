@@ -30,6 +30,10 @@ import nodejs from "../../assets/icons/nodejs.svg";
 import react from "../../assets/icons/react.svg";
 import redux from "../../assets/icons/redux.svg";
 import sass from "../../assets/icons/sass.svg";
+import esbuild from "../../assets/icons/esbuild.svg";
+import tailwind from "../../assets/icons/tailwind.svg";
+import unocss from "../../assets/icons/unocss.svg";
+import pnpm from "../../assets/icons/pnpm.svg";
 import svg from "../../assets/icons/svg.svg";
 import typescript from "../../assets/icons/typescript.svg";
 import webpack from "../../assets/icons/webpack.svg";
@@ -46,6 +50,7 @@ const programingIcons = {
   clarifai,
   colyseus,
   css,
+  unocss,
   html,
   javascript,
   nodejs,
@@ -60,6 +65,9 @@ const programingIcons = {
   vite,
   testcafe,
   npm,
+  esbuild,
+  tailwind,
+  pnpm,
 };
 
 const Icon = ({

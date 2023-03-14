@@ -4,6 +4,7 @@ import {
   For,
   lazy,
   onMount,
+  Show,
   useContext,
 } from "solid-js";
 import { GlobalContext } from "../../context/context";
@@ -24,6 +25,7 @@ const Project = ({
   about,
   links,
   skills,
+  hasBlog,
   onClick: onClickReadMore,
 }: {
   name: string;
@@ -38,6 +40,7 @@ const Project = ({
     testing: string[];
     packageManager: string[];
   };
+  hasBlog: boolean;
   onClick: () => void;
 }) => {
   const [context] = useContext(GlobalContext);
@@ -127,11 +130,14 @@ const Project = ({
         <picture>
           <source srcset={img.src.avif} type="image/avif" />
           <img
-            class="card-img"
+            class={`card-img ${!hasBlog ? "card-img-not-clickable" : ""}`}
             src={img.src.png}
             alt={img.alt}
             data-flip-key={`img-${name}`}
-            onClick={onClickReadMore}
+            onClick={() => {
+              if (!hasBlog) return;
+              onClickReadMore();
+            }}
           />
         </picture>
 
@@ -191,16 +197,18 @@ const Project = ({
         </button> */}
 
         <p class="card-pg">{about}</p>
-        <button class="card-read-more" onClick={onClickReadMore}>
-          <span>Read More</span>
-          {context.blog.import &&
-            !context.blog.finishedStaging &&
-            context.blog.type === name && (
-              <span class="card-loader Reveal-delay">
-                <LoaderLogo></LoaderLogo>
-              </span>
-            )}
-        </button>
+        <Show when={hasBlog}>
+          <button class="card-read-more" onClick={onClickReadMore}>
+            <span>Read More</span>
+            {context.blog.import &&
+              !context.blog.finishedStaging &&
+              context.blog.type === name && (
+                <span class="card-loader Reveal-delay">
+                  <LoaderLogo></LoaderLogo>
+                </span>
+              )}
+          </button>
+        </Show>
       </div>
     </div>
   );
@@ -245,7 +253,7 @@ const Projects = () => {
       <h2 class="section-title">Projects</h2>
       <div class="card-container">
         <For each={projects}>
-          {({ project, about, img, links, skills }) => (
+          {({ project, about, img, links, skills, hasBlog }) => (
             <div class="flex-gap">
               <Project
                 name={project}
@@ -253,8 +261,9 @@ const Projects = () => {
                 img={img}
                 links={links}
                 skills={skills}
+                hasBlog={hasBlog}
                 onClick={() => onClickReadMore(project as "3nRow")}
-              ></Project>
+              />
             </div>
           )}
         </For>

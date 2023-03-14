@@ -9,6 +9,7 @@ import {
   sass,
   typescript,
   solidJS,
+  tailwind,
 } from "../../components/svg/icons/animated-icons";
 import Skill from "./Skill";
 
@@ -17,6 +18,7 @@ const Skills = () => {
     [html, "HTML"],
     [css, "CSS"],
     [sass, "Sass"],
+    [tailwind, "Tailwind CSS"],
     [js, "JavaScript"],
     [typescript, "TypeScript"],
     [react, "React"],
