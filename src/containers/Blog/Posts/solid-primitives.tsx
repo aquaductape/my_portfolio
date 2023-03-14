@@ -14,7 +14,6 @@ import searchFunctionVid from "../../../assets/solid-primitives/video/searchFunc
 import primitiveTitleActiveElementImg from "../../../assets/solid-primitives/img/primitive-title-active-element.png";
 import primitiveTitleDifferentSizesImg from "../../../assets/solid-primitives/img/primitive-title-different-sizes.png";
 import primitiveTitleHugeImg from "../../../assets/solid-primitives/img/primitive-title-huge.png";
-import markdownToHTMLImg from "../../../assets/solid-primitives/img/markdown-to-html.png";
 import buildSiteImg from "../../../assets/solid-primitives/img/build-site.png";
 
 const PostSolidPrimitives = () => {
@@ -80,7 +79,8 @@ const PostSolidPrimitives = () => {
         That's why I took it upon myself to create this documentation site and
         have primitive information more accessable, as well with the help of{" "}
         <HyperLink text="thetarnav" href="https://twitter.com/thetarnav" /> when
-        it came to the strategy of pushing the site live on Netlify.
+        it came to the strategy of pushing the pre-generated site live on
+        Netlify.
       </p>
       <p style="margin-top: 40px; font-size: 20px;">Tools & Technologies</p>
       <TechList
@@ -188,16 +188,14 @@ const PostSolidPrimitives = () => {
       ></ImgContainer>
       <Heading2>Build Site Scripts</Heading2>
       <p>
-        Since the repository contains over 40 packages, it required a writing
-        pre-build script to build the html table that contains the primitives
-        information, as well as the routes where I used MDX to convert
-        individual package README markdown file to package route html page.
-      </p>
-      <p>
         Building the site required writing prebuild script using NodeJS to read
         the repos "./package/*" files such their package.json, README, and
         typescript files, to generate the route pages and html primitive table
         list.
+      </p>
+      <p>
+        The repository contains over 40 primitives, so that means 40+ routes and
+        a lot of rows on the html table list.
       </p>
       <p>Here's an extremely simplified graphic below</p>
       <ImgContainer
