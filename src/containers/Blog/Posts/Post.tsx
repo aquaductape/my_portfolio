@@ -65,16 +65,19 @@ export const ImgContainer = ({
   alt,
   styleSize,
   src,
+  height,
 }: {
   src: string;
   alt: string;
   styleSize?: "xs-small" | "small" | "medium";
+  height?: string;
 }) => {
   return (
     <div
       class={`${style["img-container"]} ${
         styleSize ? style[`media-${styleSize}`] : ""
       }`}
+      style={height ? { height } : undefined}
     >
       <img src={src} alt={alt} loading="lazy" />
     </div>

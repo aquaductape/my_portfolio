@@ -111,7 +111,7 @@
   height: 100%;
   max-width: 800px;
   margin: 0 auto;
-  padding: 0 12px;
+  padding: 0 55px;
 }
 
 .util-bar {
@@ -178,6 +178,9 @@
 }
 
 .title {
+  display: flex;
+  justify-content: center;
+  width: 100%;
   position: relative;
   font-size: 25px;
   font-weight: bold;
@@ -186,6 +189,9 @@
   user-select: none;
 
   span {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
     cursor: pointer;
     display: inline-block;
   }

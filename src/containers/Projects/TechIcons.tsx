@@ -42,6 +42,7 @@ import testcafe from "../../assets/icons/testcafe.svg";
 import solidJS from "../../assets/icons/solidJS.svg";
 import rollup from "../../assets/icons/rollup.svg";
 import vite from "../../assets/icons/vite.svg";
+import mdx from "../../assets/icons/mdx.svg";
 
 import { capitalize } from "../../utils";
 
@@ -68,6 +69,7 @@ const programingIcons = {
   esbuild,
   tailwind,
   pnpm,
+  mdx,
 };
 
 const Icon = ({
@@ -183,12 +185,15 @@ export const getTitle = (icon: string) => {
   switch (icon) {
     case "css":
     case "html":
+    case "mdx":
     case "svg":
       return icon.toUpperCase();
     case "nodejs":
       return "NodeJS";
+    case "pnpm":
     case "npm":
-      return "npm";
+    case "esbuild":
+      return icon;
     case "testcafe":
       return "TestCafe";
     default:

@@ -68,10 +68,10 @@ const PostSolidDismiss = () => {
         />
         , which is currently used by{" "}
         <HyperLink
-          text="29 accounts"
+          text="40 accounts"
           href="https://github.com/aquaductape/solid-dismiss/network/dependents"
         />{" "}
-        including SolidJS.
+        including sites that belong to SolidJS.
       </p>
       <p>
         Closing dropdowns are triggered either by clicking outside the dropdown,

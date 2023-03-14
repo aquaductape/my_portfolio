@@ -3,23 +3,35 @@ import PostFacify from "./Posts/facify";
 import style from "./Blog.module.scss";
 import { AsideTableOfContents } from "./TableOfContents/TableOfContents";
 import PostSolidDismiss from "./Posts/solid-dismiss";
+import PostSolidPrimitives from "./Posts/solid-primitives";
 
-const BlogPage = ({ type }: { type: "3nRow" | "facify" | "Solid Dismiss" }) => {
+const BlogPage = ({
+  type,
+}: {
+  type:
+    | "3nRow"
+    | "facify"
+    | "Solid Dismiss"
+    | "Solid Primitives Website"
+    | "HTML To SolidJSX";
+}) => {
   const getPost = () => {
     switch (type) {
       case "3nRow":
-        return <Post3nRow></Post3nRow>;
+        return <Post3nRow />;
       case "facify":
-        return <PostFacify></PostFacify>;
+        return <PostFacify />;
       case "Solid Dismiss":
-        return <PostSolidDismiss></PostSolidDismiss>;
+        return <PostSolidDismiss />;
+      case "Solid Primitives Website":
+        return <PostSolidPrimitives />;
     }
   };
 
   return (
     <div class={style["blog-page"]}>
       <div class={style["content"]}>
-        <AsideTableOfContents></AsideTableOfContents>
+        <AsideTableOfContents />
         {getPost()}
       </div>
     </div>

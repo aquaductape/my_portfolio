@@ -30,12 +30,12 @@ const CONSTANTS = {
       skills: {
         frontend: ["solidJS", "typescript", "tailwind"],
         backend: [],
-        buildTool: ["vite", "esbuild"],
+        buildTool: ["vite", "esbuild", "mdx"],
         api: [],
         testing: [],
         packageManager: ["pnpm"],
       },
-      hasBlog: false,
+      hasBlog: true,
     },
     {
       project: "HTML To SolidJSX",
