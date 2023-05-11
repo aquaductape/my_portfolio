@@ -23,7 +23,7 @@ const CONSTANTS = {
         alt: "banner of solid primitives",
       },
       links: {
-        website: "https://solid-primitives.netlify.app/",
+        website: "https://primitives.solidjs.community/",
         sourceCode:
           "https://github.com/solidjs-community/solid-primitives/tree/main/site",
       },
