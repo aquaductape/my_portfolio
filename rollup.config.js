@@ -58,6 +58,10 @@ export default [
             dest: "build/fonts",
           },
           {
+            src: ["public/misc/*"],
+            dest: "build/misc",
+          },
+          {
             src: ["public/styles/index.scss"],
             dest: "build/styles",
             transform: (contents, filename) => {
