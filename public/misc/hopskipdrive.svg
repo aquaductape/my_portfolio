@@ -23,17 +23,7 @@
           stroke-linejoin="round"
           stroke-dasharray="280"
           stroke-dashoffset="280"
-        >
-          <animate
-            attributeName="stroke-dashoffset"
-            calcMode="spline"
-            keySplines=".31,.24,.41,.88"
-            keyTimes="0;1"
-            values="280;0"
-            dur="2s"
-            fill="freeze"
-          />
-        </path>
+        />
       </g>
       <g
         id="buckle"
@@ -69,4 +59,14 @@
       >
         <mpath href="#path-rail" />
       </animateMotion>
+      <animate
+        href="#path-stroke"
+        attributeName="stroke-dashoffset"
+        calcMode="spline"
+        keySplines=".31,.24,.41,.88"
+        keyTimes="0;1"
+        values="280;0"
+        dur="2s"
+        fill="freeze"
+      />
     </svg>
