@@ -56,6 +56,7 @@
         calcMode="spline"
         keySplines=".31,.24,.41,.88"
         keyTimes="0;1"
+        keyPoints="0;1"
       >
         <mpath href="#path-rail" />
       </animateMotion>
