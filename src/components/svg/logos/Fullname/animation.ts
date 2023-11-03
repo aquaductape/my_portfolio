@@ -26,6 +26,7 @@ export const createDuplicatedPaths = (svgEl: HTMLElement) => {
 
   paths.forEach((path) => {
     fullNameShadowEl.appendChild(path);
+    path.style.willChange = "transform";
   });
 
   setTimeout(() => {

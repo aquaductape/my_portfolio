@@ -37,6 +37,7 @@ const FullnameLogo = (props: { ref: HTMLElement }) => {
     }
 
     el!.style.transform = `translateY(${position}px)`;
+    el!.style.willChange = "transform";
     props.position += positionAmount;
   };
 
@@ -168,6 +169,7 @@ const FullnameLogo = (props: { ref: HTMLElement }) => {
 
   return (
     <>
+      {/* SVG Letters Shadow */}
       <svg
         aria-hidden="true"
         // @ts-ignore
@@ -175,6 +177,7 @@ const FullnameLogo = (props: { ref: HTMLElement }) => {
         focusable="false"
         viewBox="0 0 49.913 38.486"
         xmlns="http://www.w3.org/2000/svg"
+        style="will-change: transform;"
       >
         <defs>
           <mask maskUnits="objectBoundingBox" id="fullname-logo-c">
@@ -191,6 +194,7 @@ const FullnameLogo = (props: { ref: HTMLElement }) => {
           class="fullname-shadow-bg-container"
           opacity="0"
           mask="url(#fullname-logo-c)"
+          style="contain: paint;"
         >
           <path d="M-.02-.088v38.71h50.026V-.087z" fill="#1c2942" />
           <g>
@@ -227,13 +231,14 @@ const FullnameLogo = (props: { ref: HTMLElement }) => {
           </g>
         </g>
       </svg>
+      {/* SVG Letters Stroke */}
       <svg
         aria-hidden="true"
         // @ts-ignore
         focusable="false"
         viewBox="0 0 49.913 38.486"
         xmlns="http://www.w3.org/2000/svg"
-        style="transform: translateY(-101.5%)"
+        style="transform: translateY(-101.5%); will-change: transform;"
       >
         <defs>
           <clipPath id="fullname-logo-b">
@@ -260,7 +265,7 @@ const FullnameLogo = (props: { ref: HTMLElement }) => {
             stroke-width="0.264583"
           />
         </g>
-        <g clip-path="url(#fullname-logo-b)">
+        <g clip-path="url(#fullname-logo-b)" style="contain: paint;">
           <path d="M9.5-48.777v78.471h35.952v-78.471z" fill="#c4c4c5" />
           <g
             class="first-name-bg"
@@ -293,6 +298,7 @@ const FullnameLogo = (props: { ref: HTMLElement }) => {
           stroke-linecap="round"
           stroke-linejoin="round"
           paint-order="markers fill stroke"
+          style="contain: paint;"
         >
           <g class="last-name-bg">
             <path
