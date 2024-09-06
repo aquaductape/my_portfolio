@@ -222,10 +222,6 @@ const Contact = () => {
                   </S_Link>
                 </span>
               </li>
-              <li class="list-item">
-                <span class="icon">{iconPhoneJSX()}</span>
-                <span>(323) 637-1232</span>
-              </li>
             </ul>
           </div>
         </div>
