@@ -5,7 +5,7 @@
   force = true
 
 [[redirects]]
-  from = "www.calebetaylor.com"
-  to = "www.calebtaylor.dev"
+  from = "https://www.calebetaylor.com"
+  to = "https://www.calebtaylor.dev"
   status = 301
   force = true
