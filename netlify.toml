@@ -6,6 +6,6 @@
 
 [[redirects]]
   from = "www.calebetaylor.com"
-  to = "https://calebtaylor.dev"
+  to = "www.calebtaylor.dev"
   status = 301
   force = true
