@@ -44,6 +44,7 @@ export default async (req) => {
   const { html, script } = await renderToStringAsync(() => (
     <App url={req.url} />
   ));
+  const domain = `https://calebtaylor.dev`;
   return `
     <!DOCTYPE html>
     <html lang="${lang}">
@@ -85,8 +86,8 @@ export default async (req) => {
       <meta property="og:description"
         content="A Front-End developer that enjoys contributing and helping others! Building projects that are responsive, performant and accessible." />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://calebetaylor.com/" />
-      <meta property="og:image" content="https://calebetaylor.com/open-graph/calebtaylorlogo_og-image1.png" />
+      <meta property="og:url" content="${domain}/" />
+      <meta property="og:image" content="${domain}/open-graph/calebtaylorlogo_og-image1.png" />
 
       <!-- Twitter -->
       <meta name="twitter:card" content="summary"> <!-- there are other card types you can choose -->
@@ -94,7 +95,7 @@ export default async (req) => {
       <meta name="twitter:description"
         content="A Front-End developer that enjoys contributing and helping others! Building projects that are responsive, performant and accessible.">
         <meta name="twitter:image:alt" content="Caleb Taylor vector letters">
-        <meta name="twitter:image" content="https://calebetaylor.com/open-graph/calebtaylorlogo_og-image1.png">
+        <meta name="twitter:image" content="${domain}/open-graph/calebtaylorlogo_og-image1.png">
       ${script}
 
     </head>
