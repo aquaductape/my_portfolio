@@ -10,7 +10,6 @@ import {
   typescript,
   solidJS,
   tailwind,
-  rubyOnRails,
 } from "../../components/svg/icons/animated-icons";
 import Skill from "./Skill";
 
@@ -22,13 +21,13 @@ const Skills = () => {
     [tailwind, "Tailwind CSS"],
     [js, "JavaScript"],
     [typescript, "TypeScript"],
+    // [nodejs, "NodeJS"],
     [react, "React"],
     [redux, "Redux"],
-    [rubyOnRails, "Ruby On Rails"],
+    // [rubyOnRails, "Ruby On Rails"],
     [solidJS, "SolidJS"],
     [git, "Git"],
     // [npm, "NPM"]
-    // [nodejs, "NodeJS"],
     // [mongodb, "MongoDB"],
     // [mysql, "MySQL"]
   ];
