@@ -249,15 +249,28 @@ const InputContainer = (input: TFormInput) => {
   switch (input.type) {
     case "email":
     case "text":
-      inputEl = <input data-input="true" type={input.type} name={input.name} />;
+      inputEl = (
+        <input
+          data-input="true"
+          type={input.type}
+          name={input.name}
+          aria-required="true"
+        />
+      );
       break;
     case "textarea":
-      inputEl = <textarea data-input="true" name={input.name}></textarea>;
+      inputEl = (
+        <textarea
+          data-input="true"
+          name={input.name}
+          aria-required="true"
+        ></textarea>
+      );
       break;
   }
 
   return (
-    <label class="inputs-label" aria-required="true">
+    <label class="inputs-label">
       <div class="label-container">
         <div>{input.label}</div>
         <div
